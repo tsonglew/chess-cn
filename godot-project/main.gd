@@ -41,12 +41,16 @@ var last_animation: Dictionary = {}
 var manual_clock := false
 var board_line_transforms: Array[Transform3D] = []
 var battlefield: Node3D
+var keyboard_cursor: MultiMeshInstance3D
+var cursor_row := 6
+var cursor_col := 0
 
 func _ready() -> void:
 	if ResourceLoader.exists("res://fonts/ui-subset.ttf"):
 		font = load("res://fonts/ui-subset.ttf")
 	_build_environment()
 	_build_board()
+	_build_keyboard_cursor()
 	battlefield = load("res://battlefield.gd").new()
 	add_child(battlefield)
 	battlefield.setup(font)
@@ -216,6 +220,69 @@ func _build_board() -> void:
 	_flush_board_lines(ink)
 	_flat_label("楚 河", Vector3(-5.3, 0.48, 0), 0.015, Color("bfaa78"), self)
 	_flat_label("汉 界", Vector3(5.3, 0.48, 0), 0.015, Color("bfaa78"), self)
+
+func _build_keyboard_cursor() -> void:
+	# Eight short corner strokes remain visible around occupied squares.
+	var box := BoxMesh.new()
+	box.size = Vector3.ONE
+	var batch := MultiMesh.new()
+	batch.transform_format = MultiMesh.TRANSFORM_3D
+	batch.mesh = box
+	batch.instance_count = 8
+	var index := 0
+	for xsign in [-1, 1]:
+		for zsign in [-1, 1]:
+			for horizontal in [true, false]:
+				var size_at := Vector3(0.46, 0.035, 0.065) if horizontal else Vector3(0.065, 0.035, 0.46)
+				var position_at := Vector3(xsign * (1.02 if horizontal else 1.22), 0, zsign * (1.22 if horizontal else 1.02))
+				batch.set_instance_transform(index, Transform3D(Basis.from_scale(size_at), position_at))
+				index += 1
+	var material := _material(Color("9de5ff"), 1.0)
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	keyboard_cursor = MultiMeshInstance3D.new()
+	keyboard_cursor.name = "KeyboardCursor"
+	keyboard_cursor.multimesh = batch
+	keyboard_cursor.material_override = material
+	keyboard_cursor.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	keyboard_cursor.visible = false
+	keyboard_cursor.position = _board_point(cursor_row, cursor_col, 0.515)
+	add_child(keyboard_cursor)
+
+func _set_keyboard_cursor(row: int, col: int, show_cursor: bool) -> void:
+	cursor_row = clampi(row, 0, 9)
+	cursor_col = clampi(col, 0, 8)
+	keyboard_cursor.position = _board_point(cursor_row, cursor_col, 0.515)
+	keyboard_cursor.visible = show_cursor
+	_emit({"type": "cursor", "row": cursor_row, "col": cursor_col, "visible": show_cursor})
+
+func _step_keyboard_cursor(dx: int, dy: int) -> void:
+	if not active_move.is_empty():
+		return
+	var desired := Vector2(clampi(dx, -1, 1), clampi(dy, -1, 1))
+	if desired == Vector2.ZERO:
+		return
+	desired = desired.normalized()
+	var origin := _board_point(cursor_row, cursor_col)
+	var screen_origin := camera.unproject_position(origin)
+	var best_direction := Vector2i.ZERO
+	var best_score := -INF
+	# Choose a board neighbour by its screen direction, including after orbiting.
+	# Clamp afterwards so a boundary key stays put instead of turning a corner.
+	for direction in [Vector2i(0, -1), Vector2i(0, 1), Vector2i(-1, 0), Vector2i(1, 0)]:
+		var neighbour := origin + Vector3(direction.x * CELL, 0, direction.y * CELL)
+		var projected := camera.unproject_position(neighbour) - screen_origin
+		var score := projected.normalized().dot(desired)
+		if score > best_score:
+			best_score = score
+			best_direction = direction
+	_set_keyboard_cursor(cursor_row + best_direction.y, cursor_col + best_direction.x, true)
+
+func _zoom_camera(amount: float) -> void:
+	if camera_focused:
+		focus_distance = clampf(focus_distance + amount * 0.7, 6, 22)
+	else:
+		camera_distance = clampf(camera_distance + amount * 2.0, 24, 65)
+	_update_camera()
 
 func _terrain_material(prefix: String, relief: float) -> StandardMaterial3D:
 	var material := StandardMaterial3D.new()
@@ -481,6 +548,12 @@ func _on_command(arguments: Array) -> void:
 			_begin_move(command)
 		"camera":
 			_set_camera(command.get("view", "iso"))
+		"cursor":
+			_set_keyboard_cursor(int(command.get("row", cursor_row)), int(command.get("col", cursor_col)), bool(command.get("visible", false)))
+		"cursor_step":
+			_step_keyboard_cursor(int(command.get("dx", 0)), int(command.get("dy", 0)))
+		"zoom":
+			_zoom_camera(clampf(float(command.get("amount", 0)), -1, 1))
 		"focus":
 			camera_focused = bool(command.get("active", false))
 			camera_target = _board_point(float(command.get("row", 4.5)), float(command.get("col", 4)), 1.05) if camera_focused else Vector3(0, 0.8, 0)
@@ -690,11 +763,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					_pick_square(event.position)
 				pointer_down = false
 		elif event.pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP, MOUSE_BUTTON_WHEEL_DOWN]:
-			if camera_focused:
-				focus_distance = clampf(focus_distance + (-0.7 if event.button_index == MOUSE_BUTTON_WHEEL_UP else 0.7), 6, 22)
-			else:
-				camera_distance = clampf(camera_distance + (-2.0 if event.button_index == MOUSE_BUTTON_WHEEL_UP else 2.0), 24, 65)
-			_update_camera()
+			_zoom_camera(-1.0 if event.button_index == MOUSE_BUTTON_WHEEL_UP else 1.0)
 	elif event is InputEventMouseMotion and pointer_down:
 		if event.position.distance_to(drag_start) > 5:
 			pointer_dragged = true
@@ -755,6 +824,10 @@ func _emit_metrics(request_id = null) -> void:
 		metrics.requestId = request_id
 	metrics.battlefield = battlefield.diagnostics() if is_instance_valid(battlefield) else {}
 	metrics.pedestals = _pedestal_diagnostics()
+	var cursor_screen := camera.unproject_position(keyboard_cursor.position)
+	metrics.keyboardCursor = {"row": cursor_row, "col": cursor_col, "visible": keyboard_cursor.visible, "screen": [cursor_screen.x, cursor_screen.y]}
+	metrics.cameraDistance = focus_distance if camera_focused else camera_distance
+	metrics.cameraPosition = [camera.position.x, camera.position.y, camera.position.z]
 	metrics.focused = camera_focused
 	metrics.cameraTarget = [camera_target.x, camera_target.y, camera_target.z]
 	_emit(metrics)

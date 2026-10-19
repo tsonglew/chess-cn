@@ -21,15 +21,15 @@
       <section class="board-panel" aria-label="三维棋盘">
         <div class="board-toolbar">
           <div class="view-tabs" role="group" aria-label="观察视角">
-            <button type="button" data-view="iso" aria-pressed="true" disabled>斜俯</button>
-            <button type="button" data-view="top" aria-pressed="false" disabled>俯视</button>
-            <button type="button" data-view="front" aria-pressed="false" disabled>正面</button>
-            <button type="button" data-view="side" aria-pressed="false" disabled>侧面</button>
+            <button type="button" data-view="iso" aria-pressed="true" title="聚焦棋盘后按 1" disabled><kbd>1</kbd> 斜俯</button>
+            <button type="button" data-view="top" aria-pressed="false" title="聚焦棋盘后按 2" disabled><kbd>2</kbd> 俯视</button>
+            <button type="button" data-view="front" aria-pressed="false" title="聚焦棋盘后按 3" disabled><kbd>3</kbd> 正面</button>
+            <button type="button" data-view="side" aria-pressed="false" title="聚焦棋盘后按 4" disabled><kbd>4</kbd> 侧面</button>
           </div>
           <label class="label-switch"><input id="labels-toggle" type="checkbox" checked disabled><span>棋子字样</span></label>
         </div>
         <div class="canvas-wrap" id="canvas-wrap">
-          <canvas id="canvas" tabindex="0" aria-label="Godot 三维象棋棋盘，点击己方棋子再点击落点">浏览器需要支持 Canvas 才能显示棋盘。</canvas>
+          <canvas id="canvas" tabindex="0" aria-label="Godot 三维象棋棋盘，可用鼠标或键盘行棋" aria-describedby="keyboard-help keyboard-status">浏览器需要支持 Canvas 才能显示棋盘。</canvas>
           <div id="loading" class="loading" role="status" aria-live="polite">
             <div class="loading-mark" aria-hidden="true">卒</div>
             <span class="eyebrow">GODOT WEB</span>
@@ -38,7 +38,7 @@
             <progress id="loading-progress" aria-label="资源加载进度"></progress>
             <button id="reload-button" type="button" hidden>重新加载</button>
           </div>
-          <div class="canvas-caption" aria-hidden="true"><span id="view-caption">斜俯视角</span><span>Q 版棋子 · 原始骨骼动作</span></div>
+          <div class="canvas-caption" aria-hidden="true"><span id="view-caption">斜俯视角</span><span class="keyboard-caption">方向键 / WASD 移动 · Enter 确认 · Esc 取消</span></div>
         </div>
         <div class="board-footer"><span><i class="ready-dot" id="ready-dot"></i><span id="runtime-state">引擎加载中</span></span><span id="performance" title="当前 Godot 实时帧率，不代表跨引擎性能结论">— FPS</span></div>
       </section>
@@ -49,6 +49,21 @@
           <div class="turn-heading"><span id="turn-seal" class="turn-seal red">红</span><h1 id="turn-text">红方先行</h1></div>
           <p id="game-hint" class="game-hint" aria-live="polite">点击棋子，再选择高亮落点。</p>
           <div class="game-actions"><button id="undo-button" type="button" disabled>↶ 悔棋</button><button id="restart-button" type="button" disabled>重新开局</button></div>
+        </section>
+
+        <section class="keyboard-help" id="keyboard-help" aria-label="键盘操作说明">
+          <div class="keyboard-heading"><h2>键盘操作</h2><span>聚焦棋盘后生效 · <kbd>Tab</kbd> 切换控件</span><button id="keyboard-focus" type="button" disabled>使用键盘</button></div>
+          <ul class="keyboard-shortcuts">
+            <li><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> / <kbd>WASD</kbd></span><span>按画面方向移光标</span></li>
+            <li><span><kbd>Enter</kbd> / <kbd>Space</kbd></span><span>选子 / 确认落点</span></li>
+            <li><span><kbd>Esc</kbd></span><span>取消选择</span></li>
+            <li><span><kbd>U</kbd> / <kbd>R</kbd></span><span>悔棋 / 重新开局</span></li>
+            <li><span><kbd>1</kbd>–<kbd>4</kbd></span><span>斜俯 / 俯视 / 正面 / 侧面</span></li>
+            <li><span><kbd>L</kbd></span><span>显示 / 隐藏字样</span></li>
+            <li><span><kbd>+</kbd> / <kbd>−</kbd></span><span>拉近 / 拉远视角</span></li>
+            <li><span><kbd>F</kbd></span><span>全屏 / 退出全屏</span></li>
+          </ul>
+          <p id="keyboard-status" class="keyboard-status" role="status" aria-live="polite" aria-atomic="true">先点“使用键盘”或用 Tab 聚焦棋盘。</p>
         </section>
 
         <section class="motion-control">

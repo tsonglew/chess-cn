@@ -25,6 +25,7 @@ let hint = '点击棋子，再选择高亮落点。';
 let engine = null;
 let completedMoves = 0;
 let nextRequestId = 1;
+let keyboardCursor = {row:6,col:0,visible:false};
 const pendingInspections = new Map();
 
 function result(ok, reason) { return {ok, ...(reason ? {reason} : {})}; }
@@ -37,11 +38,13 @@ function sync() {
   return send({type:'sync',state:clone(state),selectedId,legalMoves:clone(selectedMoves),testMode,config:{testMode}});
 }
 function clearSelection() { selectedId = null; selectedMoves = []; }
+function inputHint() { return keyboardCursor.visible ? '方向键移动光标，Enter 选子并确认落点。' : '点击棋子，再选择高亮落点。'; }
 function status() { return gameStatus(state); }
 function snapshot() {
   return clone({runtimeReady,phase,testMode,mode,turn:state.turn,pieces:state.pieces,selectedId,
     legalMoves:selectedMoves,lastMove:state.lastMove,historyLength:state.history.length,
     completedMoves,status:status(),animation,camera,focus,labels,metrics,runtime,error,errors,
+    keyboard:{...keyboardCursor,focused:document.activeElement === $('canvas')},
     coordinates:'row 0..9 (black home to red home); col 0..8 (red left to right)',
   });
 }
@@ -63,6 +66,16 @@ function render() {
   $('replay-button').disabled = busy || !mode.startsWith('demo-');
   $('labels-toggle').disabled = !runtimeReady || phase === 'error';
   $('labels-toggle').checked = labels;
+  $('keyboard-focus').disabled = busy;
+  const keyboardFocused = document.activeElement === $('canvas');
+  $('keyboard-help').classList.toggle('keyboard-active',keyboardFocused);
+  $('keyboard-focus').textContent = keyboardFocused ? '键盘已启用' : '使用键盘';
+  const occupant = pieceAt(state.pieces,keyboardCursor.row,keyboardCursor.col);
+  const occupantName = occupant ? `${occupant.color === 'red' ? '红' : '黑'}${GLYPH[occupant.color][occupant.type]}` : '空位';
+  const keyboardStatus = keyboardCursor.visible
+    ? `光标：第 ${keyboardCursor.row + 1} 行 · 第 ${keyboardCursor.col + 1} 列 · ${occupantName}${keyboardFocused ? '' : ' · 已离开棋盘'}`
+    : keyboardFocused ? '已聚焦棋盘：方向键移动光标，Enter 选择当前格。' : '先点“使用键盘”或用 Tab 聚焦棋盘。';
+  if ($('keyboard-status').textContent !== keyboardStatus) $('keyboard-status').textContent = keyboardStatus;
   document.querySelectorAll('[data-view]').forEach((button) => {
     button.disabled = !runtimeReady || phase === 'error';
     button.setAttribute('aria-pressed', String(button.dataset.view === camera));
@@ -88,7 +101,8 @@ function select(row, col) {
   if (status().over) return result(false,'game_over');
   selectedId = piece.id;
   selectedMoves = legalMoves(state.pieces,piece);
-  hint = `已选${piece.color === 'red' ? '红' : '黑'}${GLYPH[piece.color][piece.type]}，${selectedMoves.length ? '点击高亮落点行棋。' : '目前没有合法落点。'}`;
+  const moveHint = keyboardCursor.visible ? '移到高亮落点，按 Enter 行棋。' : '点击高亮落点行棋。';
+  hint = `已选${piece.color === 'red' ? '红' : '黑'}${GLYPH[piece.color][piece.type]}，${selectedMoves.length ? moveHint : '目前没有合法落点。'}`;
   sync(); render();
   return result(true);
 }
@@ -118,24 +132,29 @@ function square(row,col) {
   if (selectedId !== null && selectedMoves.some((entry) => entry.row === row && entry.col === col)) return move(row,col);
   const piece = pieceAt(state.pieces,row,col);
   if (piece?.color === state.turn) return select(row,col);
-  clearSelection(); hint = '点击己方棋子，查看合法落点。'; sync(); render();
+  clearSelection(); hint = keyboardCursor.visible ? '请移到己方棋子，按 Enter 查看合法落点。' : '点击己方棋子，查看合法落点。'; sync(); render();
   return result(false,'not_current_side');
 }
 function reset(nextState, nextMode) {
   state = nextState; mode = nextMode; clearSelection();
   animation = {phase:'idle',clip:null,time:0,trace:[]};
-  hint = '点击棋子，再选择高亮落点。';
+  hint = inputHint();
   phase = 'ready'; sync(); render();
 }
 function restart() {
   if (!canPlay()) return result(false,'runtime_busy');
   focus = null; send({type:'focus',active:false});
+  keyboardCursor = {...keyboardCursor,row:6,col:0};
+  send({type:'cursor',...keyboardCursor});
   reset(createInitialState(),'game');
   return result(true);
 }
 function undo() {
   if (!canPlay()) return result(false,'runtime_busy');
-  if (!undoRules(state)) return result(false,'no_history');
+  const undone = undoRules(state);
+  if (!undone) return result(false,'no_history');
+  keyboardCursor = {...keyboardCursor,...undone.from};
+  send({type:'cursor',...keyboardCursor});
   clearSelection(); animation = {phase:'idle',clip:null,time:0,trace:[]};
   hint = '已撤回一步。'; sync(); render();
   return result(true);
@@ -154,6 +173,8 @@ function demo(color = 'red') {
     piece.color = piece.color === 'red' ? 'black' : 'red';
   }
   lastDemo = color;
+  keyboardCursor = {...keyboardCursor,row:color === 'red' ? 5 : 4,col:color === 'red' ? 0 : 8};
+  send({type:'cursor',...keyboardCursor});
   reset({pieces,turn:color,history:[],lastMove:null},`demo-${color}`);
   focus = {row:color === 'red' ? 5.5 : 3.5,col:color === 'red' ? 0 : 8};
   send({type:'focus',active:true,...focus});
@@ -167,6 +188,68 @@ function view(name) {
 function showLabels(visible) {
   if (!runtimeReady || phase === 'error') return result(false,'runtime_unavailable');
   labels = Boolean(visible); send({type:'labels',visible:labels}); render(); return result(true);
+}
+function showKeyboardCursor() {
+  if (!keyboardCursor.visible) {
+    keyboardCursor.visible = true;
+    send({type:'cursor',...keyboardCursor});
+  }
+}
+function focusKeyboard() {
+  if (!canPlay()) return;
+  $('canvas').focus({preventScroll:true});
+  showKeyboardCursor();
+  if (selectedId === null) hint = inputHint();
+  render();
+}
+function cancelSelection() {
+  clearSelection();
+  hint = '已取消选择。移动光标，按 Enter 选择己方棋子。';
+  sync(); render();
+}
+function fullscreen() {
+  const request = document.fullscreenElement ? document.exitFullscreen?.() : $('canvas-wrap').requestFullscreen?.();
+  request?.catch(() => {});
+}
+function keyboardInput(event) {
+  const canvas = $('canvas');
+  if (document.activeElement !== canvas || event.target !== canvas || event.isComposing || event.keyCode === 229
+    || event.altKey || event.ctrlKey || event.metaKey
+    || event.target.closest?.('input,textarea,select,[contenteditable]:not([contenteditable="false"])')) return;
+  // Godot's input listener may consume Tab; leave the browser's focus traversal intact.
+  if (event.key === 'Tab') { event.stopPropagation(); return; }
+  const key = event.key.toLowerCase();
+  const directions = {arrowup:[0,-1],w:[0,-1],arrowdown:[0,1],s:[0,1],arrowleft:[-1,0],a:[-1,0],arrowright:[1,0],d:[1,0]};
+  const isNavigation = Object.hasOwn(directions,key);
+  const isAction = ['enter',' ','escape','u','r','1','2','3','4','l','f','+','=','-','_'].includes(key);
+  if (!isNavigation && !isAction) return;
+  // Only the focused board consumes game keys. Native buttons retain Enter/Space,
+  // and Tab remains available to leave the canvas and reach every control.
+  if (key !== 'escape') event.preventDefault();
+  event.stopPropagation();
+  if (!runtimeReady || phase === 'error' || (!isNavigation && event.repeat)) return;
+  if (isNavigation) {
+    if (!canPlay()) return;
+    showKeyboardCursor();
+    const [dx,dy] = directions[key];
+    send({type:'cursor_step',dx,dy});
+  } else if (key === 'enter' || key === ' ') {
+    if (!canPlay()) return;
+    showKeyboardCursor();
+    square(keyboardCursor.row,keyboardCursor.col);
+  } else if (key === 'escape') {
+    if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+    if (canPlay()) cancelSelection();
+  } else if (key === 'u') {
+    if (canPlay()) undo();
+  } else if (key === 'r') {
+    if (canPlay()) restart();
+  } else if (/^[1-4]$/.test(key)) {
+    view(['iso','top','front','side'][Number(key)-1]);
+  } else if (key === 'l') showLabels(!labels);
+  else if (key === 'f') fullscreen();
+  else send({type:'zoom',amount:key === '+' || key === '=' ? -1 : 1});
+  render();
 }
 function inspect() { send({type:'inspect'}); return snapshot(); }
 function awaitInspection() {
@@ -216,10 +299,17 @@ window.GodotHost = {
       if (version) $('engine-version').textContent = `${version.toLowerCase().startsWith('godot') ? '' : 'Godot '}${version} · WebGL 2`;
       queueMicrotask(() => { sync(); send({type:'camera',view:camera}); send({type:'labels',visible:labels}); send({type:'inspect'}); });
     } else if (type === 'square') {
+      keyboardCursor = {row:Number(event.row),col:Number(event.col),visible:false};
+      send({type:'cursor',...keyboardCursor});
       square(Number(event.row),Number(event.col));
+    } else if (type === 'cursor') {
+      const row = Number(event.row), col = Number(event.col);
+      if (Number.isInteger(row) && row >= 0 && row <= 9 && Number.isInteger(col) && col >= 0 && col <= 8) {
+        keyboardCursor = {row,col,visible:Boolean(event.visible)};
+      }
     } else if (type === 'move_done') {
       phase = 'ready'; completedMoves++;
-      hint = mode.startsWith('demo-') ? '可切换视角、再次演示，或重新开局。' : '点击棋子，再选择高亮落点。';
+      hint = mode.startsWith('demo-') ? '可切换视角、再次演示，或重新开局。' : inputHint();
       // The scene owns the completed placement. Sync only clears highlights and
       // reconciles the rule state; it must not trigger a second animation.
       queueMicrotask(sync);
@@ -255,13 +345,11 @@ $('demo-black').addEventListener('click',() => demo('black'));
 $('replay-button').addEventListener('click',() => demo(lastDemo));
 $('labels-toggle').addEventListener('change',(event) => showLabels(event.target.checked));
 $('reload-button').addEventListener('click',() => location.reload());
+$('keyboard-focus').addEventListener('click',focusKeyboard);
+$('canvas').addEventListener('focus',render);
+$('canvas').addEventListener('blur',render);
 document.querySelectorAll('[data-view]').forEach((button) => button.addEventListener('click',() => view(button.dataset.view)));
-document.addEventListener('keydown',(event) => {
-  if (event.key.toLowerCase() !== 'f' || event.altKey || event.ctrlKey || event.metaKey || /^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName)) return;
-  event.preventDefault();
-  const request = document.fullscreenElement ? document.exitFullscreen?.() : $('canvas-wrap').requestFullscreen?.();
-  request?.catch(() => {});
-});
+document.addEventListener('keydown',keyboardInput,true);
 render();
 
 async function start() {

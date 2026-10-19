@@ -36,8 +36,30 @@
 
 页面提供正常棋局、红兵/黑卒突刺演示、重播、悔棋、重开、四个视角和名字标签开关。`?test=1` 使用可控时间供自动化验收；普通用户使用不带该参数的网址。
 
+### 键盘操作
+
+点击侧栏“使用键盘”，或用 Tab 聚焦棋盘。浅蓝色角框表示当前光标，金色圈表示已选棋子，绿色标记表示合法落点。按键提示常驻侧栏，全屏时棋盘底部保留基础提示。
+
+| 按键 | 操作 |
+| --- | --- |
+| 方向键 / WASD | 按当前画面方向移动一个棋格；支持长按，边界停留 |
+| Enter / Space | 选中己方棋子，或确认合法落点 |
+| Esc | 取消选择；全屏时也可退出全屏 |
+| U / R | 悔棋 / 重新开局 |
+| 1 / 2 / 3 / 4 | 斜俯 / 俯视 / 正面 / 侧面 |
+| L | 显示或隐藏棋子字样 |
+| + / − | 拉近或拉远视角（无需 Shift 的 = 也可拉近） |
+| F | 切换全屏 |
+| Tab / Shift+Tab | 离开棋盘，切换网页控件 |
+
+![棋盘与侧栏键盘操作提示](../docs/godot-preview/keyboard-controls.png)
+
+快捷键仅在棋盘获得焦点时生效。鼠标点击棋格会隐藏键盘角框，下一次方向键从该棋格继续；动作期间暂停选子、移动、悔棋与重开，视角和缩放仍可使用。系统组合键、中文输入法和页面原生控件保留各自行为。
+
 运行 `node tools/godot-assets.mjs` 检查模型哈希、骨骼与动画和 Web 导出配置。原 Three.js 源模型不在当前检出中时，此脚本仍校验复制模型与资产清单的一致性，并明确标注没有执行源文件比对。
 
 运行 `Godot --headless --path godot-project --script tests/runtime_smoke.gd` 验证模型切换、真实骨骼前刺、命中时序、落点和32枚棋子恢复（将 `Godot` 替换为本机可执行文件）。浏览器验收使用 `tools/godot-browser-acceptance.mjs` 导出的 `runGodotAcceptance(page, options)`；`page` 为 ego-browser 当前任务空间中的页面，不另启动浏览器。
+
+`tests/keyboard_smoke.gd` 通过相同命令验证光标方向、边界、缩放限位和动画互斥。浏览器键盘验收使用 `tools/godot-keyboard-qa.mjs` 的 `runGodotKeyboardQa(page, options)`，以真实按键及鼠标检查行棋、快捷键、焦点、输入法保护和全屏。
 
 编辑器原生运行可预览棋盘；本轮交互规则通过 Web JavaScriptBridge 接入。Godot 导入器保留默认网格 LOD，桌面采样因此不能直接与旧 Three.js 数据做同条件性能比较。浏览器验收与实测结论见 `docs/reports/godot-*`。移动端真机验证不在此次范围内。

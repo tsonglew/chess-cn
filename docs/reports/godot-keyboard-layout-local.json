@@ -1,0 +1,98 @@
+{
+  "generatedAt": "2026-10-19T08:02:06.151Z",
+  "passed": true,
+  "viewports": [
+    {
+      "width": 1368,
+      "height": 781,
+      "help": {
+        "x": 1072,
+        "y": 341,
+        "width": 266,
+        "height": 332.59375,
+        "bottom": 673.59375,
+        "right": 1338
+      },
+      "panel": {
+        "x": 30,
+        "y": 116,
+        "width": 1015,
+        "height": 653,
+        "bottom": 769,
+        "right": 1045
+      },
+      "footer": {
+        "x": 31,
+        "y": 736,
+        "width": 1013,
+        "height": 32,
+        "bottom": 768,
+        "right": 1044
+      },
+      "caption": {
+        "x": 51,
+        "y": 696,
+        "width": 973,
+        "height": 24,
+        "bottom": 720,
+        "right": 1024
+      },
+      "canvas": {
+        "x": 31,
+        "y": 173,
+        "width": 1013,
+        "height": 563,
+        "bottom": 736,
+        "right": 1044
+      }
+    },
+    {
+      "width": 1100,
+      "height": 800,
+      "help": {
+        "x": 804,
+        "y": 341,
+        "width": 266,
+        "height": 332.59375,
+        "bottom": 673.59375,
+        "right": 1070
+      },
+      "panel": {
+        "x": 30,
+        "y": 116,
+        "width": 747,
+        "height": 672,
+        "bottom": 788,
+        "right": 777
+      },
+      "footer": {
+        "x": 31,
+        "y": 755,
+        "width": 745,
+        "height": 32,
+        "bottom": 787,
+        "right": 776
+      },
+      "caption": {
+        "x": 51,
+        "y": 715,
+        "width": 705,
+        "height": 24,
+        "bottom": 739,
+        "right": 756
+      },
+      "canvas": {
+        "x": 31,
+        "y": 173,
+        "width": 745,
+        "height": 582,
+        "bottom": 755,
+        "right": 776
+      }
+    }
+  ],
+  "screenshots": [
+    "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-keyboard/local-viewport-1368.png",
+    "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-keyboard/local-viewport-1100.png"
+  ]
+}

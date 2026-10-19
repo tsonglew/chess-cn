@@ -6,3 +6,28 @@
 @media(max-width:760px){.app{padding:0 12px}.masthead{height:76px;gap:15px}.identity strong{font-size:19px}.identity small{font-size:8px}.seal{width:35px;height:39px;font-size:26px}.original-link{font-size:10px}.original-link span{margin-left:3px}.workspace{display:flex;flex-direction:column;gap:20px;padding-top:13px}.canvas-wrap{height:68dvh;min-height:430px;max-height:720px}.board-toolbar{padding:0 9px;height:49px}.view-tabs button{font-size:11px;padding:6px 11px}.label-switch{font-size:10px}.control-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:19px;padding:1px 5px}.turn-heading{margin-top:20px}.turn-heading h1{font-size:23px}.game-hint{margin:13px 0;min-height:43px;font-size:11px}.game-actions button{font-size:11px}.motion-control{margin:0;padding:0 0 0 18px;border-top:0;border-left:1px solid var(--line)}.motion-title{gap:13px;margin:18px 0}.large-glyph{font-size:43px}.large-glyph>span{font-size:21px;right:-14px}.motion-title h2{font-size:18px}.motion-title p{font-size:9px}.demo-actions{gap:6px}.demo-actions button{font-size:11px;height:35px}.motion-track{margin-top:20px}.motion-status{font-size:9px}.observation{grid-column:1/-1;margin:0;padding-top:18px}.observation p{margin:12px 0;line-height:1.8}.piece-legend{float:right;margin-top:-25px}.observation p{padding-right:100px}.comparison-note{grid-column:1/-1;padding:0;margin:0}.comparison-note br{display:none}.page-footer{height:48px;font-size:8px}.loading h1{font-size:22px}.loading p{font-size:10px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 .canvas-wrap:fullscreen{width:100vw;height:100vh;min-height:0;max-height:none;background:#182329}
+
+/* Keyboard instructions stay alongside the board, including at narrow widths. */
+.board-panel{align-self:start;width:100%}
+kbd{display:inline-flex;align-items:center;justify-content:center;min-width:18px;padding:1px 4px;border:1px solid #c5c5b8;border-bottom-width:2px;border-radius:3px;background:#f8f5ee;font:10px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;color:#4e594c;white-space:nowrap}
+.view-tabs kbd{min-width:14px;padding:0 3px;font-size:9px;opacity:.8;margin-right:2px}
+.view-tabs button[aria-pressed="true"] kbd{border-color:#84917e;background:#4c5e4e;color:#faf7ee}
+.keyboard-help{margin-top:22px;padding:12px;border:1px solid var(--line);border-radius:4px;background:#f4f0e6}
+.keyboard-heading{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:11px}
+.keyboard-heading h2{font-size:12px;font-weight:600;letter-spacing:.06em;margin:0;white-space:nowrap}
+.keyboard-heading>span{font-size:10px;color:var(--muted);line-height:1.6;order:3;flex-basis:100%}
+.keyboard-heading>span kbd{font-size:9px}
+#keyboard-focus{margin-left:auto;padding:5px 10px;flex-shrink:0;font-size:11px;border-color:#a8b4a0;color:#526352;background:#e8ecdf}
+.keyboard-active #keyboard-focus{border-color:#526352;background:#526352;color:#fff8eb}
+.keyboard-shortcuts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 10px;padding:0;margin:0;list-style:none}
+.keyboard-shortcuts li{display:flex;flex-direction:column;gap:4px;font-size:10px;line-height:1.5;color:#656f5e}
+.keyboard-shortcuts li:first-child{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 7px}
+.keyboard-shortcuts li>span:first-child{min-height:20px;white-space:nowrap}
+.keyboard-shortcuts kbd+kbd{margin-left:2px}
+.keyboard-status{font-size:10px;line-height:1.6;color:#737b6a;margin:10px 0 0;padding-top:8px;border-top:1px solid #dedfd2;min-height:25px;font-variant-numeric:tabular-nums}
+.keyboard-active .keyboard-status{color:#405c3f}
+.canvas-caption{flex-wrap:wrap;gap:6px}
+.canvas-caption .keyboard-caption{display:block}
+#canvas:focus-visible{box-shadow:inset 0 0 0 3px #dac783}
+@media(max-width:1050px){.view-tabs button{padding:7px 7px}.keyboard-help{padding:10px}.keyboard-shortcuts{gap:8px}.keyboard-heading{gap:8px}}
+@media(max-width:760px){.view-tabs button{padding:6px 7px}.keyboard-help{grid-column:1/-1;grid-row:2;margin-top:0;padding:12px}.motion-control{grid-column:2;grid-row:1}.keyboard-heading{margin-bottom:10px}.keyboard-shortcuts li{flex-direction:column;align-items:flex-start;gap:2px}.keyboard-shortcuts{gap:8px 14px}.keyboard-shortcuts li:first-child{grid-column:auto;flex-direction:column;align-items:flex-start}}
