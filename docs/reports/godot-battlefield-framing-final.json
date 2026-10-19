@@ -1,0 +1,4014 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-19T07:37:59.200Z",
+  "url": "http://127.0.0.1:8000/godot/?test=1&battlefield=4",
+  "scope": "Desktop framing and screenshots for human visual review. Projected piece feet and head positions test framing, not full silhouette occlusion or mobile compatibility.",
+  "samples": [
+    {
+      "view": "iso",
+      "metrics": {
+        "viewport": [
+          1403,
+          960
+        ],
+        "drawCalls": 183,
+        "primitives": 657406,
+        "objects": 183,
+        "focused": false,
+        "cameraTarget": [
+          0,
+          0.800000011920929,
+          0
+        ],
+        "battlefield": {
+          "banners": 4,
+          "braziers": 4,
+          "embers": 24,
+          "geometry_batches": 18,
+          "mesh_instances": 13,
+          "palisades": 30,
+          "rocks": 126,
+          "smoke_puffs": 20,
+          "wall_blocks": 102
+        },
+        "visualPieces": [
+          {
+            "id": 0,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              400.422912597656,
+              311.426086425781
+            ],
+            "headScreen": [
+              390.654174804688,
+              274.416656494141
+            ]
+          },
+          {
+            "id": 1,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              456.325164794922,
+              832.359985351562
+            ],
+            "headScreen": [
+              445.363647460938,
+              804.653381347656
+            ]
+          },
+          {
+            "id": 2,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              462.142639160156,
+              301.983551025391
+            ],
+            "headScreen": [
+              454.429016113281,
+              264.920318603516
+            ]
+          },
+          {
+            "id": 3,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              539.676330566406,
+              814.891052246094
+            ],
+            "headScreen": [
+              532.508666992188,
+              786.66845703125
+            ]
+          },
+          {
+            "id": 4,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              523.058166503906,
+              292.6640625
+            ],
+            "headScreen": [
+              517.346313476562,
+              255.551696777344
+            ]
+          },
+          {
+            "id": 5,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              621.555541992188,
+              797.730590820312
+            ],
+            "headScreen": [
+              618.047180175781,
+              769.015014648438
+            ]
+          },
+          {
+            "id": 6,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              583.185180664062,
+              283.465179443359
+            ],
+            "headScreen": [
+              579.423278808594,
+              246.308151245117
+            ]
+          },
+          {
+            "id": 7,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              702.001403808594,
+              780.870483398438
+            ],
+            "headScreen": [
+              702.023193359375,
+              751.68408203125
+            ]
+          },
+          {
+            "id": 8,
+            "type": "general",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              642.538818359375,
+              274.384643554688
+            ],
+            "headScreen": [
+              640.676574707031,
+              237.18733215332
+            ]
+          },
+          {
+            "id": 9,
+            "type": "general",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              781.05126953125,
+              764.302978515625
+            ],
+            "headScreen": [
+              784.479125976562,
+              734.666809082031
+            ]
+          },
+          {
+            "id": 10,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              701.133972167969,
+              265.420166015625
+            ],
+            "headScreen": [
+              701.122497558594,
+              228.186721801758
+            ]
+          },
+          {
+            "id": 11,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              858.741088867188,
+              748.020568847656
+            ],
+            "headScreen": [
+              865.455871582031,
+              717.954895019531
+            ]
+          },
+          {
+            "id": 12,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              758.984985351562,
+              256.569488525391
+            ],
+            "headScreen": [
+              760.776916503906,
+              219.303924560547
+            ]
+          },
+          {
+            "id": 13,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              935.105712890625,
+              732.015869140625
+            ],
+            "headScreen": [
+              944.992919921875,
+              701.540100097656
+            ]
+          },
+          {
+            "id": 14,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              816.106079101562,
+              247.830520629883
+            ],
+            "headScreen": [
+              819.6552734375,
+              210.536727905273
+            ]
+          },
+          {
+            "id": 15,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              1010.17883300781,
+              716.281860351562
+            ],
+            "headScreen": [
+              1023.12823486328,
+              685.41455078125
+            ]
+          },
+          {
+            "id": 16,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              872.510803222656,
+              239.201141357422
+            ],
+            "headScreen": [
+              877.772521972656,
+              201.882843017578
+            ]
+          },
+          {
+            "id": 17,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              1083.99279785156,
+              700.811706542969
+            ],
+            "headScreen": [
+              1099.89868164062,
+              669.570739746094
+            ]
+          },
+          {
+            "id": 18,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              475.615234375,
+              391.108612060547
+            ],
+            "headScreen": [
+              467.866638183594,
+              354.714263916016
+            ]
+          },
+          {
+            "id": 19,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              850.206298828125,
+              330.141418457031
+            ],
+            "headScreen": [
+              855.096008300781,
+              293.25048828125
+            ]
+          },
+          {
+            "id": 20,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              517.996337890625,
+              671.471801757812
+            ],
+            "headScreen": [
+              510.492767333984,
+              639.552612304688
+            ]
+          },
+          {
+            "id": 21,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              956.437622070312,
+              586.561828613281
+            ],
+            "headScreen": [
+              966.351318359375,
+              552.905029296875
+            ]
+          },
+          {
+            "id": 22,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              415.436096191406,
+              451.328887939453
+            ],
+            "headScreen": [
+              405.220428466797,
+              415.591339111328
+            ]
+          },
+          {
+            "id": 23,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              433.680511474609,
+              621.342529296875
+            ],
+            "headScreen": [
+              423.046325683594,
+              588.357055664062
+            ]
+          },
+          {
+            "id": 24,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              549.601867675781,
+              428.772583007812
+            ],
+            "headScreen": [
+              544.257629394531,
+              392.769622802734
+            ]
+          },
+          {
+            "id": 25,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              581.768249511719,
+              593.712707519531
+            ],
+            "headScreen": [
+              577.092102050781,
+              560.189392089844
+            ]
+          },
+          {
+            "id": 26,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              679.990539550781,
+              406.851226806641
+            ],
+            "headScreen": [
+              679.244812011719,
+              370.612609863281
+            ]
+          },
+          {
+            "id": 27,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              725.252197265625,
+              566.941772460938
+            ],
+            "headScreen": [
+              726.164855957031,
+              532.930908203125
+            ]
+          },
+          {
+            "id": 28,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              806.759338378906,
+              385.538513183594
+            ],
+            "headScreen": [
+              810.356384277344,
+              349.091796875
+            ]
+          },
+          {
+            "id": 29,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              864.34375,
+              540.990478515625
+            ],
+            "headScreen": [
+              870.501586914062,
+              506.538543701172
+            ]
+          },
+          {
+            "id": 30,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              930.056884765625,
+              364.809387207031
+            ],
+            "headScreen": [
+              937.7568359375,
+              328.180114746094
+            ]
+          },
+          {
+            "id": 31,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              999.241516113281,
+              515.821655273438
+            ],
+            "headScreen": [
+              1010.32440185547,
+              480.971557617188
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "canvas": {
+        "width": 1085,
+        "height": 742,
+        "cssWidth": 1085,
+        "cssHeight": 742
+      },
+      "body": {
+        "scrollWidth": 1440,
+        "viewportWidth": 1440
+      },
+      "minimumFrameMarginPx": 127.64001464843795,
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "screenshot": "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-battlefield/final-1440x960-iso.png"
+    },
+    {
+      "view": "top",
+      "metrics": {
+        "viewport": [
+          1403,
+          960
+        ],
+        "drawCalls": 189,
+        "primitives": 703486,
+        "objects": 189,
+        "focused": false,
+        "cameraTarget": [
+          0,
+          0.800000011920929,
+          0
+        ],
+        "battlefield": {
+          "banners": 4,
+          "braziers": 4,
+          "embers": 24,
+          "geometry_batches": 18,
+          "mesh_instances": 13,
+          "palisades": 30,
+          "rocks": 126,
+          "smoke_puffs": 20,
+          "wall_blocks": 102
+        },
+        "visualPieces": [
+          {
+            "id": 0,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              378.104705810547,
+              116.197418212891
+            ],
+            "headScreen": [
+              360.285766601562,
+              95.9593963623047
+            ]
+          },
+          {
+            "id": 1,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              377.577606201172,
+              844.427001953125
+            ],
+            "headScreen": [
+              359.698913574219,
+              864.348327636719
+            ]
+          },
+          {
+            "id": 2,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              458.953521728516,
+              116.197418212891
+            ],
+            "headScreen": [
+              445.589324951172,
+              95.9593963623047
+            ]
+          },
+          {
+            "id": 3,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              458.558197021484,
+              844.427001953125
+            ],
+            "headScreen": [
+              445.149169921875,
+              864.348327636719
+            ]
+          },
+          {
+            "id": 4,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              539.802368164062,
+              116.197418212891
+            ],
+            "headScreen": [
+              530.892883300781,
+              95.9593963623047
+            ]
+          },
+          {
+            "id": 5,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              539.538818359375,
+              844.427001953125
+            ],
+            "headScreen": [
+              530.599426269531,
+              864.348327636719
+            ]
+          },
+          {
+            "id": 6,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              620.651184082031,
+              116.197418212891
+            ],
+            "headScreen": [
+              616.196472167969,
+              95.9593963623047
+            ]
+          },
+          {
+            "id": 7,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              620.519409179688,
+              844.427001953125
+            ],
+            "headScreen": [
+              616.049743652344,
+              864.348327636719
+            ]
+          },
+          {
+            "id": 8,
+            "type": "general",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              701.5,
+              116.197418212891
+            ],
+            "headScreen": [
+              701.5,
+              95.9593963623047
+            ]
+          },
+          {
+            "id": 9,
+            "type": "general",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              701.5,
+              844.427001953125
+            ],
+            "headScreen": [
+              701.5,
+              864.348327636719
+            ]
+          },
+          {
+            "id": 10,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              782.348815917969,
+              116.197418212891
+            ],
+            "headScreen": [
+              786.803527832031,
+              95.9593963623047
+            ]
+          },
+          {
+            "id": 11,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              782.480590820312,
+              844.427001953125
+            ],
+            "headScreen": [
+              786.950256347656,
+              864.348327636719
+            ]
+          },
+          {
+            "id": 12,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              863.197631835938,
+              116.197418212891
+            ],
+            "headScreen": [
+              872.107116699219,
+              95.9593963623047
+            ]
+          },
+          {
+            "id": 13,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              863.461181640625,
+              844.427001953125
+            ],
+            "headScreen": [
+              872.400573730469,
+              864.348327636719
+            ]
+          },
+          {
+            "id": 14,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              944.046447753906,
+              116.197418212891
+            ],
+            "headScreen": [
+              957.41064453125,
+              95.9593963623047
+            ]
+          },
+          {
+            "id": 15,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              944.441772460938,
+              844.427001953125
+            ],
+            "headScreen": [
+              957.850830078125,
+              864.348327636719
+            ]
+          },
+          {
+            "id": 16,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1024.89526367188,
+              116.197418212891
+            ],
+            "headScreen": [
+              1042.71423339844,
+              95.9593963623047
+            ]
+          },
+          {
+            "id": 17,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              1025.42236328125,
+              844.427001953125
+            ],
+            "headScreen": [
+              1043.30114746094,
+              864.348327636719
+            ]
+          },
+          {
+            "id": 18,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              458.865783691406,
+              277.821350097656
+            ],
+            "headScreen": [
+              445.491638183594,
+              266.484344482422
+            ]
+          },
+          {
+            "id": 19,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              944.134216308594,
+              277.821350097656
+            ],
+            "headScreen": [
+              957.508361816406,
+              266.484344482422
+            ]
+          },
+          {
+            "id": 20,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              458.646179199219,
+              682.393127441406
+            ],
+            "headScreen": [
+              445.247131347656,
+              693.366882324219
+            ]
+          },
+          {
+            "id": 21,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              944.353820800781,
+              682.393127441406
+            ],
+            "headScreen": [
+              957.752868652344,
+              693.366882324219
+            ]
+          },
+          {
+            "id": 22,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              377.92919921875,
+              358.677124023438
+            ],
+            "headScreen": [
+              360.090393066406,
+              351.795684814453
+            ]
+          },
+          {
+            "id": 23,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              377.753479003906,
+              601.420227050781
+            ],
+            "headScreen": [
+              359.894775390625,
+              607.925170898438
+            ]
+          },
+          {
+            "id": 24,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              539.714599609375,
+              358.677124023438
+            ],
+            "headScreen": [
+              530.795166015625,
+              351.795684814453
+            ]
+          },
+          {
+            "id": 25,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              539.626770019531,
+              601.420227050781
+            ],
+            "headScreen": [
+              530.697387695312,
+              607.925170898438
+            ]
+          },
+          {
+            "id": 26,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              701.5,
+              358.677124023438
+            ],
+            "headScreen": [
+              701.5,
+              351.795684814453
+            ]
+          },
+          {
+            "id": 27,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              701.5,
+              601.420227050781
+            ],
+            "headScreen": [
+              701.5,
+              607.925170898438
+            ]
+          },
+          {
+            "id": 28,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              863.285400390625,
+              358.677124023438
+            ],
+            "headScreen": [
+              872.204833984375,
+              351.795684814453
+            ]
+          },
+          {
+            "id": 29,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              863.373229980469,
+              601.420227050781
+            ],
+            "headScreen": [
+              872.302612304688,
+              607.925170898438
+            ]
+          },
+          {
+            "id": 30,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1025.07080078125,
+              358.677124023438
+            ],
+            "headScreen": [
+              1042.90966796875,
+              351.795684814453
+            ]
+          },
+          {
+            "id": 31,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              1025.24645996094,
+              601.420227050781
+            ],
+            "headScreen": [
+              1043.10522460938,
+              607.925170898438
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "canvas": {
+        "width": 1085,
+        "height": 742,
+        "cssWidth": 1085,
+        "cssHeight": 742
+      },
+      "body": {
+        "scrollWidth": 1440,
+        "viewportWidth": 1440
+      },
+      "minimumFrameMarginPx": 95.65167236328102,
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "screenshot": "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-battlefield/final-1440x960-top.png"
+    },
+    {
+      "view": "front",
+      "metrics": {
+        "viewport": [
+          1403,
+          960
+        ],
+        "drawCalls": 153,
+        "primitives": 702918,
+        "objects": 153,
+        "focused": false,
+        "cameraTarget": [
+          0,
+          0.800000011920929,
+          0
+        ],
+        "battlefield": {
+          "banners": 4,
+          "braziers": 4,
+          "embers": 24,
+          "geometry_batches": 18,
+          "mesh_instances": 13,
+          "palisades": 30,
+          "rocks": 126,
+          "smoke_puffs": 20,
+          "wall_blocks": 102
+        },
+        "visualPieces": [
+          {
+            "id": 0,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              455.303985595703,
+              329.444976806641
+            ],
+            "headScreen": [
+              449.735260009766,
+              283.796997070312
+            ]
+          },
+          {
+            "id": 1,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              311.885559082031,
+              729.465270996094
+            ],
+            "headScreen": [
+              297.7529296875,
+              670.771179199219
+            ]
+          },
+          {
+            "id": 2,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              516.852966308594,
+              329.444976806641
+            ],
+            "headScreen": [
+              512.676452636719,
+              283.796997070312
+            ]
+          },
+          {
+            "id": 3,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              409.289154052734,
+              729.465270996094
+            ],
+            "headScreen": [
+              398.689697265625,
+              670.771179199219
+            ]
+          },
+          {
+            "id": 4,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              578.401977539062,
+              329.444976806641
+            ],
+            "headScreen": [
+              575.617614746094,
+              283.796997070312
+            ]
+          },
+          {
+            "id": 5,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              506.692779541016,
+              729.465270996094
+            ],
+            "headScreen": [
+              499.62646484375,
+              670.771179199219
+            ]
+          },
+          {
+            "id": 6,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              639.950988769531,
+              329.444976806641
+            ],
+            "headScreen": [
+              638.558837890625,
+              283.796997070312
+            ]
+          },
+          {
+            "id": 7,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              604.096374511719,
+              729.465270996094
+            ],
+            "headScreen": [
+              600.563232421875,
+              670.771179199219
+            ]
+          },
+          {
+            "id": 8,
+            "type": "general",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              701.5,
+              329.444976806641
+            ],
+            "headScreen": [
+              701.5,
+              283.796997070312
+            ]
+          },
+          {
+            "id": 9,
+            "type": "general",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              701.5,
+              729.465270996094
+            ],
+            "headScreen": [
+              701.5,
+              670.771179199219
+            ]
+          },
+          {
+            "id": 10,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              763.049011230469,
+              329.444976806641
+            ],
+            "headScreen": [
+              764.441162109375,
+              283.796997070312
+            ]
+          },
+          {
+            "id": 11,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              798.903625488281,
+              729.465270996094
+            ],
+            "headScreen": [
+              802.436767578125,
+              670.771179199219
+            ]
+          },
+          {
+            "id": 12,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              824.598022460938,
+              329.444976806641
+            ],
+            "headScreen": [
+              827.382385253906,
+              283.796997070312
+            ]
+          },
+          {
+            "id": 13,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              896.307250976562,
+              729.465270996094
+            ],
+            "headScreen": [
+              903.37353515625,
+              670.771179199219
+            ]
+          },
+          {
+            "id": 14,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              886.147033691406,
+              329.444976806641
+            ],
+            "headScreen": [
+              890.323547363281,
+              283.796997070312
+            ]
+          },
+          {
+            "id": 15,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              993.710815429688,
+              729.465270996094
+            ],
+            "headScreen": [
+              1004.31030273438,
+              670.771179199219
+            ]
+          },
+          {
+            "id": 16,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              947.696044921875,
+              329.444976806641
+            ],
+            "headScreen": [
+              953.264770507812,
+              283.796997070312
+            ]
+          },
+          {
+            "id": 17,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              1091.11450195312,
+              729.465270996094
+            ],
+            "headScreen": [
+              1105.2470703125,
+              670.771179199219
+            ]
+          },
+          {
+            "id": 18,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              500.403106689453,
+              390.620635986328
+            ],
+            "headScreen": [
+              495.439239501953,
+              342.315612792969
+            ]
+          },
+          {
+            "id": 19,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              902.596862792969,
+              390.620635986328
+            ],
+            "headScreen": [
+              907.560729980469,
+              342.315612792969
+            ]
+          },
+          {
+            "id": 20,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              442.781066894531,
+              604.911926269531
+            ],
+            "headScreen": [
+              434.506469726562,
+              549.176635742188
+            ]
+          },
+          {
+            "id": 21,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              960.218933105469,
+              604.911926269531
+            ],
+            "headScreen": [
+              968.493530273438,
+              549.176635742188
+            ]
+          },
+          {
+            "id": 22,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              420.870391845703,
+              425.486480712891
+            ],
+            "headScreen": [
+              413.612091064453,
+              375.772979736328
+            ]
+          },
+          {
+            "id": 23,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              375.238708496094,
+              552.76171875
+            ],
+            "headScreen": [
+              365.386566162109,
+              498.563812255859
+            ]
+          },
+          {
+            "id": 24,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              561.185180664062,
+              425.486480712891
+            ],
+            "headScreen": [
+              557.556030273438,
+              375.772979736328
+            ]
+          },
+          {
+            "id": 25,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              538.369384765625,
+              552.76171875
+            ],
+            "headScreen": [
+              533.443298339844,
+              498.563812255859
+            ]
+          },
+          {
+            "id": 26,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              701.5,
+              425.486480712891
+            ],
+            "headScreen": [
+              701.5,
+              375.772979736328
+            ]
+          },
+          {
+            "id": 27,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              701.5,
+              552.76171875
+            ],
+            "headScreen": [
+              701.5,
+              498.563812255859
+            ]
+          },
+          {
+            "id": 28,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              841.814819335938,
+              425.486480712891
+            ],
+            "headScreen": [
+              845.443969726562,
+              375.772979736328
+            ]
+          },
+          {
+            "id": 29,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              864.630615234375,
+              552.76171875
+            ],
+            "headScreen": [
+              869.556701660156,
+              498.563812255859
+            ]
+          },
+          {
+            "id": 30,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              982.129577636719,
+              425.486480712891
+            ],
+            "headScreen": [
+              989.387878417969,
+              375.772979736328
+            ]
+          },
+          {
+            "id": 31,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              1027.76123046875,
+              552.76171875
+            ],
+            "headScreen": [
+              1037.61340332031,
+              498.563812255859
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "canvas": {
+        "width": 1085,
+        "height": 742,
+        "cssWidth": 1085,
+        "cssHeight": 742
+      },
+      "body": {
+        "scrollWidth": 1440,
+        "viewportWidth": 1440
+      },
+      "minimumFrameMarginPx": 230.53472900390602,
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "screenshot": "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-battlefield/final-1440x960-front.png"
+    },
+    {
+      "view": "side",
+      "metrics": {
+        "viewport": [
+          1403,
+          960
+        ],
+        "drawCalls": 194,
+        "primitives": 703738,
+        "objects": 194,
+        "focused": false,
+        "cameraTarget": [
+          0,
+          0.800000011920929,
+          0
+        ],
+        "battlefield": {
+          "banners": 4,
+          "braziers": 4,
+          "embers": 24,
+          "geometry_batches": 18,
+          "mesh_instances": 13,
+          "palisades": 30,
+          "rocks": 126,
+          "smoke_puffs": 20,
+          "wall_blocks": 102
+        },
+        "visualPieces": [
+          {
+            "id": 0,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              992.782897949219,
+              293.750335693359
+            ],
+            "headScreen": [
+              1001.96801757812,
+              251.084976196289
+            ]
+          },
+          {
+            "id": 1,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              410.217163085938,
+              293.750305175781
+            ],
+            "headScreen": [
+              401.032043457031,
+              251.084976196289
+            ]
+          },
+          {
+            "id": 2,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1003.44622802734,
+              335.991302490234
+            ],
+            "headScreen": [
+              1013.32763671875,
+              293.095306396484
+            ]
+          },
+          {
+            "id": 3,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              399.553863525391,
+              335.991271972656
+            ],
+            "headScreen": [
+              389.672454833984,
+              293.095275878906
+            ]
+          },
+          {
+            "id": 4,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1014.91998291016,
+              381.442596435547
+            ],
+            "headScreen": [
+              1025.57983398438,
+              338.406982421875
+            ]
+          },
+          {
+            "id": 5,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              388.080078125,
+              381.442565917969
+            ],
+            "headScreen": [
+              377.420227050781,
+              338.406951904297
+            ]
+          },
+          {
+            "id": 6,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1027.30017089844,
+              430.484497070312
+            ],
+            "headScreen": [
+              1038.83422851562,
+              387.424987792969
+            ]
+          },
+          {
+            "id": 7,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              375.699890136719,
+              430.484466552734
+            ],
+            "headScreen": [
+              364.165771484375,
+              387.424957275391
+            ]
+          },
+          {
+            "id": 8,
+            "type": "general",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1040.69860839844,
+              483.560119628906
+            ],
+            "headScreen": [
+              1053.21911621094,
+              440.623596191406
+            ]
+          },
+          {
+            "id": 9,
+            "type": "general",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              362.301452636719,
+              483.560089111328
+            ],
+            "headScreen": [
+              349.780914306641,
+              440.623565673828
+            ]
+          },
+          {
+            "id": 10,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1055.24621582031,
+              541.188415527344
+            ],
+            "headScreen": [
+              1068.88549804688,
+              498.561340332031
+            ]
+          },
+          {
+            "id": 11,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              347.753753662109,
+              541.188354492188
+            ],
+            "headScreen": [
+              334.114593505859,
+              498.561309814453
+            ]
+          },
+          {
+            "id": 12,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1071.09777832031,
+              603.981323242188
+            ],
+            "headScreen": [
+              1086.01245117188,
+              561.900939941406
+            ]
+          },
+          {
+            "id": 13,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              331.902221679688,
+              603.981323242188
+            ],
+            "headScreen": [
+              316.987609863281,
+              561.900939941406
+            ]
+          },
+          {
+            "id": 14,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1088.4365234375,
+              672.665893554688
+            ],
+            "headScreen": [
+              1104.814453125,
+              631.43505859375
+            ]
+          },
+          {
+            "id": 15,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              314.5634765625,
+              672.665832519531
+            ],
+            "headScreen": [
+              298.185638427734,
+              631.43505859375
+            ]
+          },
+          {
+            "id": 16,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1107.48217773438,
+              748.111877441406
+            ],
+            "headScreen": [
+              1125.54968261719,
+              708.118835449219
+            ]
+          },
+          {
+            "id": 17,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              295.517852783203,
+              748.11181640625
+            ],
+            "headScreen": [
+              277.450408935547,
+              708.118835449219
+            ]
+          },
+          {
+            "id": 18,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              869.247924804688,
+              335.991302490234
+            ],
+            "headScreen": [
+              874.737609863281,
+              293.095306396484
+            ]
+          },
+          {
+            "id": 19,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              916.464782714844,
+              672.665893554688
+            ],
+            "headScreen": [
+              925.563598632812,
+              631.43505859375
+            ]
+          },
+          {
+            "id": 20,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              533.752136230469,
+              335.991302490234
+            ],
+            "headScreen": [
+              528.262512207031,
+              293.095306396484
+            ]
+          },
+          {
+            "id": 21,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              486.535278320312,
+              672.665893554688
+            ],
+            "headScreen": [
+              477.436492919922,
+              631.43505859375
+            ]
+          },
+          {
+            "id": 22,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              798.594360351562,
+              293.750335693359
+            ],
+            "headScreen": [
+              801.656066894531,
+              251.084976196289
+            ]
+          },
+          {
+            "id": 23,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              604.40576171875,
+              293.750335693359
+            ],
+            "headScreen": [
+              601.344055175781,
+              251.084976196289
+            ]
+          },
+          {
+            "id": 24,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              805.973388671875,
+              381.442565917969
+            ],
+            "headScreen": [
+              809.526672363281,
+              338.406982421875
+            ]
+          },
+          {
+            "id": 25,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              597.026733398438,
+              381.442565917969
+            ],
+            "headScreen": [
+              593.473449707031,
+              338.406982421875
+            ]
+          },
+          {
+            "id": 26,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              814.566223144531,
+              483.560119628906
+            ],
+            "headScreen": [
+              818.73974609375,
+              440.623565673828
+            ]
+          },
+          {
+            "id": 27,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              588.433837890625,
+              483.560089111328
+            ],
+            "headScreen": [
+              584.260314941406,
+              440.623565673828
+            ]
+          },
+          {
+            "id": 28,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              824.699279785156,
+              603.981323242188
+            ],
+            "headScreen": [
+              829.670837402344,
+              561.900939941406
+            ]
+          },
+          {
+            "id": 29,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              578.30078125,
+              603.981323242188
+            ],
+            "headScreen": [
+              573.329223632812,
+              561.900939941406
+            ]
+          },
+          {
+            "id": 30,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              836.827392578125,
+              748.11181640625
+            ],
+            "headScreen": [
+              842.849914550781,
+              708.118835449219
+            ]
+          },
+          {
+            "id": 31,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              566.172607421875,
+              748.11181640625
+            ],
+            "headScreen": [
+              560.150146484375,
+              708.118835449219
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "canvas": {
+        "width": 1085,
+        "height": 742,
+        "cssWidth": 1085,
+        "cssHeight": 742
+      },
+      "body": {
+        "scrollWidth": 1440,
+        "viewportWidth": 1440
+      },
+      "minimumFrameMarginPx": 211.88812255859398,
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "screenshot": "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-battlefield/final-1440x960-side.png"
+    },
+    {
+      "view": "iso",
+      "metrics": {
+        "viewport": [
+          1280,
+          999
+        ],
+        "drawCalls": 183,
+        "primitives": 559406,
+        "objects": 183,
+        "focused": false,
+        "cameraTarget": [
+          0,
+          0.800000011920929,
+          0
+        ],
+        "battlefield": {
+          "banners": 4,
+          "braziers": 4,
+          "embers": 24,
+          "geometry_batches": 18,
+          "mesh_instances": 13,
+          "palisades": 30,
+          "rocks": 126,
+          "smoke_puffs": 20,
+          "wall_blocks": 102
+        },
+        "visualPieces": [
+          {
+            "id": 0,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              326.691650390625,
+              324.077789306641
+            ],
+            "headScreen": [
+              316.526031494141,
+              285.564819335938
+            ]
+          },
+          {
+            "id": 1,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              384.864929199219,
+              866.174621582031
+            ],
+            "headScreen": [
+              373.458129882812,
+              837.342468261719
+            ]
+          },
+          {
+            "id": 2,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              390.918731689453,
+              314.251617431641
+            ],
+            "headScreen": [
+              382.891723632812,
+              275.682708740234
+            ]
+          },
+          {
+            "id": 3,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              471.602233886719,
+              847.995971679688
+            ],
+            "headScreen": [
+              464.143402099609,
+              818.626831054688
+            ]
+          },
+          {
+            "id": 4,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              454.308990478516,
+              304.553527832031
+            ],
+            "headScreen": [
+              448.365051269531,
+              265.933471679688
+            ]
+          },
+          {
+            "id": 5,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              556.807800292969,
+              830.138366699219
+            ],
+            "headScreen": [
+              553.156921386719,
+              800.256286621094
+            ]
+          },
+          {
+            "id": 6,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              516.878662109375,
+              294.98095703125
+            ],
+            "headScreen": [
+              512.9638671875,
+              256.314422607422
+            ]
+          },
+          {
+            "id": 7,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              640.521789550781,
+              812.593322753906
+            ],
+            "headScreen": [
+              640.54443359375,
+              782.221252441406
+            ]
+          },
+          {
+            "id": 8,
+            "type": "general",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              578.6435546875,
+              285.531494140625
+            ],
+            "headScreen": [
+              576.705627441406,
+              246.823059082031
+            ]
+          },
+          {
+            "id": 9,
+            "type": "general",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              722.783020019531,
+              795.352783203125
+            ],
+            "headScreen": [
+              726.350158691406,
+              764.5126953125
+            ]
+          },
+          {
+            "id": 10,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              639.619079589844,
+              276.202850341797
+            ],
+            "headScreen": [
+              639.607116699219,
+              237.456802368164
+            ]
+          },
+          {
+            "id": 11,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              803.629028320312,
+              778.408874511719
+            ],
+            "headScreen": [
+              810.616577148438,
+              747.121826171875
+            ]
+          },
+          {
+            "id": 12,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              699.8203125,
+              266.992645263672
+            ],
+            "headScreen": [
+              701.684997558594,
+              228.213150024414
+            ]
+          },
+          {
+            "id": 13,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              883.095947265625,
+              761.753967285156
+            ],
+            "headScreen": [
+              893.384826660156,
+              730.040161132812
+            ]
+          },
+          {
+            "id": 14,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              759.261901855469,
+              257.898620605469
+            ],
+            "headScreen": [
+              762.955322265625,
+              219.089782714844
+            ]
+          },
+          {
+            "id": 15,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              961.218933105469,
+              745.380798339844
+            ],
+            "headScreen": [
+              974.694396972656,
+              713.259521484375
+            ]
+          },
+          {
+            "id": 16,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              817.958129882812,
+              248.918685913086
+            ],
+            "headScreen": [
+              823.433654785156,
+              210.084335327148
+            ]
+          },
+          {
+            "id": 17,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              1038.03149414062,
+              729.2822265625
+            ],
+            "headScreen": [
+              1054.58361816406,
+              696.772033691406
+            ]
+          },
+          {
+            "id": 18,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              404.938659667969,
+              406.997406005859
+            ],
+            "headScreen": [
+              396.875305175781,
+              369.124542236328
+            ]
+          },
+          {
+            "id": 19,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              794.747497558594,
+              343.553405761719
+            ],
+            "headScreen": [
+              799.835815429688,
+              305.163787841797
+            ]
+          },
+          {
+            "id": 20,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              449.04150390625,
+              698.750366210938
+            ],
+            "headScreen": [
+              441.233093261719,
+              665.534423828125
+            ]
+          },
+          {
+            "id": 21,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              905.294494628906,
+              610.390869140625
+            ],
+            "headScreen": [
+              915.610900878906,
+              575.366821289062
+            ]
+          },
+          {
+            "id": 22,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              342.314758300781,
+              469.664123535156
+            ],
+            "headScreen": [
+              331.68408203125,
+              432.474761962891
+            ]
+          },
+          {
+            "id": 23,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              361.300354003906,
+              646.584533691406
+            ],
+            "headScreen": [
+              350.234130859375,
+              612.259094238281
+            ]
+          },
+          {
+            "id": 24,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              481.931030273438,
+              446.191467285156
+            ],
+            "headScreen": [
+              476.369659423828,
+              408.725891113281
+            ]
+          },
+          {
+            "id": 25,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              515.404174804688,
+              617.832275390625
+            ],
+            "headScreen": [
+              510.538024902344,
+              582.947082519531
+            ]
+          },
+          {
+            "id": 26,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              617.61669921875,
+              423.379577636719
+            ],
+            "headScreen": [
+              616.840698242188,
+              385.668731689453
+            ]
+          },
+          {
+            "id": 27,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              664.717163085938,
+              589.973815917969
+            ],
+            "headScreen": [
+              665.666870117188,
+              554.581237792969
+            ]
+          },
+          {
+            "id": 28,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              749.535461425781,
+              401.201019287109
+            ],
+            "headScreen": [
+              753.278625488281,
+              363.273651123047
+            ]
+          },
+          {
+            "id": 29,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              809.459289550781,
+              562.96826171875
+            ],
+            "headScreen": [
+              815.867309570312,
+              527.11669921875
+            ]
+          },
+          {
+            "id": 30,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              877.842041015625,
+              379.629760742188
+            ],
+            "headScreen": [
+              885.854797363281,
+              341.512420654297
+            ]
+          },
+          {
+            "id": 31,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              949.837280273438,
+              536.776916503906
+            ],
+            "headScreen": [
+              961.370422363281,
+              500.511016845703
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "canvas": {
+        "width": 745,
+        "height": 582,
+        "cssWidth": 745,
+        "cssHeight": 582
+      },
+      "body": {
+        "scrollWidth": 1100,
+        "viewportWidth": 1100
+      },
+      "minimumFrameMarginPx": 132.82537841796898,
+      "viewport": {
+        "width": 1100,
+        "height": 800
+      },
+      "screenshot": "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-battlefield/final-1100x800-iso.png"
+    },
+    {
+      "view": "top",
+      "metrics": {
+        "viewport": [
+          1280,
+          999
+        ],
+        "drawCalls": 189,
+        "primitives": 605486,
+        "objects": 189,
+        "focused": false,
+        "cameraTarget": [
+          0,
+          0.800000011920929,
+          0
+        ],
+        "battlefield": {
+          "banners": 4,
+          "braziers": 4,
+          "embers": 24,
+          "geometry_batches": 18,
+          "mesh_instances": 13,
+          "palisades": 30,
+          "rocks": 126,
+          "smoke_puffs": 20,
+          "wall_blocks": 102
+        },
+        "visualPieces": [
+          {
+            "id": 0,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              303.466796875,
+              120.917930603027
+            ],
+            "headScreen": [
+              284.923980712891,
+              99.8577499389648
+            ]
+          },
+          {
+            "id": 1,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              302.918273925781,
+              878.731872558594
+            ],
+            "headScreen": [
+              284.313293457031,
+              899.462463378906
+            ]
+          },
+          {
+            "id": 2,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              387.600067138672,
+              120.917930603027
+            ],
+            "headScreen": [
+              373.692962646484,
+              99.8577499389648
+            ]
+          },
+          {
+            "id": 3,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              387.188690185547,
+              878.731872558594
+            ],
+            "headScreen": [
+              373.234924316406,
+              899.462463378906
+            ]
+          },
+          {
+            "id": 4,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              471.7333984375,
+              120.917930603027
+            ],
+            "headScreen": [
+              462.461975097656,
+              99.8577499389648
+            ]
+          },
+          {
+            "id": 5,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              471.459136962891,
+              878.731872558594
+            ],
+            "headScreen": [
+              462.156646728516,
+              899.462463378906
+            ]
+          },
+          {
+            "id": 6,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              555.86669921875,
+              120.917930603027
+            ],
+            "headScreen": [
+              551.231018066406,
+              99.8577499389648
+            ]
+          },
+          {
+            "id": 7,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              555.729553222656,
+              878.731872558594
+            ],
+            "headScreen": [
+              551.078308105469,
+              899.462463378906
+            ]
+          },
+          {
+            "id": 8,
+            "type": "general",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              640,
+              120.917930603027
+            ],
+            "headScreen": [
+              640,
+              99.8577499389648
+            ]
+          },
+          {
+            "id": 9,
+            "type": "general",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              640,
+              878.731872558594
+            ],
+            "headScreen": [
+              640,
+              899.462463378906
+            ]
+          },
+          {
+            "id": 10,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              724.13330078125,
+              120.917930603027
+            ],
+            "headScreen": [
+              728.768981933594,
+              99.8577499389648
+            ]
+          },
+          {
+            "id": 11,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              724.270446777344,
+              878.731872558594
+            ],
+            "headScreen": [
+              728.921691894531,
+              899.462463378906
+            ]
+          },
+          {
+            "id": 12,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              808.2666015625,
+              120.917930603027
+            ],
+            "headScreen": [
+              817.538024902344,
+              99.8577499389648
+            ]
+          },
+          {
+            "id": 13,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              808.540832519531,
+              878.731872558594
+            ],
+            "headScreen": [
+              817.843383789062,
+              899.462463378906
+            ]
+          },
+          {
+            "id": 14,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              892.39990234375,
+              120.917930603027
+            ],
+            "headScreen": [
+              906.307067871094,
+              99.8577499389648
+            ]
+          },
+          {
+            "id": 15,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              892.811340332031,
+              878.731872558594
+            ],
+            "headScreen": [
+              906.765075683594,
+              899.462463378906
+            ]
+          },
+          {
+            "id": 16,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              976.533203125,
+              120.917930603027
+            ],
+            "headScreen": [
+              995.076049804688,
+              99.8577499389648
+            ]
+          },
+          {
+            "id": 17,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              977.081726074219,
+              878.731872558594
+            ],
+            "headScreen": [
+              995.686706542969,
+              899.462463378906
+            ]
+          },
+          {
+            "id": 18,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              387.5087890625,
+              289.107818603516
+            ],
+            "headScreen": [
+              373.59130859375,
+              277.310272216797
+            ]
+          },
+          {
+            "id": 19,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              892.4912109375,
+              289.107818603516
+            ],
+            "headScreen": [
+              906.40869140625,
+              277.310272216797
+            ]
+          },
+          {
+            "id": 20,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              387.280242919922,
+              710.115356445312
+            ],
+            "headScreen": [
+              373.336853027344,
+              721.534912109375
+            ]
+          },
+          {
+            "id": 21,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              892.719787597656,
+              710.115356445312
+            ],
+            "headScreen": [
+              906.663146972656,
+              721.534912109375
+            ]
+          },
+          {
+            "id": 22,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              303.284149169922,
+              373.248382568359
+            ],
+            "headScreen": [
+              284.720642089844,
+              366.08740234375
+            ]
+          },
+          {
+            "id": 23,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              303.101318359375,
+              625.852905273438
+            ],
+            "headScreen": [
+              284.517059326172,
+              632.622131347656
+            ]
+          },
+          {
+            "id": 24,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              471.64208984375,
+              373.248382568359
+            ],
+            "headScreen": [
+              462.360321044922,
+              366.08740234375
+            ]
+          },
+          {
+            "id": 25,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              471.550659179688,
+              625.852905273438
+            ],
+            "headScreen": [
+              462.258544921875,
+              632.622131347656
+            ]
+          },
+          {
+            "id": 26,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              640,
+              373.248382568359
+            ],
+            "headScreen": [
+              640,
+              366.08740234375
+            ]
+          },
+          {
+            "id": 27,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              640,
+              625.852905273438
+            ],
+            "headScreen": [
+              640,
+              632.622131347656
+            ]
+          },
+          {
+            "id": 28,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              808.35791015625,
+              373.248382568359
+            ],
+            "headScreen": [
+              817.6396484375,
+              366.08740234375
+            ]
+          },
+          {
+            "id": 29,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              808.449340820312,
+              625.852905273438
+            ],
+            "headScreen": [
+              817.741455078125,
+              632.622131347656
+            ]
+          },
+          {
+            "id": 30,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              976.7158203125,
+              373.248382568359
+            ],
+            "headScreen": [
+              995.279357910156,
+              366.08740234375
+            ]
+          },
+          {
+            "id": 31,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              976.898681640625,
+              625.852905273438
+            ],
+            "headScreen": [
+              995.48291015625,
+              632.622131347656
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "canvas": {
+        "width": 745,
+        "height": 582,
+        "cssWidth": 745,
+        "cssHeight": 582
+      },
+      "body": {
+        "scrollWidth": 1100,
+        "viewportWidth": 1100
+      },
+      "minimumFrameMarginPx": 99.53753662109398,
+      "viewport": {
+        "width": 1100,
+        "height": 800
+      },
+      "screenshot": "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-battlefield/final-1100x800-top.png"
+    },
+    {
+      "view": "front",
+      "metrics": {
+        "viewport": [
+          1280,
+          999
+        ],
+        "drawCalls": 153,
+        "primitives": 702918,
+        "objects": 153,
+        "focused": false,
+        "cameraTarget": [
+          0,
+          0.800000011920929,
+          0
+        ],
+        "battlefield": {
+          "banners": 4,
+          "braziers": 4,
+          "embers": 24,
+          "geometry_batches": 18,
+          "mesh_instances": 13,
+          "palisades": 30,
+          "rocks": 126,
+          "smoke_puffs": 20,
+          "wall_blocks": 102
+        },
+        "visualPieces": [
+          {
+            "id": 0,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              383.802276611328,
+              342.828704833984
+            ],
+            "headScreen": [
+              378.00732421875,
+              295.326232910156
+            ]
+          },
+          {
+            "id": 1,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              234.557495117188,
+              759.099792480469
+            ],
+            "headScreen": [
+              219.850738525391,
+              698.021240234375
+            ]
+          },
+          {
+            "id": 2,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              447.851684570312,
+              342.828704833984
+            ],
+            "headScreen": [
+              443.505493164062,
+              295.326232910156
+            ]
+          },
+          {
+            "id": 3,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              335.918090820312,
+              759.099792480469
+            ],
+            "headScreen": [
+              324.888031005859,
+              698.021240234375
+            ]
+          },
+          {
+            "id": 4,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              511.901153564453,
+              342.828704833984
+            ],
+            "headScreen": [
+              509.003662109375,
+              295.326232910156
+            ]
+          },
+          {
+            "id": 5,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              437.278747558594,
+              759.099792480469
+            ],
+            "headScreen": [
+              429.925354003906,
+              698.021240234375
+            ]
+          },
+          {
+            "id": 6,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              575.950561523438,
+              342.828704833984
+            ],
+            "headScreen": [
+              574.501831054688,
+              295.326232910156
+            ]
+          },
+          {
+            "id": 7,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              538.639404296875,
+              759.099792480469
+            ],
+            "headScreen": [
+              534.962707519531,
+              698.021240234375
+            ]
+          },
+          {
+            "id": 8,
+            "type": "general",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              640,
+              342.828704833984
+            ],
+            "headScreen": [
+              640,
+              295.326232910156
+            ]
+          },
+          {
+            "id": 9,
+            "type": "general",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              640,
+              759.099792480469
+            ],
+            "headScreen": [
+              640,
+              698.021240234375
+            ]
+          },
+          {
+            "id": 10,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              704.049438476562,
+              342.828704833984
+            ],
+            "headScreen": [
+              705.498168945312,
+              295.326232910156
+            ]
+          },
+          {
+            "id": 11,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              741.360595703125,
+              759.099792480469
+            ],
+            "headScreen": [
+              745.037292480469,
+              698.021240234375
+            ]
+          },
+          {
+            "id": 12,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              768.098876953125,
+              342.828704833984
+            ],
+            "headScreen": [
+              770.996337890625,
+              295.326232910156
+            ]
+          },
+          {
+            "id": 13,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              842.721252441406,
+              759.099792480469
+            ],
+            "headScreen": [
+              850.074645996094,
+              698.021240234375
+            ]
+          },
+          {
+            "id": 14,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              832.148315429688,
+              342.828704833984
+            ],
+            "headScreen": [
+              836.494506835938,
+              295.326232910156
+            ]
+          },
+          {
+            "id": 15,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              944.081909179688,
+              759.099792480469
+            ],
+            "headScreen": [
+              955.111999511719,
+              698.021240234375
+            ]
+          },
+          {
+            "id": 16,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              896.197692871094,
+              342.828704833984
+            ],
+            "headScreen": [
+              901.99267578125,
+              295.326232910156
+            ]
+          },
+          {
+            "id": 17,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              1045.44250488281,
+              759.099792480469
+            ],
+            "headScreen": [
+              1060.14929199219,
+              698.021240234375
+            ]
+          },
+          {
+            "id": 18,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              430.733520507812,
+              406.489593505859
+            ],
+            "headScreen": [
+              425.568023681641,
+              356.22216796875
+            ]
+          },
+          {
+            "id": 19,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              849.266479492188,
+              406.489593505859
+            ],
+            "headScreen": [
+              854.431945800781,
+              356.22216796875
+            ]
+          },
+          {
+            "id": 20,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              370.770599365234,
+              629.486450195312
+            ],
+            "headScreen": [
+              362.159851074219,
+              571.486938476562
+            ]
+          },
+          {
+            "id": 21,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              909.229431152344,
+              629.486450195312
+            ],
+            "headScreen": [
+              917.840148925781,
+              571.486938476562
+            ]
+          },
+          {
+            "id": 22,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              347.969848632812,
+              442.771881103516
+            ],
+            "headScreen": [
+              340.416656494141,
+              391.038757324219
+            ]
+          },
+          {
+            "id": 23,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              300.484344482422,
+              575.217651367188
+            ],
+            "headScreen": [
+              290.231964111328,
+              518.817932128906
+            ]
+          },
+          {
+            "id": 24,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              493.984924316406,
+              442.771881103516
+            ],
+            "headScreen": [
+              490.208343505859,
+              391.038757324219
+            ]
+          },
+          {
+            "id": 25,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              470.2421875,
+              575.217651367188
+            ],
+            "headScreen": [
+              465.115997314453,
+              518.817932128906
+            ]
+          },
+          {
+            "id": 26,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              640,
+              442.771881103516
+            ],
+            "headScreen": [
+              640,
+              391.038757324219
+            ]
+          },
+          {
+            "id": 27,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              640,
+              575.217651367188
+            ],
+            "headScreen": [
+              640,
+              518.817932128906
+            ]
+          },
+          {
+            "id": 28,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              786.015075683594,
+              442.771881103516
+            ],
+            "headScreen": [
+              789.791687011719,
+              391.038757324219
+            ]
+          },
+          {
+            "id": 29,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              809.7578125,
+              575.217651367188
+            ],
+            "headScreen": [
+              814.884033203125,
+              518.817932128906
+            ]
+          },
+          {
+            "id": 30,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              932.030151367188,
+              442.771881103516
+            ],
+            "headScreen": [
+              939.583312988281,
+              391.038757324219
+            ]
+          },
+          {
+            "id": 31,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              979.515625,
+              575.217651367188
+            ],
+            "headScreen": [
+              989.768005371094,
+              518.817932128906
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "canvas": {
+        "width": 745,
+        "height": 582,
+        "cssWidth": 745,
+        "cssHeight": 582
+      },
+      "body": {
+        "scrollWidth": 1100,
+        "viewportWidth": 1100
+      },
+      "minimumFrameMarginPx": 219.85070800781,
+      "viewport": {
+        "width": 1100,
+        "height": 800
+      },
+      "screenshot": "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-battlefield/final-1100x800-front.png"
+    },
+    {
+      "view": "side",
+      "metrics": {
+        "viewport": [
+          1280,
+          999
+        ],
+        "drawCalls": 187,
+        "primitives": 654246,
+        "objects": 187,
+        "focused": false,
+        "cameraTarget": [
+          0,
+          0.800000011920929,
+          0
+        ],
+        "battlefield": {
+          "banners": 4,
+          "braziers": 4,
+          "embers": 24,
+          "geometry_batches": 18,
+          "mesh_instances": 13,
+          "palisades": 30,
+          "rocks": 126,
+          "smoke_puffs": 20,
+          "wall_blocks": 102
+        },
+        "visualPieces": [
+          {
+            "id": 0,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              943.116271972656,
+              305.683929443359
+            ],
+            "headScreen": [
+              952.674560546875,
+              261.285308837891
+            ]
+          },
+          {
+            "id": 1,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              336.883819580078,
+              305.683898925781
+            ],
+            "headScreen": [
+              327.325531005859,
+              261.285308837891
+            ]
+          },
+          {
+            "id": 2,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              954.212768554688,
+              349.640960693359
+            ],
+            "headScreen": [
+              964.49560546875,
+              305.002288818359
+            ]
+          },
+          {
+            "id": 3,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              325.787292480469,
+              349.640930175781
+            ],
+            "headScreen": [
+              315.504455566406,
+              305.002258300781
+            ]
+          },
+          {
+            "id": 4,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              966.152709960938,
+              396.938690185547
+            ],
+            "headScreen": [
+              977.24560546875,
+              352.15478515625
+            ]
+          },
+          {
+            "id": 5,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              313.847412109375,
+              396.938659667969
+            ],
+            "headScreen": [
+              302.754516601562,
+              352.154754638672
+            ]
+          },
+          {
+            "id": 6,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              979.035766601562,
+              447.972900390625
+            ],
+            "headScreen": [
+              991.038452148438,
+              403.164123535156
+            ]
+          },
+          {
+            "id": 7,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              300.964294433594,
+              447.972900390625
+            ],
+            "headScreen": [
+              288.961608886719,
+              403.164123535156
+            ]
+          },
+          {
+            "id": 8,
+            "type": "general",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              992.978515625,
+              503.204742431641
+            ],
+            "headScreen": [
+              1006.00775146484,
+              458.52392578125
+            ]
+          },
+          {
+            "id": 9,
+            "type": "general",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              287.021514892578,
+              503.204711914062
+            ],
+            "headScreen": [
+              273.992340087891,
+              458.523895263672
+            ]
+          },
+          {
+            "id": 10,
+            "type": "advisor",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1008.1171875,
+              563.174194335938
+            ],
+            "headScreen": [
+              1022.31048583984,
+              518.815368652344
+            ]
+          },
+          {
+            "id": 11,
+            "type": "advisor",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              271.8828125,
+              563.174133300781
+            ],
+            "headScreen": [
+              257.689544677734,
+              518.815368652344
+            ]
+          },
+          {
+            "id": 12,
+            "type": "elephant",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1024.61267089844,
+              628.51806640625
+            ],
+            "headScreen": [
+              1040.13330078125,
+              584.728210449219
+            ]
+          },
+          {
+            "id": 13,
+            "type": "elephant",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              255.387344360352,
+              628.51806640625
+            ],
+            "headScreen": [
+              239.866790771484,
+              584.728149414062
+            ]
+          },
+          {
+            "id": 14,
+            "type": "horse",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1042.65588378906,
+              699.992919921875
+            ],
+            "headScreen": [
+              1059.69909667969,
+              657.087097167969
+            ]
+          },
+          {
+            "id": 15,
+            "type": "horse",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              237.344207763672,
+              699.992919921875
+            ],
+            "headScreen": [
+              220.301025390625,
+              657.087097167969
+            ]
+          },
+          {
+            "id": 16,
+            "type": "chariot",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              1062.47521972656,
+              778.50390625
+            ],
+            "headScreen": [
+              1081.27661132812,
+              736.886169433594
+            ]
+          },
+          {
+            "id": 17,
+            "type": "chariot",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              217.524841308594,
+              778.50390625
+            ],
+            "headScreen": [
+              198.723419189453,
+              736.886169433594
+            ]
+          },
+          {
+            "id": 18,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              814.562683105469,
+              349.640930175781
+            ],
+            "headScreen": [
+              820.275390625,
+              305.002288818359
+            ]
+          },
+          {
+            "id": 19,
+            "type": "cannon",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              863.697692871094,
+              699.992919921875
+            ],
+            "headScreen": [
+              873.166137695312,
+              657.087097167969
+            ]
+          },
+          {
+            "id": 20,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              465.437377929688,
+              349.640930175781
+            ],
+            "headScreen": [
+              459.724700927734,
+              305.002288818359
+            ]
+          },
+          {
+            "id": 21,
+            "type": "cannon",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              416.302337646484,
+              699.992919921875
+            ],
+            "headScreen": [
+              406.833892822266,
+              657.087097167969
+            ]
+          },
+          {
+            "id": 22,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              741.038818359375,
+              305.683929443359
+            ],
+            "headScreen": [
+              744.224914550781,
+              261.285308837891
+            ]
+          },
+          {
+            "id": 23,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              538.961303710938,
+              305.683929443359
+            ],
+            "headScreen": [
+              535.775207519531,
+              261.285308837891
+            ]
+          },
+          {
+            "id": 24,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              748.717590332031,
+              396.938690185547
+            ],
+            "headScreen": [
+              752.415222167969,
+              352.154754638672
+            ]
+          },
+          {
+            "id": 25,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              531.282470703125,
+              396.938659667969
+            ],
+            "headScreen": [
+              527.584838867188,
+              352.154754638672
+            ]
+          },
+          {
+            "id": 26,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              757.659545898438,
+              503.204742431641
+            ],
+            "headScreen": [
+              762.002624511719,
+              458.523895263672
+            ]
+          },
+          {
+            "id": 27,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              522.340515136719,
+              503.204742431641
+            ],
+            "headScreen": [
+              517.997497558594,
+              458.523895263672
+            ]
+          },
+          {
+            "id": 28,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              768.204284667969,
+              628.51806640625
+            ],
+            "headScreen": [
+              773.377807617188,
+              584.728210449219
+            ]
+          },
+          {
+            "id": 29,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              511.795806884766,
+              628.51806640625
+            ],
+            "headScreen": [
+              506.622283935547,
+              584.728149414062
+            ]
+          },
+          {
+            "id": 30,
+            "type": "soldier",
+            "color": "black",
+            "visible": true,
+            "screen": [
+              780.825073242188,
+              778.50390625
+            ],
+            "headScreen": [
+              787.092224121094,
+              736.886169433594
+            ]
+          },
+          {
+            "id": 31,
+            "type": "soldier",
+            "color": "red",
+            "visible": true,
+            "screen": [
+              499.174957275391,
+              778.50390625
+            ],
+            "headScreen": [
+              492.907806396484,
+              736.886169433594
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "canvas": {
+        "width": 745,
+        "height": 582,
+        "cssWidth": 745,
+        "cssHeight": 582
+      },
+      "body": {
+        "scrollWidth": 1100,
+        "viewportWidth": 1100
+      },
+      "minimumFrameMarginPx": 198.72338867188,
+      "viewport": {
+        "width": 1100,
+        "height": 800
+      },
+      "screenshot": "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-battlefield/final-1100x800-side.png"
+    }
+  ],
+  "assetChecks": [
+    {
+      "type": "general",
+      "sha256": "28370908ed427cbd6fa80d11a148f25d97dc579f1bd40ef09667cd6db1b85261",
+      "unchanged": true
+    },
+    {
+      "type": "advisor",
+      "sha256": "389b56b677c2c910d774ccd5b97ffb6c1d774045005e7db5b46701ed95041446",
+      "unchanged": true
+    },
+    {
+      "type": "elephant",
+      "sha256": "0bdc43b8d26e9863c879815d9febed0bb749deaca09d9ee1b650718267dd41a8",
+      "unchanged": true
+    },
+    {
+      "type": "horse",
+      "sha256": "0c688b3dd81e07e835f592d43840fe59b54dc5bc20ec1f21474e4425aaae32e4",
+      "unchanged": true
+    },
+    {
+      "type": "chariot",
+      "sha256": "749495b9650fca2d54682f0902e7ee655bae01a79dd37058a08b2ae733f66c1b",
+      "unchanged": true
+    },
+    {
+      "type": "cannon",
+      "sha256": "6fe2c1eddd0d7271081f4af62b2af9c2277d1995f513bb3fdb981487816c21dc",
+      "unchanged": true
+    },
+    {
+      "type": "soldier",
+      "sha256": "41458c1adb323bc429814873cbf7c22c69a135bab85ad71be81b64caa403be15",
+      "unchanged": true
+    }
+  ],
+  "passed": true
+}

@@ -14,6 +14,7 @@ var pieces_root := Node3D.new()
 var markers_root := Node3D.new()
 var templates: Dictionary = {}
 var piece_nodes: Dictionary = {}
+var pedestal_batches: Dictionary = {}
 var material_cache: Dictionary = {}
 var state: Dictionary = {"pieces": []}
 var host: JavaScriptObject
@@ -39,14 +40,19 @@ var diagnostic_timer := 0.0
 var last_animation: Dictionary = {}
 var manual_clock := false
 var board_line_transforms: Array[Transform3D] = []
+var battlefield: Node3D
 
 func _ready() -> void:
 	if ResourceLoader.exists("res://fonts/ui-subset.ttf"):
 		font = load("res://fonts/ui-subset.ttf")
 	_build_environment()
 	_build_board()
+	battlefield = load("res://battlefield.gd").new()
+	add_child(battlefield)
+	battlefield.setup(font)
 	add_child(pieces_root)
 	add_child(markers_root)
+	_build_pedestals()
 	for kind in TYPES:
 		var path := "res://models/%s.glb" % kind
 		if ResourceLoader.exists(path):
@@ -86,44 +92,105 @@ func _ready() -> void:
 func _build_environment() -> void:
 	var world := WorldEnvironment.new()
 	var environment := Environment.new()
-	environment.background_mode = Environment.BG_COLOR
-	environment.background_color = Color("182329")
+	# A real sky supplies broad highlights to the imported armor and brass.
+	# All effects here work in the WebGL Compatibility renderer.
+	var sky_material := ProceduralSkyMaterial.new()
+	sky_material.sky_top_color = Color("273c57")
+	sky_material.sky_horizon_color = Color("a99075")
+	sky_material.ground_bottom_color = Color("252521")
+	sky_material.ground_horizon_color = Color("8a735e")
+	sky_material.sky_curve = 0.22
+	var sky := Sky.new()
+	sky.sky_material = sky_material
+	sky.radiance_size = Sky.RADIANCE_SIZE_128
+	environment.sky = sky
+	environment.background_mode = Environment.BG_SKY
 	environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	environment.ambient_light_color = Color("d1e3ec")
-	environment.ambient_light_energy = 0.45
-	environment.tonemap_mode = Environment.TONE_MAPPER_FILMIC
+	environment.ambient_light_color = Color("a9c3dc")
+	environment.ambient_light_energy = 0.48
+	environment.reflected_light_source = Environment.REFLECTION_SOURCE_SKY
+	environment.tonemap_mode = Environment.TONE_MAPPER_ACES
+	environment.tonemap_exposure = 1.0
+	environment.fog_enabled = true
+	environment.fog_mode = Environment.FOG_MODE_DEPTH
+	environment.fog_light_color = Color("6d726f")
+	environment.fog_light_energy = 0.55
+	environment.fog_depth_begin = 48.0
+	environment.fog_depth_end = 115.0
+	environment.fog_density = 0.65
 	world.environment = environment
 	add_child(world)
 	var sun := DirectionalLight3D.new()
-	sun.rotation_degrees = Vector3(-48, -32, 0)
-	sun.light_color = Color("fff0d1")
-	sun.light_energy = 0.95
+	sun.name = "SunsetKey"
+	sun.rotation_degrees = Vector3(-47, -38, 0)
+	sun.light_color = Color("ffcf91")
+	sun.light_energy = 1.2
 	sun.shadow_enabled = true
 	sun.directional_shadow_max_distance = 65.0
 	sun.shadow_bias = 0.035
 	sun.directional_shadow_mode = DirectionalLight3D.SHADOW_ORTHOGONAL
 	add_child(sun)
 	var fill := DirectionalLight3D.new()
-	fill.rotation_degrees = Vector3(-35, 140, 0)
-	fill.light_color = Color("c1dce6")
-	fill.light_energy = 0.3
+	fill.name = "CoolRim"
+	fill.rotation_degrees = Vector3(-29, 145, 0)
+	fill.light_color = Color("a2c5ee")
+	fill.light_energy = 0.62
 	add_child(fill)
 	camera = Camera3D.new()
 	camera.fov = 42
 	camera.near = 0.1
-	camera.far = 140
+	camera.far = 170
 	camera.current = true
 	add_child(camera)
-	_box(Vector3(200, 0.2, 200), Vector3(0, -0.65, 0), _material(Color("182329"), 0.96))
 
 func _build_board() -> void:
-	var wood := _material(Color("75482e"), 0.72)
-	var edge := _material(Color("be8e50"), 0.6)
-	var surface := _material(Color("9c7443"), 0.8)
-	var ink := _material(Color("573c25"), 0.92)
+	var wood := _material(Color("32231c"), 0.88)
+	var edge := _material(Color("967444"), 0.48)
+	edge.metallic = 0.65
+	var stone := _material(Color("302e2a"), 0.94)
+	var surface := _terrain_material("board", 0.65)
+	var ink := _material(Color("be9c5c"), 0.68)
+	ink.metallic = 0.22
+	_box(Vector3(26.05, 0.28, 28.65), Vector3(0, -0.5, 0), stone)
 	_box(Vector3(25.6, 0.68, 28.2), Vector3(0, -0.02, 0), wood)
 	_box(Vector3(25.25, 0.12, 27.85), Vector3(0, 0.32, 0), edge)
-	_box(Vector3(24.65, 0.09, 27.25), Vector3(0, 0.405, 0), surface)
+	# Plane UVs map the central worn riverbed exactly to the empty river rank.
+	var plane := PlaneMesh.new()
+	plane.size = Vector2(24.65, 27.25)
+	var board_surface := MeshInstance3D.new()
+	board_surface.name = "WeatheredBoard"
+	board_surface.mesh = plane
+	board_surface.material_override = surface
+	board_surface.position.y = 0.45
+	board_surface.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	add_child(board_surface)
+	# Raised dark frame, brass corner protectors and inset metal pins.
+	for side in [-1, 1]:
+		_box(Vector3(0.22, 0.13, 27.7), Vector3(side * 12.46, 0.41, 0), wood)
+		_box(Vector3(24.8, 0.13, 0.22), Vector3(0, 0.41, side * 13.76), wood)
+		for end in [-1, 1]:
+			_box(Vector3(0.66, 0.1, 1.65), Vector3(side * 12.46, 0.48, end * 12.95), edge)
+			_box(Vector3(1.65, 0.1, 0.66), Vector3(side * 11.95, 0.48, end * 13.46), edge)
+	var pin_mesh := CylinderMesh.new()
+	pin_mesh.top_radius = 0.075
+	pin_mesh.bottom_radius = 0.075
+	pin_mesh.height = 0.045
+	pin_mesh.radial_segments = 8
+	var pins := MultiMesh.new()
+	pins.transform_format = MultiMesh.TRANSFORM_3D
+	pins.mesh = pin_mesh
+	pins.instance_count = 14
+	var pin_index := 0
+	for x in [-12.46, 12.46]:
+		for z in [-10.5, -7, -3.5, 0, 3.5, 7, 10.5]:
+			pins.set_instance_transform(pin_index, Transform3D(Basis.IDENTITY, Vector3(x, 0.5, z)))
+			pin_index += 1
+	var pins_node := MultiMeshInstance3D.new()
+	pins_node.name = "FramePins"
+	pins_node.multimesh = pins
+	pins_node.material_override = edge
+	pins_node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	add_child(pins_node)
 	for row in range(10):
 		_line(Vector3(-4 * CELL, 0.46, (row - 4.5) * CELL), Vector3(4 * CELL, 0.46, (row - 4.5) * CELL), 0.028, ink)
 	for col in range(9):
@@ -147,8 +214,20 @@ func _build_board() -> void:
 					_line(origin + Vector3(xsign * 0.22, 0, zsign * 0.42), origin + Vector3(xsign * 0.22, 0, zsign * 0.22), 0.025, ink)
 					_line(origin + Vector3(xsign * 0.22, 0, zsign * 0.22), origin + Vector3(xsign * 0.42, 0, zsign * 0.22), 0.025, ink)
 	_flush_board_lines(ink)
-	_flat_label("楚 河", Vector3(-5.3, 0.48, 0), 0.015, Color("80512f"), self)
-	_flat_label("汉 界", Vector3(5.3, 0.48, 0), 0.015, Color("80512f"), self)
+	_flat_label("楚 河", Vector3(-5.3, 0.48, 0), 0.015, Color("bfaa78"), self)
+	_flat_label("汉 界", Vector3(5.3, 0.48, 0), 0.015, Color("bfaa78"), self)
+
+func _terrain_material(prefix: String, relief: float) -> StandardMaterial3D:
+	var material := StandardMaterial3D.new()
+	material.albedo_texture = load("res://textures/%s-albedo.jpg" % prefix)
+	material.normal_enabled = true
+	material.normal_texture = load("res://textures/%s-normal.png" % prefix)
+	material.normal_scale = relief
+	material.roughness_texture = load("res://textures/%s-roughness.png" % prefix)
+	material.roughness_texture_channel = BaseMaterial3D.TEXTURE_CHANNEL_RED
+	material.roughness = 1.0
+	material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC
+	return material
 
 func _material(color: Color, roughness := 0.6) -> StandardMaterial3D:
 	var material := StandardMaterial3D.new()
@@ -223,16 +302,85 @@ func _flat_label(text_value: String, position_at: Vector3, pixel_scale: float, c
 func _board_point(row: float, col: float, height := PIECE_Y) -> Vector3:
 	return Vector3((col - 4) * CELL, height, (row - 4.5) * CELL)
 
+func _build_pedestals() -> void:
+	# Every side shares one edge and one paint material. Keep the repeated bases
+	# in four persistent batches instead of submitting two meshes per piece.
+	var edge_mesh := CylinderMesh.new()
+	edge_mesh.top_radius = 1.06
+	edge_mesh.bottom_radius = 1.06
+	edge_mesh.height = 0.32
+	edge_mesh.radial_segments = 40
+	var top_mesh := CylinderMesh.new()
+	top_mesh.top_radius = 0.99
+	top_mesh.bottom_radius = 0.99
+	top_mesh.height = 0.08
+	top_mesh.radial_segments = 40
+	for color in ["red", "black"]:
+		var red: bool = color == "red"
+		var edge := _material(Color("886240") if red else Color("56626a"), 0.5)
+		edge.metallic = 0.62
+		var top := _material(Color("68332d") if red else Color("26343d"), 0.88)
+		# Reuse the neutral wear map as a paint mask; avoid a flat plastic disk.
+		top.albedo_texture = load("res://textures/ground-roughness.png")
+		top.normal_enabled = true
+		top.normal_texture = load("res://textures/ground-normal.png")
+		top.normal_scale = 0.22
+		top.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC
+		var layers: Dictionary = {}
+		for layer in ["edge", "top"]:
+			var batch := MultiMesh.new()
+			batch.transform_format = MultiMesh.TRANSFORM_3D
+			batch.mesh = edge_mesh if layer == "edge" else top_mesh
+			batch.instance_count = 16
+			batch.visible_instance_count = 0
+			var instance := MultiMeshInstance3D.new()
+			instance.name = "Pedestals_%s_%s" % [color, layer]
+			instance.multimesh = batch
+			instance.material_override = edge if layer == "edge" else top
+			# The wider edge already casts the complete base footprint.
+			instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON if layer == "edge" else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			add_child(instance)
+			layers[layer] = instance
+		pedestal_batches[color] = layers
+
+func _sync_pedestals() -> void:
+	var transforms: Dictionary = {"red": [], "black": []}
+	var local_from_world := global_transform.affine_inverse()
+	for node in piece_nodes.values():
+		if node.is_visible_in_tree():
+			var piece: Dictionary = node.get_meta("piece")
+			transforms[piece.color].append(local_from_world * node.global_transform)
+	for color in pedestal_batches:
+		var positions: Array = transforms[color]
+		for layer in pedestal_batches[color]:
+			var batch: MultiMesh = pedestal_batches[color][layer].multimesh
+			if batch.instance_count < positions.size():
+				batch.instance_count = positions.size()
+			var offset := Transform3D(Basis.IDENTITY, Vector3(0, 0.19 if layer == "top" else 0.0, 0))
+			for index in range(positions.size()):
+				var transform: Transform3D = positions[index] * offset
+				batch.set_instance_transform(index, transform)
+			# Compact only visible pieces, so a captured base disappears on the
+			# same tick as its model and an empty side retains no stale instances.
+			batch.visible_instance_count = positions.size()
+
+func _pedestal_diagnostics() -> Dictionary:
+	var teams: Dictionary = {}
+	var batch_count := 0
+	var visible_pieces := 0
+	for color in pedestal_batches:
+		var count: int = pedestal_batches[color].edge.multimesh.visible_instance_count
+		teams[color] = count
+		visible_pieces += count
+		batch_count += pedestal_batches[color].size()
+	return {"batches": batch_count, "visiblePieces": visible_pieces, "instances": visible_pieces * 2, "teams": teams}
+
 func _new_piece(piece: Dictionary) -> Node3D:
 	var root := Node3D.new()
 	root.name = "Piece_%s" % str(piece.id)
 	pieces_root.add_child(root)
 	root.set_meta("piece", piece.duplicate(true))
 	var red: bool = piece.color == "red"
-	var edge := _material(Color("9f6a3c") if red else Color("697e83"), 0.48)
-	var top := _material(Color("b64535") if red else Color("355466"), 0.65)
-	_cylinder(1.06, 0.32, edge, root, 0)
-	_cylinder(0.99, 0.08, top, root, 0.19)
 	var figure := Node3D.new()
 	figure.name = "Figure"
 	figure.position.y = 0.34
@@ -300,7 +448,7 @@ func _tint_meshes(node: Node, kind: String, color: String) -> void:
 				if not material_cache.has(key):
 					var tinted: StandardMaterial3D = original.duplicate()
 					tinted.albedo_color *= Color(1.0, 0.78, 0.7) if color == "red" else Color(0.64, 0.78, 1.0)
-					tinted.roughness = maxf(tinted.roughness, 0.42)
+					tinted.roughness = 0.63
 					material_cache[key] = tinted
 				node.set_surface_override_material(index, material_cache[key])
 	for child in node.get_children():
@@ -378,6 +526,7 @@ func _sync_state(command: Dictionary) -> void:
 			piece_nodes[key].queue_free()
 			piece_nodes.erase(key)
 	_update_markers(command.get("selectedId"), command.get("legalMoves", []))
+	_sync_pedestals()
 	_emit_metrics()
 
 func _update_markers(selected_id, moves: Array) -> void:
@@ -413,6 +562,7 @@ func _begin_move(command: Dictionary) -> void:
 		node.get_node("Figure").rotation.y = 0
 		node.rotation.y = atan2(to.x - from.x, to.z - from.z)
 		_animation_event("start", 0)
+	_sync_pedestals()
 
 func _process(delta: float) -> void:
 	frame_count += 1
@@ -420,12 +570,15 @@ func _process(delta: float) -> void:
 	diagnostic_timer += delta
 	if not manual_clock:
 		_tick(delta)
+	else:
+		_sync_pedestals()
 	if diagnostic_timer >= 1.0:
 		diagnostic_timer = 0
 		_emit_metrics()
 
 func _tick(delta: float) -> void:
 	if active_move.is_empty():
+		_sync_pedestals()
 		return
 	active_move.time = minf(float(active_move.time) + delta, float(active_move.duration))
 	var time: float = active_move.time
@@ -459,6 +612,8 @@ func _tick(delta: float) -> void:
 		active_move = {}
 		_sync_state({"state": after, "selectedId": null, "legalMoves": []})
 		_emit({"type": "move_done"})
+	else:
+		_sync_pedestals()
 
 func _smooth(value: float) -> float:
 	var x := clampf(value, 0, 1)
@@ -598,6 +753,8 @@ func _emit_metrics(request_id = null) -> void:
 		metrics.targetVisualAlive = victim != null and piece_nodes.has(int(victim)) and piece_nodes[int(victim)].visible
 	if request_id != null:
 		metrics.requestId = request_id
+	metrics.battlefield = battlefield.diagnostics() if is_instance_valid(battlefield) else {}
+	metrics.pedestals = _pedestal_diagnostics()
 	metrics.focused = camera_focused
 	metrics.cameraTarget = [camera_target.x, camera_target.y, camera_target.z]
 	_emit(metrics)

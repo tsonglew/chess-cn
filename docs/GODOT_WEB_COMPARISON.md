@@ -1,5 +1,7 @@
 # Godot 网页对照验收 · 2026-10-19
 
+> 下文记录初版引擎对照。当前战场材质与环境、最终截图及新旧同会话性能采样见 [战场升级验收](GODOT_BATTLEFIELD.md)。旧版性能与 PCK 哈希不代表战场版。
+
 入口 https://tsonglew.github.io/chess-cn/godot/ 。原 Three.js 主页 https://tsonglew.github.io/chess-cn/ 保持原发布文件不变。
 
 ## 交付范围

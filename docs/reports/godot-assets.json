@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T07:02:46.037Z",
+  "generatedAt": "2026-10-19T07:37:36.786Z",
   "scope": "Project model hashes must match the provenance manifest; compare original source bytes additionally when available. Browser import/animation is checked separately.",
   "assetsOnly": false,
   "models": [
@@ -10,8 +10,8 @@
       "sha256": "28370908ed427cbd6fa80d11a148f25d97dc579f1bd40ef09667cd6db1b85261",
       "bytes": 483612,
       "triangles": 9799,
-      "sourceAvailable": true,
-      "sourceBytesCompared": true
+      "sourceAvailable": false,
+      "sourceBytesCompared": false
     },
     {
       "type": "advisor",
@@ -19,8 +19,8 @@
       "sha256": "389b56b677c2c910d774ccd5b97ffb6c1d774045005e7db5b46701ed95041446",
       "bytes": 482788,
       "triangles": 9800,
-      "sourceAvailable": true,
-      "sourceBytesCompared": true
+      "sourceAvailable": false,
+      "sourceBytesCompared": false
     },
     {
       "type": "elephant",
@@ -28,8 +28,8 @@
       "sha256": "0bdc43b8d26e9863c879815d9febed0bb749deaca09d9ee1b650718267dd41a8",
       "bytes": 487208,
       "triangles": 9800,
-      "sourceAvailable": true,
-      "sourceBytesCompared": true
+      "sourceAvailable": false,
+      "sourceBytesCompared": false
     },
     {
       "type": "horse",
@@ -37,8 +37,8 @@
       "sha256": "0c688b3dd81e07e835f592d43840fe59b54dc5bc20ec1f21474e4425aaae32e4",
       "bytes": 462244,
       "triangles": 9800,
-      "sourceAvailable": true,
-      "sourceBytesCompared": true
+      "sourceAvailable": false,
+      "sourceBytesCompared": false
     },
     {
       "type": "chariot",
@@ -46,8 +46,8 @@
       "sha256": "749495b9650fca2d54682f0902e7ee655bae01a79dd37058a08b2ae733f66c1b",
       "bytes": 554888,
       "triangles": 9799,
-      "sourceAvailable": true,
-      "sourceBytesCompared": true
+      "sourceAvailable": false,
+      "sourceBytesCompared": false
     },
     {
       "type": "cannon",
@@ -55,8 +55,8 @@
       "sha256": "6fe2c1eddd0d7271081f4af62b2af9c2277d1995f513bb3fdb981487816c21dc",
       "bytes": 527080,
       "triangles": 9800,
-      "sourceAvailable": true,
-      "sourceBytesCompared": true
+      "sourceAvailable": false,
+      "sourceBytesCompared": false
     },
     {
       "type": "soldier",
@@ -64,8 +64,8 @@
       "sha256": "41458c1adb323bc429814873cbf7c22c69a135bab85ad71be81b64caa403be15",
       "bytes": 602700,
       "triangles": 9798,
-      "sourceAvailable": true,
-      "sourceBytesCompared": true,
+      "sourceAvailable": false,
+      "sourceBytesCompared": false,
       "skins": 1,
       "bones": 20,
       "animation": "SoldierThrust",
@@ -77,9 +77,9 @@
   "passed": true,
   "export": {
     "wasmBytes": 39514754,
-    "pckBytes": 9789356,
+    "pckBytes": 13239832,
     "wasmSha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
-    "pckSha256": "f460cbd413f66035b995c9136638121b42b05388557f9daab0eee61045c10308",
+    "pckSha256": "be5213700fe7613a5c572fabf246253cbf86ad3e30b5a8542e169315ac4a142d",
     "singleThreaded": true,
     "renderingMethod": "gl_compatibility"
   }

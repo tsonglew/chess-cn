@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "generator": "tools/build-godot-battlefield-textures.py",
+  "seed": 12220190,
+  "provenance": "Original deterministic procedural materials; no external raster source.",
+  "scope": "Godot comparison only. Does not replace the Three.js board or any character texture.",
+  "boardMapping": {
+    "worldSizeXZ": [
+      24.65,
+      27.25
+    ],
+    "uvScale": [
+      1,
+      1
+    ],
+    "gridBaked": false,
+    "riverCentreZ": 0,
+    "riverBankZApprox": [
+      -1.0,
+      1.0
+    ],
+    "riverExtentX": [
+      -10.5,
+      10.5
+    ]
+  },
+  "recommendedMaterial": {
+    "boardNormalScale": 0.65,
+    "groundNormalScale": 0.7,
+    "roughness": 1.0,
+    "roughnessTextureChannel": "red",
+    "metallic": 0.0,
+    "filter": "linear with mipmaps",
+    "groundUvMetresPerTile": 12.0
+  },
+  "assets": [
+    {
+      "path": "textures/board-albedo.jpg",
+      "width": 1024,
+      "height": 1024,
+      "colorSpace": "sRGB",
+      "bytes": 120386,
+      "sha256": "d2e62ed4f5c43ae332aa24a938b22b07f7e18230096a0d8a45a484c216efb501"
+    },
+    {
+      "path": "textures/board-normal.png",
+      "width": 1024,
+      "height": 1024,
+      "colorSpace": "linear / OpenGL +Y",
+      "bytes": 1521606,
+      "sha256": "07c022e18c3415e557b541217517b0f3dae1ecc418fb154f65b2c17e6c02a2e0"
+    },
+    {
+      "path": "textures/board-roughness.png",
+      "width": 1024,
+      "height": 1024,
+      "colorSpace": "linear / red channel",
+      "bytes": 218240,
+      "sha256": "65f5dc7d5c85f0b0bb0ee512aaeea433a4bf8a29eff61a1c85e508cdd74772fc"
+    },
+    {
+      "path": "textures/ground-albedo.jpg",
+      "width": 512,
+      "height": 512,
+      "colorSpace": "sRGB",
+      "bytes": 32847,
+      "sha256": "73f3e7b8678a8189d548cb18e990935350491c74451c2745d96e82e802dd88da"
+    },
+    {
+      "path": "textures/ground-normal.png",
+      "width": 512,
+      "height": 512,
+      "colorSpace": "linear / OpenGL +Y",
+      "bytes": 400326,
+      "sha256": "b8e83fbf1a278eaaa70129103c43a4c6e16bd52aebe26dab8e4d6ecacb7d5b25"
+    },
+    {
+      "path": "textures/ground-roughness.png",
+      "width": 512,
+      "height": 512,
+      "colorSpace": "linear / red channel",
+      "bytes": 83048,
+      "sha256": "f4b3b8e2020c15fa76a65abd747f26f124711855e32daabbeb76ac4ca182b856"
+    }
+  ]
+}

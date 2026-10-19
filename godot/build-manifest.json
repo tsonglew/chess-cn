@@ -2,7 +2,7 @@
   "engine": "4.7.2.stable.official.ed1daf0bf",
   "variant": "web_nothreads_release",
   "renderer": "gl_compatibility",
-  "generatedAt": "2026-10-19T07:00:16.117Z",
+  "generatedAt": "2026-10-19T07:37:23.787Z",
   "files": [
     {
       "name": "FONT-LICENSE.txt",
@@ -46,8 +46,8 @@
     },
     {
       "name": "index.html",
-      "bytes": 5588,
-      "sha256": "4d7e8bf894333e6cc9393b340b1b58ced7d91e651c872c828d9495db8688e52c"
+      "bytes": 5589,
+      "sha256": "e035eb681402429093dd7e5931273c94ae00d11718b16024a2d92d3b9fbe3e43"
     },
     {
       "name": "index.js",
@@ -56,8 +56,8 @@
     },
     {
       "name": "index.pck",
-      "bytes": 9789356,
-      "sha256": "f460cbd413f66035b995c9136638121b42b05388557f9daab0eee61045c10308"
+      "bytes": 13239832,
+      "sha256": "be5213700fe7613a5c572fabf246253cbf86ad3e30b5a8542e169315ac4a142d"
     },
     {
       "name": "index.png",

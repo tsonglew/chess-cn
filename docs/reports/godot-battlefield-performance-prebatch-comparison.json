@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-19T07:30:46.135Z",
+  "scope": "Same visible desktop Chromium page, one preceding published Godot export and one new battlefield export, 32-piece idle boards. Each warmed for180engineframes and sampled for10seconds. Same canvas/viewport and GL renderer asserted. One short sample per version; no mobile or cross-engine claim. This records the battlefield before the final pedestal batching optimization, not the final publication.",
+  "viewport": {
+    "width": 1368,
+    "height": 781,
+    "dpr": 2
+  },
+  "canvas": {
+    "renderWidth": 1520,
+    "renderHeight": 845,
+    "cssWidth": 1013,
+    "cssHeight": 563
+  },
+  "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1, Unspecified Version)",
+  "previous": {
+    "summary": {
+      "frames": 257,
+      "observedFrameRate": 25.615468952456894,
+      "medianFrameMs": 33.30000000000109,
+      "p95FrameMs": 49.399999999999636,
+      "p99FrameMs": 50.20000000000073,
+      "longestFrameMs": 1050,
+      "intervalsOver20ms": 252,
+      "intervalsOver50ms": 4,
+      "note": "20 ms threshold is a 60 Hz frame budget plus 20% tolerance; it is not a hardware refresh-rate measurement."
+    },
+    "metrics": [
+      {
+        "elapsedMs": 0,
+        "fps": 30,
+        "frames": 204,
+        "drawCalls": 235,
+        "primitives": 690268,
+        "objects": 235
+      },
+      {
+        "elapsedMs": 1016.6000000000004,
+        "fps": 29,
+        "frames": 232,
+        "drawCalls": 235,
+        "primitives": 690268,
+        "objects": 235
+      },
+      {
+        "elapsedMs": 2032.7000000000007,
+        "fps": 30,
+        "frames": 262,
+        "drawCalls": 235,
+        "primitives": 690268,
+        "objects": 235
+      },
+      {
+        "elapsedMs": 3016.3999999999996,
+        "fps": 29,
+        "frames": 292,
+        "drawCalls": 235,
+        "primitives": 690268,
+        "objects": 235
+      },
+      {
+        "elapsedMs": 4033.2000000000007,
+        "fps": 30,
+        "frames": 322,
+        "drawCalls": 235,
+        "primitives": 690268,
+        "objects": 235
+      },
+      {
+        "elapsedMs": 5016.5,
+        "fps": 29,
+        "frames": 352,
+        "drawCalls": 235,
+        "primitives": 690268,
+        "objects": 235
+      },
+      {
+        "elapsedMs": 6032.1,
+        "fps": 30,
+        "frames": 382,
+        "drawCalls": 235,
+        "primitives": 690268,
+        "objects": 235
+      },
+      {
+        "elapsedMs": 8033.0999999999985,
+        "fps": 29,
+        "frames": 412,
+        "drawCalls": 235,
+        "primitives": 690268,
+        "objects": 235
+      },
+      {
+        "elapsedMs": 10033,
+        "fps": 3,
+        "frames": 435,
+        "drawCalls": 235,
+        "primitives": 690268,
+        "objects": 235
+      }
+    ],
+    "build": {
+      "engine": "4.7.2.stable.official.ed1daf0bf",
+      "variant": "web_nothreads_release",
+      "renderer": "gl_compatibility",
+      "generatedAt": "2026-10-19T07:00:16.117Z",
+      "files": [
+        {
+          "name": "FONT-LICENSE.txt",
+          "bytes": 4350,
+          "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6"
+        },
+        {
+          "name": "FONT-NOTICE.txt",
+          "bytes": 247,
+          "sha256": "b2f0c785e161b5df2acfc91b709d9b2ccb63d43dc85eb4ffcf4366f22a81a80f"
+        },
+        {
+          "name": "GODOT-LICENSE.txt",
+          "bytes": 1149,
+          "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+        },
+        {
+          "name": "THIRD-PARTY-NOTICES.txt",
+          "bytes": 100108,
+          "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+        },
+        {
+          "name": "asset-manifest.json",
+          "bytes": 2184,
+          "sha256": "4d99fb4b04ea84d22d2f9393b540909f909e96edc21409979fe66b406ff43aa3"
+        },
+        {
+          "name": "host.js",
+          "bytes": 15304,
+          "sha256": "f48adaf5fbccf78b1e96dfbdb77154e87f2370f52e9df1ee96e7211f810aaf1b"
+        },
+        {
+          "name": "index.audio.position.worklet.js",
+          "bytes": 2973,
+          "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+        },
+        {
+          "name": "index.audio.worklet.js",
+          "bytes": 7298,
+          "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+        },
+        {
+          "name": "index.html",
+          "bytes": 5588,
+          "sha256": "4d7e8bf894333e6cc9393b340b1b58ced7d91e651c872c828d9495db8688e52c"
+        },
+        {
+          "name": "index.js",
+          "bytes": 279815,
+          "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+        },
+        {
+          "name": "index.pck",
+          "bytes": 9789356,
+          "sha256": "f460cbd413f66035b995c9136638121b42b05388557f9daab0eee61045c10308"
+        },
+        {
+          "name": "index.png",
+          "bytes": 21443,
+          "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+        },
+        {
+          "name": "index.wasm",
+          "bytes": 39514754,
+          "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+        },
+        {
+          "name": "rules.js",
+          "bytes": 8107,
+          "sha256": "70037912512ff154e9e989cb1e5564fc4366aecd04681d4fd037c4412101fa27"
+        },
+        {
+          "name": "style.css",
+          "bytes": 10288,
+          "sha256": "b33127442ac1808e3cb490f594804306df324173573d409a6c4b9c4d85d147ea"
+        }
+      ]
+    }
+  },
+  "battlefield": {
+    "summary": {
+      "frames": 221,
+      "observedFrameRate": 20.432314491226123,
+      "medianFrameMs": 33.30000000000109,
+      "p95FrameMs": 49.899999999999636,
+      "p99FrameMs": 132.90000000000146,
+      "longestFrameMs": 1166.5999999999985,
+      "intervalsOver20ms": 220,
+      "intervalsOver50ms": 7,
+      "note": "20 ms threshold is a 60 Hz frame budget plus 20% tolerance; it is not a hardware refresh-rate measurement."
+    },
+    "metrics": [
+      {
+        "elapsedMs": 0,
+        "fps": 29,
+        "frames": 203,
+        "drawCalls": 311,
+        "primitives": 718846,
+        "objects": 311
+      },
+      {
+        "elapsedMs": 1033.2999999999993,
+        "fps": 29,
+        "frames": 232,
+        "drawCalls": 311,
+        "primitives": 718846,
+        "objects": 311
+      },
+      {
+        "elapsedMs": 2033.2999999999993,
+        "fps": 30,
+        "frames": 262,
+        "drawCalls": 311,
+        "primitives": 718846,
+        "objects": 311
+      },
+      {
+        "elapsedMs": 3015.8999999999996,
+        "fps": 30,
+        "frames": 292,
+        "drawCalls": 311,
+        "primitives": 718846,
+        "objects": 311
+      },
+      {
+        "elapsedMs": 4033.2999999999993,
+        "fps": 29,
+        "frames": 322,
+        "drawCalls": 311,
+        "primitives": 718846,
+        "objects": 311
+      },
+      {
+        "elapsedMs": 5015.699999999999,
+        "fps": 30,
+        "frames": 352,
+        "drawCalls": 311,
+        "primitives": 718846,
+        "objects": 311
+      },
+      {
+        "elapsedMs": 6033.199999999999,
+        "fps": 29,
+        "frames": 382,
+        "drawCalls": 311,
+        "primitives": 718846,
+        "objects": 311
+      },
+      {
+        "elapsedMs": 7049.799999999999,
+        "fps": 30,
+        "frames": 412,
+        "drawCalls": 311,
+        "primitives": 718846,
+        "objects": 311
+      }
+    ],
+    "build": {
+      "engine": "4.7.2.stable.official.ed1daf0bf",
+      "variant": "web_nothreads_release",
+      "renderer": "gl_compatibility",
+      "generatedAt": "2026-10-19T07:28:26.483Z",
+      "files": [
+        {
+          "name": "FONT-LICENSE.txt",
+          "bytes": 4350,
+          "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6"
+        },
+        {
+          "name": "FONT-NOTICE.txt",
+          "bytes": 247,
+          "sha256": "b2f0c785e161b5df2acfc91b709d9b2ccb63d43dc85eb4ffcf4366f22a81a80f"
+        },
+        {
+          "name": "GODOT-LICENSE.txt",
+          "bytes": 1149,
+          "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+        },
+        {
+          "name": "THIRD-PARTY-NOTICES.txt",
+          "bytes": 100108,
+          "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+        },
+        {
+          "name": "asset-manifest.json",
+          "bytes": 2184,
+          "sha256": "4d99fb4b04ea84d22d2f9393b540909f909e96edc21409979fe66b406ff43aa3"
+        },
+        {
+          "name": "host.js",
+          "bytes": 15304,
+          "sha256": "f48adaf5fbccf78b1e96dfbdb77154e87f2370f52e9df1ee96e7211f810aaf1b"
+        },
+        {
+          "name": "index.audio.position.worklet.js",
+          "bytes": 2973,
+          "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+        },
+        {
+          "name": "index.audio.worklet.js",
+          "bytes": 7298,
+          "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+        },
+        {
+          "name": "index.html",
+          "bytes": 5589,
+          "sha256": "9d10723a889e56977720835611d30fd028e3a0196180920fdb8b654fbf9ec91e"
+        },
+        {
+          "name": "index.js",
+          "bytes": 279815,
+          "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+        },
+        {
+          "name": "index.pck",
+          "bytes": 13237832,
+          "sha256": "bbdd55b7620b7e95ec01f2f68d5441d2c9d385c10110f36415e7a7e1d5277aba"
+        },
+        {
+          "name": "index.png",
+          "bytes": 21443,
+          "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+        },
+        {
+          "name": "index.wasm",
+          "bytes": 39514754,
+          "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+        },
+        {
+          "name": "rules.js",
+          "bytes": 8107,
+          "sha256": "70037912512ff154e9e989cb1e5564fc4366aecd04681d4fd037c4412101fa27"
+        },
+        {
+          "name": "style.css",
+          "bytes": 10288,
+          "sha256": "b33127442ac1808e3cb490f594804306df324173573d409a6c4b9c4d85d147ea"
+        }
+      ]
+    }
+  },
+  "rafBaseline": {
+    "reportPath": "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/docs/reports/godot-battlefield-performance-raf-baseline.json",
+    "frames": 148,
+    "observedFrameRate": 49.32511248125312,
+    "medianFrameMs": 16.799999999999727,
+    "p95FrameMs": 33.40000000000009,
+    "longestFrameMs": 50.89999999999998
+  },
+  "observedFpsChangePercent": -20.234470314991558,
+  "passed": true
+}

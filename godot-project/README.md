@@ -20,6 +20,12 @@
 
 兵的原动画为 `SoldierThrust`，时长 1.2 秒，命中时刻 0.58 秒。棋盘位移与朝向由运行时控制，关节运动来自 GLB 动画。字体沿用本项目的中文子集，许可见 `fonts/`；引擎及第三方许可见 `licenses/`。
 
+## 战场场景
+
+`battlefield.gd` 构造外围地形、残墙、战旗与火盆。重复环境几何及烟尘/余烬采用 MultiMesh；棋子底座按阵营与层分为四个批次，移动、吃子和重开时随模型同步。`main.gd` 负责棋盘、光照、材质与游戏桥接。
+
+`textures/` 保存已生成的六张 PBR 贴图及清单。需要重建贴图时运行 `python3 tools/build-godot-battlefield-textures.py`（Pillow、NumPy），普通 Godot 导出无需运行 Python。颜色图有裂纹、焦痕及河床，棋盘线和汉字不烘焙进贴图。完整视觉与性能记录见 [战场升级验收](../docs/GODOT_BATTLEFIELD.md)。
+
 ## 发布与回滚
 
 现有 GitHub Pages 使用 `master` 分支根目录。发布只需更新 `godot/` 及对应源码/构建脚本，保持根目录 Three.js 文件不变。浏览器入口为 `/chess-cn/godot/`，返回链接为 `../`。
