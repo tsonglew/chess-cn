@@ -1,0 +1,25 @@
+; Independent Web comparison; the existing Three.js application stays unchanged.
+config_version=5
+
+[application]
+config/name="楚河汉界 · Godot 对照版"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/description="Godot Web renderer using the existing chess models and SoldierThrust skeleton animation."
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=960
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+textures/default_filters/anisotropic_filtering_level=2
+anti_aliasing/quality/msaa_3d=1
+environment/defaults/default_clear_color=Color(0.055, 0.065, 0.075, 1)
+
+[audio]
+driver/enable_input=false

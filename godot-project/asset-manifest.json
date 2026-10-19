@@ -1,0 +1,66 @@
+{
+  "models": [
+    {
+      "type": "general",
+      "tier": "standard",
+      "source": "assets/models/readable/general-standard.glb",
+      "godotResource": "models/general.glb",
+      "bytes": 483612,
+      "sha256": "28370908ed427cbd6fa80d11a148f25d97dc579f1bd40ef09667cd6db1b85261"
+    },
+    {
+      "type": "advisor",
+      "tier": "standard",
+      "source": "assets/models/readable/advisor-standard.glb",
+      "godotResource": "models/advisor.glb",
+      "bytes": 482788,
+      "sha256": "389b56b677c2c910d774ccd5b97ffb6c1d774045005e7db5b46701ed95041446"
+    },
+    {
+      "type": "elephant",
+      "tier": "standard",
+      "source": "assets/models/readable/elephant-standard.glb",
+      "godotResource": "models/elephant.glb",
+      "bytes": 487208,
+      "sha256": "0bdc43b8d26e9863c879815d9febed0bb749deaca09d9ee1b650718267dd41a8"
+    },
+    {
+      "type": "horse",
+      "tier": "standard",
+      "source": "assets/models/readable/horse-standard.glb",
+      "godotResource": "models/horse.glb",
+      "bytes": 462244,
+      "sha256": "0c688b3dd81e07e835f592d43840fe59b54dc5bc20ec1f21474e4425aaae32e4"
+    },
+    {
+      "type": "chariot",
+      "tier": "standard",
+      "source": "assets/models/readable/chariot-standard.glb",
+      "godotResource": "models/chariot.glb",
+      "bytes": 554888,
+      "sha256": "749495b9650fca2d54682f0902e7ee655bae01a79dd37058a08b2ae733f66c1b"
+    },
+    {
+      "type": "cannon",
+      "tier": "standard",
+      "source": "assets/models/readable/cannon-standard.glb",
+      "godotResource": "models/cannon.glb",
+      "bytes": 527080,
+      "sha256": "6fe2c1eddd0d7271081f4af62b2af9c2277d1995f513bb3fdb981487816c21dc"
+    },
+    {
+      "type": "soldier",
+      "tier": "standard",
+      "source": "assets/models/animated/soldier-standard.glb",
+      "godotResource": "models/soldier.glb",
+      "bytes": 602700,
+      "sha256": "41458c1adb323bc429814873cbf7c22c69a135bab85ad71be81b64caa403be15"
+    }
+  ],
+  "soldierAnimation": {
+    "name": "SoldierThrust",
+    "durationSeconds": 1.2,
+    "impactSeconds": 0.58
+  },
+  "note": "Exact bytes copied from current local Three.js standard assets; source paths document provenance."
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#eee8dc">
+  <meta name="description" content="中国象棋 Godot 网页对照版，复用 Q 版棋子与兵卒突刺动画。">
+  <title>楚河汉界 · Godot 对照版</title>
+  <link rel="stylesheet" href="./style.css">
+  $GODOT_HEAD_INCLUDE
+</head>
+<body>
+  <div class="app">
+    <header class="masthead">
+      <a class="identity" href="../" aria-label="打开 Three.js 原版"><span class="seal" aria-hidden="true">象</span><span><strong>楚河汉界</strong><small>三维象棋 · 引擎对照</small></span></a>
+      <div class="edition"><span class="edition-dot"></span>GODOT <span>网页版</span></div>
+      <a class="original-link" href="../" target="_blank" rel="noopener">打开 Three.js 原版 <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="workspace">
+      <section class="board-panel" aria-label="三维棋盘">
+        <div class="board-toolbar">
+          <div class="view-tabs" role="group" aria-label="观察视角">
+            <button type="button" data-view="iso" aria-pressed="true" disabled>斜俯</button>
+            <button type="button" data-view="top" aria-pressed="false" disabled>俯视</button>
+            <button type="button" data-view="front" aria-pressed="false" disabled>正面</button>
+            <button type="button" data-view="side" aria-pressed="false" disabled>侧面</button>
+          </div>
+          <label class="label-switch"><input id="labels-toggle" type="checkbox" checked disabled><span>棋子字样</span></label>
+        </div>
+        <div class="canvas-wrap" id="canvas-wrap">
+          <canvas id="canvas" tabindex="0" aria-label="Godot 三维象棋棋盘，点击己方棋子再点击落点">浏览器需要支持 Canvas 才能显示棋盘。</canvas>
+          <div id="loading" class="loading" role="status" aria-live="polite">
+            <div class="loading-mark" aria-hidden="true">卒</div>
+            <span class="eyebrow">GODOT WEB</span>
+            <h1 id="loading-title">正在布置棋局</h1>
+            <p id="loading-detail">首次打开需要加载引擎与棋子资源。</p>
+            <progress id="loading-progress" aria-label="资源加载进度"></progress>
+            <button id="reload-button" type="button" hidden>重新加载</button>
+          </div>
+          <div class="canvas-caption" aria-hidden="true"><span id="view-caption">斜俯视角</span><span>Q 版棋子 · 原始骨骼动作</span></div>
+        </div>
+        <div class="board-footer"><span><i class="ready-dot" id="ready-dot"></i><span id="runtime-state">引擎加载中</span></span><span id="performance" title="当前 Godot 实时帧率，不代表跨引擎性能结论">— FPS</span></div>
+      </section>
+
+      <aside class="control-panel" aria-label="棋局控制">
+        <section class="game-control">
+          <div class="section-kicker"><span>棋局</span><span id="mode-label">自由对弈</span></div>
+          <div class="turn-heading"><span id="turn-seal" class="turn-seal red">红</span><h1 id="turn-text">红方先行</h1></div>
+          <p id="game-hint" class="game-hint" aria-live="polite">点击棋子，再选择高亮落点。</p>
+          <div class="game-actions"><button id="undo-button" type="button" disabled>↶ 悔棋</button><button id="restart-button" type="button" disabled>重新开局</button></div>
+        </section>
+
+        <section class="motion-control">
+          <div class="section-kicker"><span>动作样板</span><span class="motion-duration">1.20 s</span></div>
+          <div class="motion-title"><span class="large-glyph">兵<span>卒</span></span><div><h2>向前一击</h2><p>观察突刺、命中与收势</p></div></div>
+          <div class="demo-actions"><button id="demo-red" class="accent-button" type="button" disabled>演示红兵</button><button id="demo-black" type="button" disabled>演示黑卒</button></div>
+          <div class="motion-track" aria-hidden="true"><div id="motion-progress"></div><i title="命中 0.58 秒"></i></div>
+          <div class="motion-status"><span id="motion-phase">等待演示</span><span id="motion-time">0.00 / 1.20 s</span></div>
+          <button id="replay-button" class="text-button" type="button" disabled>↻ 再看一次</button>
+        </section>
+
+        <section class="observation">
+          <div class="section-kicker"><span>这样看更清楚</span></div>
+          <p>切到俯视并隐藏字样，比较横冠的士与圆盔的兵；用正面和侧面检查突刺的姿态。</p>
+          <div class="piece-legend"><span><i class="red-side"></i>红方</span><span><i class="black-side"></i>黑方</span></div>
+        </section>
+        <p class="comparison-note">共用现有棋子模型与象棋规则。<br>Godot 负责棋盘、渲染与骨骼动画。</p>
+      </aside>
+    </main>
+    <footer class="page-footer"><span>一局棋，两种呈现。</span><span id="engine-version">Godot · WebGL 2</span></footer>
+  </div>
+  <noscript>请启用 JavaScript 以运行此网页版。</noscript>
+  <script src="$GODOT_URL"></script>
+  <script>window.GODOT_EXPORT_CONFIG = $GODOT_CONFIG;</script>
+  <script type="module" src="./host.js"></script>
+</body>
+</html>

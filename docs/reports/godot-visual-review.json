@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-19T07:02:46.214Z",
+  "passed": true,
+  "scope": "Agent visual inspection of all 13 actual Godot Web screenshots, plus deterministic runtime assertions; not a blind user-recognition study.",
+  "pckSha256": "f460cbd413f66035b995c9136638121b42b05388557f9daab0eee61045c10308",
+  "screenshots": [
+    {
+      "path": "output/godot-validation/local-batched-board-iso.png",
+      "sha256": "ea42464993ec48adbc44b4079b387581ecd31c64bf182a3a6459468a5abe6d10"
+    },
+    {
+      "path": "output/godot-validation/local-batched-board-top.png",
+      "sha256": "d69b45352265579a0325d327f9756ac7f5c2c6dea777420ae11a0c822d901b0a"
+    },
+    {
+      "path": "output/godot-validation/local-batched-board-front.png",
+      "sha256": "677a2f0106ec93ac9a8723684dcf3e0332ea6ee805b9e34e612a50973e33ebc4"
+    },
+    {
+      "path": "output/godot-validation/local-batched-board-side.png",
+      "sha256": "b5da59fbb97cab72d2619120503ced77555cbf352dc2cff55e554ae649bc9bbe"
+    },
+    {
+      "path": "output/godot-validation/local-batched-board-top-no-labels.png",
+      "sha256": "29314bfd1e23e296f9fd9a0714510f23c222e371b4c5069de1071358b9366f86"
+    },
+    {
+      "path": "output/godot-validation/local-batched-red-iso-impact.png",
+      "sha256": "602b275e728c64d22179dc0498c69bb63b4ad61f3490cc32ebc79044becb9b6a"
+    },
+    {
+      "path": "output/godot-validation/local-batched-red-top-impact.png",
+      "sha256": "530af6232855aaf3e757b326e6e8b980f81dc6f26c6229a2da1878e855ebdc99"
+    },
+    {
+      "path": "output/godot-validation/local-batched-red-front-impact.png",
+      "sha256": "97685df3f886456d381b367b9c93ac7dbc981d6276382b67ca943777f2c41f63"
+    },
+    {
+      "path": "output/godot-validation/local-batched-red-side-impact.png",
+      "sha256": "f4bad9423c78bde283692e96b8287412290b71600ff55c6a76ae52fe082813ae"
+    },
+    {
+      "path": "output/godot-validation/local-batched-black-iso-impact.png",
+      "sha256": "ee35bff32276325817b51479f689952fe82184e618f3f560d84feb98e3e55974"
+    },
+    {
+      "path": "output/godot-validation/local-batched-black-top-impact.png",
+      "sha256": "27e67b02150abe8efe28119e2b3514e618ab05b1eecf8b3ba62f8d025ebe7642"
+    },
+    {
+      "path": "output/godot-validation/local-batched-black-front-impact.png",
+      "sha256": "00e503ab4228bf791a0e3323faa696b8ae7eabfac0470afc49f6e504b262becb"
+    },
+    {
+      "path": "output/godot-validation/local-batched-black-side-impact.png",
+      "sha256": "18161e3ae76eacf4d994e4eddec2773ac0a6514829d9b630fed675ce5228f793"
+    }
+  ],
+  "observations": [
+    {
+      "area": "Full board",
+      "result": "All 32 figures, their pedestals, river and palace remain visible in iso/top/front/side views. Canvas fills the host width after viewport expansion."
+    },
+    {
+      "area": "Advisor versus soldier",
+      "result": "In the label-free top view the advisor has a broad horizontal headdress while the soldier has a circular helmet with a single side shield. The distinction survives board-scale rendering."
+    },
+    {
+      "area": "Soldier thrust",
+      "result": "Inspected both colors at 0.5833334 seconds from four views. Spear, shield, limbs and pedestal remain coherent without visible detached geometry; side views clearly show the spear extended in the attack direction."
+    },
+    {
+      "area": "Timing and recovery",
+      "result": "Both colors keep the victim at 0.5666667 seconds and hide it at 0.5833334; 14 local bone rotations differ from the starting pose; undo restores four models and resets the motion display."
+    },
+    {
+      "area": "Lighting",
+      "result": "Final export uses a warmer golden board, darker grid lines and reduced lighting; grid, character outlines and team colors remain clear. It is a simple Godot comparison environment, not visual parity with Three.js."
+    },
+    {
+      "area": "Grid batching",
+      "result": "The final merged grid matches the earlier palace, river and marker geometry in all four views; no missing or displaced line segments observed."
+    }
+  ],
+  "resolvedFindings": [
+    "Reused piece IDs originally kept the wrong model when switching to demo; type/color identity changes now rebuild the node.",
+    "Undo/restart originally restored stale end-of-animation UI through metrics; only active motion metrics now update it."
+  ],
+  "limitations": [
+    "No mobile or Safari acceptance was requested or performed.",
+    "This is functional Web renderer validation and does not establish comparative performance against Three.js.",
+    "Visual inspection is limited to the recorded desktop viewport and sampled animation poses."
+  ],
+  "acceptanceReport": "docs/reports/godot-browser-local-batched.json"
+}

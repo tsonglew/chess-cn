@@ -1,0 +1,3 @@
+Chess CN Serif is a subset and static instance of Noto Serif SC, weight 600.
+Modified by this project. Original copyright and OFL license are retained in OFL.txt.
+Original version and SHA-256: see characters.json and art-source/fonts/source.json.

@@ -1,0 +1,83 @@
+{
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "variant": "web_nothreads_release",
+  "renderer": "gl_compatibility",
+  "generatedAt": "2026-10-19T07:00:16.117Z",
+  "files": [
+    {
+      "name": "FONT-LICENSE.txt",
+      "bytes": 4350,
+      "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6"
+    },
+    {
+      "name": "FONT-NOTICE.txt",
+      "bytes": 247,
+      "sha256": "b2f0c785e161b5df2acfc91b709d9b2ccb63d43dc85eb4ffcf4366f22a81a80f"
+    },
+    {
+      "name": "GODOT-LICENSE.txt",
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    {
+      "name": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    {
+      "name": "asset-manifest.json",
+      "bytes": 2184,
+      "sha256": "4d99fb4b04ea84d22d2f9393b540909f909e96edc21409979fe66b406ff43aa3"
+    },
+    {
+      "name": "host.js",
+      "bytes": 15304,
+      "sha256": "f48adaf5fbccf78b1e96dfbdb77154e87f2370f52e9df1ee96e7211f810aaf1b"
+    },
+    {
+      "name": "index.audio.position.worklet.js",
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    {
+      "name": "index.audio.worklet.js",
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    {
+      "name": "index.html",
+      "bytes": 5588,
+      "sha256": "4d7e8bf894333e6cc9393b340b1b58ced7d91e651c872c828d9495db8688e52c"
+    },
+    {
+      "name": "index.js",
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    {
+      "name": "index.pck",
+      "bytes": 9789356,
+      "sha256": "f460cbd413f66035b995c9136638121b42b05388557f9daab0eee61045c10308"
+    },
+    {
+      "name": "index.png",
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    {
+      "name": "index.wasm",
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    },
+    {
+      "name": "rules.js",
+      "bytes": 8107,
+      "sha256": "70037912512ff154e9e989cb1e5564fc4366aecd04681d4fd037c4412101fa27"
+    },
+    {
+      "name": "style.css",
+      "bytes": 10288,
+      "sha256": "b33127442ac1808e3cb490f594804306df324173573d409a6c4b9c4d85d147ea"
+    }
+  ]
+}

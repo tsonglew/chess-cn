@@ -1,0 +1,70 @@
+{
+  "direction": [
+    0.0,
+    0.0,
+    -1.0
+  ],
+  "impact": {
+    "actor": [
+      -10.3999996185303,
+      0.620000004768372,
+      2.9300000667572
+    ],
+    "meshBindings": [
+      {
+        "bindCount": 20,
+        "node": "/root/GodotChess/@Node3D@138/@Node3D@289/Figure/@Node3D@292/soldier/SoldierRig/Skeleton3D/SoldierBody_standard",
+        "resolvedSkeleton": "/root/GodotChess/@Node3D@138/@Node3D@289/Figure/@Node3D@292/soldier/SoldierRig/Skeleton3D",
+        "skeletonPath": "..",
+        "surfaceCount": 1
+      }
+    ],
+    "spearBone": [
+      -9.90497875213623,
+      1.79742097854614,
+      2.66172790527344
+    ],
+    "spearTip": [
+      -9.8895902633667,
+      1.79295873641968,
+      1.30025970935822
+    ]
+  },
+  "rest": {
+    "actor": [
+      -10.3999996185303,
+      0.620000004768372,
+      3.90000009536743
+    ],
+    "meshBindings": [
+      {
+        "bindCount": 20,
+        "node": "/root/GodotChess/@Node3D@138/@Node3D@289/Figure/@Node3D@292/soldier/SoldierRig/Skeleton3D/SoldierBody_standard",
+        "resolvedSkeleton": "/root/GodotChess/@Node3D@138/@Node3D@289/Figure/@Node3D@292/soldier/SoldierRig/Skeleton3D",
+        "skeletonPath": "..",
+        "surfaceCount": 1
+      }
+    ],
+    "spearBone": [
+      -9.7545690536499,
+      1.78853356838226,
+      3.79911208152771
+    ],
+    "spearTip": [
+      -9.75660419464111,
+      2.65338373184204,
+      3.70822072029114
+    ]
+  },
+  "targetCenter": [
+    -10.3999996185303,
+    1.5,
+    1.29999995231628
+  ],
+  "checks": {
+    "spearForwardDisplacement": 1.1373841762542698,
+    "skeletonOnlyForwardDisplacement": 0.16738414764403986,
+    "tipTargetForwardError": 0.00025975704194003413,
+    "skinBindsToActualSkeleton": true
+  }
+}
