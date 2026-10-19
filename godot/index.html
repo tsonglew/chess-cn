@@ -26,10 +26,14 @@
             <button type="button" data-view="front" aria-pressed="false" title="聚焦棋盘后按 3" disabled><kbd>3</kbd> 正面</button>
             <button type="button" data-view="side" aria-pressed="false" title="聚焦棋盘后按 4" disabled><kbd>4</kbd> 侧面</button>
           </div>
-          <label class="label-switch"><input id="labels-toggle" type="checkbox" checked disabled><span>棋子字样</span></label>
+          <div class="display-options">
+            <label class="label-switch"><input id="effects-toggle" type="checkbox" checked disabled title="走棋扬尘 · 命中火花"><span>战斗特效</span></label>
+            <label class="label-switch"><input id="labels-toggle" type="checkbox" checked disabled><span>棋子字样</span></label>
+          </div>
         </div>
         <div class="canvas-wrap" id="canvas-wrap">
           <canvas id="canvas" tabindex="0" aria-label="Godot 三维象棋棋盘，可用鼠标或键盘行棋" aria-describedby="keyboard-help keyboard-status">浏览器需要支持 Canvas 才能显示棋盘。</canvas>
+          <div id="battle-notice" class="battle-notice" role="status" aria-live="polite" aria-atomic="true" hidden><span id="battle-notice-seal" aria-hidden="true"></span><span id="battle-notice-text"></span></div>
           <div id="loading" class="loading" role="status" aria-live="polite">
             <div class="loading-mark" aria-hidden="true">卒</div>
             <span class="eyebrow">GODOT WEB</span>
@@ -68,7 +72,7 @@
 
         <section class="motion-control">
           <div class="section-kicker"><span>动作样板</span><span class="motion-duration">1.20 s</span></div>
-          <div class="motion-title"><span class="large-glyph">兵<span>卒</span></span><div><h2>向前一击</h2><p>观察突刺、命中与收势</p></div></div>
+          <div class="motion-title"><span class="large-glyph">兵<span>卒</span></span><div><h2>向前一击</h2><p>突刺扬尘 · 命中火花</p></div></div>
           <div class="demo-actions"><button id="demo-red" class="accent-button" type="button" disabled>演示红兵</button><button id="demo-black" type="button" disabled>演示黑卒</button></div>
           <div class="motion-track" aria-hidden="true"><div id="motion-progress"></div><i title="命中 0.58 秒"></i></div>
           <div class="motion-status"><span id="motion-phase">等待演示</span><span id="motion-time">0.00 / 1.20 s</span></div>
@@ -87,7 +91,7 @@
   </div>
   <noscript>请启用 JavaScript 以运行此网页版。</noscript>
   <script src="index.js"></script>
-  <script>window.GODOT_EXPORT_CONFIG = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":13242408,"index.wasm":39514754},"focusCanvas":false,"gdextensionLibs":[],"godotPoolSize":4};</script>
+  <script>window.GODOT_EXPORT_CONFIG = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":13258364,"index.wasm":39514754},"focusCanvas":false,"gdextensionLibs":[],"godotPoolSize":4};</script>
   <script type="module" src="./host.js"></script>
 </body>
 </html>

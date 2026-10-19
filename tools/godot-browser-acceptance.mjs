@@ -211,12 +211,17 @@ export async function sampleGodotRealtime(page, {
   tag = 'local',
   durationMs = 10000,
   warmupFrames = 0,
+  viewport,
   reportPath = resolve(root, `docs/reports/godot-performance-${tag}.json`),
 } = {}) {
   const target = new URL(url);
   target.searchParams.delete('test');
   await page.goto(target.href);
   await page.waitForFunction(() => window.godotTest?.state().runtimeReady, undefined, {timeout: 120000});
+  if (viewport) {
+    await page.cdp('Emulation.setDeviceMetricsOverride', {...viewport, mobile: false});
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  }
   if (warmupFrames > 0) await page.waitForFunction(frames => window.godotTest.state().metrics.frames > frames, warmupFrames, {timeout: 30000});
   await page.evaluate(() => window.godotTest.inspect());
   const before = await page.evaluate(() => window.godotTest.state());
@@ -263,6 +268,7 @@ export async function sampleGodotRealtime(page, {
     requestAnimationFrame(step);
   }), durationMs);
   assert.deepEqual(sample.visibilityStates, ['visible'], 'background tabs cannot establish visible rendering performance');
+  if (viewport) assert.deepEqual(sample.viewport, {width: viewport.width, height: viewport.height, dpr: viewport.deviceScaleFactor}, 'comparison viewport must remain fixed throughout the sample');
   assert.equal(sample.manualClock, false);
   const ordered = [...sample.intervals].sort((a, b) => a - b);
   const percentile = p => ordered[Math.min(ordered.length - 1, Math.floor((ordered.length - 1) * p))];

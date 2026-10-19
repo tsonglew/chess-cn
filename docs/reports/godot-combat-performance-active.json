@@ -1,0 +1,155 @@
+{
+  "generatedAt": "2026-10-19T08:35:12.902Z",
+  "scope": "8-second visible desktop sample repeatedly restarts a 32-piece game and captures with a cannon (31 pieces during capture), ordinary real-time clock. Includes restart costs; not mobile or a sustained benchmark.",
+  "durationMs": 8016.199999999999,
+  "frames": 172,
+  "observedFrameRate": 21.456550485267336,
+  "medianFrameMs": 33.30000000000291,
+  "p95FrameMs": 50,
+  "longestFrameMs": 1083.3999999999996,
+  "attacks": 6,
+  "samples": [
+    {
+      "phase": "moving",
+      "pieces": 31,
+      "drawCalls": 192,
+      "effects": {
+        "activeParticles": 11,
+        "activeRings": 0,
+        "activeTrails": 5,
+        "capacity": 92,
+        "enabled": true,
+        "flashVisible": false,
+        "geometryBatches": 3,
+        "projectilePosition": [
+          -7.80000019073486,
+          4.43638324737549,
+          0.122961521148682
+        ],
+        "projectileVisible": true,
+        "reducedMotion": false,
+        "ringCapacity": 4,
+        "selectionActive": false,
+        "selectionVisible": false,
+        "totalBursts": 1,
+        "trailEmissions": 5
+      },
+      "manualClock": false
+    },
+    {
+      "phase": "moving",
+      "pieces": 31,
+      "drawCalls": 190,
+      "effects": {
+        "activeParticles": 34,
+        "activeRings": 1,
+        "activeTrails": 4,
+        "capacity": 92,
+        "enabled": true,
+        "flashVisible": false,
+        "geometryBatches": 3,
+        "projectilePosition": [
+          -7.80000019073486,
+          1.60746657848358,
+          -11.5481338500977
+        ],
+        "projectileVisible": false,
+        "reducedMotion": false,
+        "ringCapacity": 4,
+        "selectionActive": false,
+        "selectionVisible": false,
+        "totalBursts": 5,
+        "trailEmissions": 26
+      },
+      "manualClock": false
+    },
+    {
+      "phase": "moving",
+      "pieces": 31,
+      "drawCalls": 190,
+      "effects": {
+        "activeParticles": 34,
+        "activeRings": 1,
+        "activeTrails": 4,
+        "capacity": 92,
+        "enabled": true,
+        "flashVisible": false,
+        "geometryBatches": 3,
+        "projectilePosition": [
+          -7.80000019073486,
+          1.85508680343628,
+          -11.117259979248
+        ],
+        "projectileVisible": false,
+        "reducedMotion": false,
+        "ringCapacity": 4,
+        "selectionActive": false,
+        "selectionVisible": false,
+        "totalBursts": 8,
+        "trailEmissions": 39
+      },
+      "manualClock": false
+    },
+    {
+      "phase": "moving",
+      "pieces": 31,
+      "drawCalls": 190,
+      "effects": {
+        "activeParticles": 34,
+        "activeRings": 1,
+        "activeTrails": 4,
+        "capacity": 92,
+        "enabled": true,
+        "flashVisible": false,
+        "geometryBatches": 3,
+        "projectilePosition": [
+          -7.80000019073486,
+          1.66947305202484,
+          -11.4404144287109
+        ],
+        "projectileVisible": false,
+        "reducedMotion": false,
+        "ringCapacity": 4,
+        "selectionActive": false,
+        "selectionVisible": false,
+        "totalBursts": 11,
+        "trailEmissions": 52
+      },
+      "manualClock": false
+    },
+    {
+      "phase": "moving",
+      "pieces": 31,
+      "drawCalls": 190,
+      "effects": {
+        "activeParticles": 33,
+        "activeRings": 1,
+        "activeTrails": 3,
+        "capacity": 92,
+        "enabled": true,
+        "flashVisible": false,
+        "geometryBatches": 3,
+        "projectilePosition": [
+          -7.80000019073486,
+          2.23220729827881,
+          -10.4537334442139
+        ],
+        "projectileVisible": false,
+        "reducedMotion": false,
+        "ringCapacity": 4,
+        "selectionActive": false,
+        "selectionVisible": false,
+        "totalBursts": 14,
+        "trailEmissions": 64
+      },
+      "manualClock": false
+    }
+  ],
+  "visibility": "visible",
+  "viewport": [
+    1380,
+    759,
+    2
+  ],
+  "errors": []
+}

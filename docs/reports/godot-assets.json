@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T08:01:45.224Z",
+  "generatedAt": "2026-10-19T08:33:31.005Z",
   "scope": "Project model hashes must match the provenance manifest; compare original source bytes additionally when available. Browser import/animation is checked separately.",
   "assetsOnly": false,
   "models": [
@@ -77,9 +77,9 @@
   "passed": true,
   "export": {
     "wasmBytes": 39514754,
-    "pckBytes": 13242408,
+    "pckBytes": 13258364,
     "wasmSha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
-    "pckSha256": "f07d229479d125e1a75294ea78ec466d0ce9aed5424f6768886dd7d21ba17fc1",
+    "pckSha256": "12a2aa61139f76f3e634c784a33dfd42eaac480255a44d43b1c50ab10b45f724",
     "singleThreaded": true,
     "renderingMethod": "gl_compatibility"
   }

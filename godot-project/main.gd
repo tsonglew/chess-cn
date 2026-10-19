@@ -44,6 +44,9 @@ var battlefield: Node3D
 var keyboard_cursor: MultiMeshInstance3D
 var cursor_row := 6
 var cursor_col := 0
+var combat_fx: Node3D
+var effects_enabled := true
+var reduced_motion := false
 
 func _ready() -> void:
 	if ResourceLoader.exists("res://fonts/ui-subset.ttf"):
@@ -56,6 +59,10 @@ func _ready() -> void:
 	battlefield.setup(font)
 	add_child(pieces_root)
 	add_child(markers_root)
+	combat_fx = load("res://combat_fx.gd").new()
+	add_child(combat_fx)
+	combat_fx.setup()
+	combat_fx.configure(effects_enabled, reduced_motion)
 	_build_pedestals()
 	for kind in TYPES:
 		var path := "res://models/%s.glb" % kind
@@ -554,6 +561,10 @@ func _on_command(arguments: Array) -> void:
 			_step_keyboard_cursor(int(command.get("dx", 0)), int(command.get("dy", 0)))
 		"zoom":
 			_zoom_camera(clampf(float(command.get("amount", 0)), -1, 1))
+		"effects":
+			effects_enabled = bool(command.get("enabled", effects_enabled))
+			reduced_motion = bool(command.get("reducedMotion", reduced_motion))
+			combat_fx.configure(effects_enabled, reduced_motion)
 		"focus":
 			camera_focused = bool(command.get("active", false))
 			camera_target = _board_point(float(command.get("row", 4.5)), float(command.get("col", 4)), 1.05) if camera_focused else Vector3(0, 0.8, 0)
@@ -574,6 +585,11 @@ func _on_command(arguments: Array) -> void:
 			_emit_metrics(command.get("requestId"))
 
 func _sync_state(command: Dictionary) -> void:
+	active_move = {}
+	# Selection updates and the host's completion acknowledgement must preserve
+	# the final dust ring. Undo, restart and demo resets explicitly clear it.
+	if command.get("resetEffects", false):
+		combat_fx.clear_transients()
 	state = command.get("state", state).duplicate(true)
 	var remaining: Dictionary = {}
 	for piece in state.get("pieces", []):
@@ -591,7 +607,11 @@ func _sync_state(command: Dictionary) -> void:
 		node.visible = true
 		node.position = _board_point(piece.row, piece.col)
 		node.rotation = Vector3.ZERO
-		node.get_node("Figure").rotation.y = PI if piece.color == "red" else 0.0
+		node.scale = Vector3.ONE
+		var figure: Node3D = node.get_node("Figure")
+		figure.position = Vector3(0, 0.34, 0)
+		figure.rotation = Vector3(0, PI if piece.color == "red" else 0.0, 0)
+		figure.scale = Vector3.ONE
 		node.set_meta("piece", piece.duplicate(true))
 		_sample_clip(node, 0)
 	for key in piece_nodes.keys():
@@ -605,8 +625,10 @@ func _sync_state(command: Dictionary) -> void:
 func _update_markers(selected_id, moves: Array) -> void:
 	for child in markers_root.get_children():
 		child.queue_free()
+	combat_fx.set_selection(Vector3.ZERO, false, "red")
 	if selected_id != null and piece_nodes.has(int(selected_id)):
 		var node: Node3D = piece_nodes[int(selected_id)]
+		combat_fx.set_selection(node.position, true, node.get_meta("piece").color)
 		var marker := Node3D.new()
 		markers_root.add_child(marker)
 		marker.position = Vector3(node.position.x, 0.48, node.position.z)
@@ -619,6 +641,7 @@ func _update_markers(selected_id, moves: Array) -> void:
 
 func _begin_move(command: Dictionary) -> void:
 	active_move = {}
+	combat_fx.clear_transients()
 	_sync_state({"state": command.before, "selectedId": null, "legalMoves": []})
 	var move: Dictionary = command.move
 	var key := int(move.pieceId)
@@ -630,7 +653,12 @@ func _begin_move(command: Dictionary) -> void:
 	var is_thrust: bool = piece.type == "soldier" and move.get("capturedId") != null
 	var from := _board_point(move.from.row, move.from.col)
 	var to := _board_point(move.to.row, move.to.col)
-	active_move = {"node": node, "move": move, "after": command.after, "from": from, "to": to, "time": 0.0, "impact": false, "thrust": is_thrust, "duration": THRUST_DURATION if is_thrust else 0.46}
+	var capture: bool = move.get("capturedId") != null
+	var durations := {"soldier": 0.46, "horse": 0.66, "chariot": 0.6, "cannon": 0.9 if capture else 0.58, "advisor": 0.5, "elephant": 0.64, "general": 0.54}
+	var duration: float = THRUST_DURATION if is_thrust else durations.get(piece.type, 0.46)
+	active_move = {"node": node, "move": move, "after": command.after, "from": from, "to": to, "time": 0.0, "impact": false, "thrust": is_thrust, "duration": duration, "kind": piece.type, "color": piece.color, "capture": capture}
+	combat_fx.begin_move(from, to, piece.type, piece.color, capture, duration)
+	_action_event("start")
 	if is_thrust:
 		node.get_node("Figure").rotation.y = 0
 		node.rotation.y = atan2(to.x - from.x, to.z - from.z)
@@ -650,16 +678,39 @@ func _process(delta: float) -> void:
 		_emit_metrics()
 
 func _tick(delta: float) -> void:
+	# The test bridge can advance an entire attack at once. Substeps give
+	# particles their actual age and preserve the contact frame in that case.
+	var remaining := maxf(delta, 0.0)
+	if remaining == 0.0:
+		_tick_step(0.0)
+	while remaining > 0.0000001:
+		var step := minf(remaining, 1.0 / 30.0)
+		_tick_step(step)
+		remaining -= step
+	# Particle/event substeps do not need to upload every pedestal transform.
+	_sync_pedestals()
+
+func _tick_step(delta: float) -> void:
+	combat_fx.tick(delta)
 	if active_move.is_empty():
-		_sync_pedestals()
 		return
 	active_move.time = minf(float(active_move.time) + delta, float(active_move.duration))
+	if float(active_move.time) + 0.000001 >= float(active_move.duration):
+		active_move.time = float(active_move.duration)
 	var time: float = active_move.time
 	var node: Node3D = active_move.node
 	var from: Vector3 = active_move.from
 	var to: Vector3 = active_move.to
 	var progress: float
 	var lift := 0.0
+	var figure: Node3D = node.get_node("Figure")
+	figure.position = Vector3(0, 0.34, 0)
+	figure.rotation.x = 0
+	figure.rotation.z = 0
+	figure.scale = Vector3.ONE
+	var duration: float = active_move.duration
+	var phase := clampf(time / duration, 0.0, 1.0)
+	var direction := (to - from).normalized()
 	if active_move.thrust:
 		var distance := from.distance_to(to)
 		var approach := (distance - minf(distance, 1.63)) / maxf(distance, 0.001)
@@ -667,26 +718,79 @@ func _tick(delta: float) -> void:
 		lift = sin(PI * clampf(time / 0.3, 0, 1)) * 0.12 if time < 0.3 else sin(PI * clampf((time - 0.95) / 0.25, 0, 1)) * 0.16 if time > 0.95 else 0.0
 		_sample_clip(node, time)
 	else:
-		progress = _smooth(time / float(active_move.duration))
-		lift = sin(progress * PI) * 0.25
+		progress = _smooth(phase)
+		figure.rotation.y = atan2(direction.x, direction.z)
+		match active_move.kind:
+			"horse":
+				# A compact leap reads clearly beside the infantry's small step.
+				lift = pow(sin(phase * PI), 0.85) * 0.88
+				figure.rotation.x = sin(phase * TAU) * 0.19
+			"chariot":
+				progress = phase * phase * (3.0 - 2.0 * phase)
+				figure.rotation.x = sin(phase * TAU) * 0.045
+				figure.position.y += sin(phase * PI * 4) * sin(phase * PI) * 0.028
+			"cannon":
+				if active_move.capture:
+					var contact := duration * 0.72
+					# The cannon stays on its source square while its shot travels.
+					progress = _smooth((time - contact) / (duration - contact))
+					var recoil := sin(clampf((time - 0.08) / 0.28, 0, 1) * PI)
+					figure.position -= direction * recoil * 0.2
+					figure.rotation.x = -recoil * 0.09
+					lift = sin(progress * PI) * 0.11
+				else:
+					lift = sin(phase * PI) * 0.07
+					figure.rotation.x = sin(phase * TAU) * 0.04
+			"soldier":
+				lift = absf(sin(phase * TAU)) * sin(phase * PI) * 0.14
+				figure.rotation.z = sin(phase * TAU) * 0.06
+				figure.rotation.x = sin(phase * PI) * 0.055
+			"elephant":
+				lift = sin(phase * PI) * 0.3
+				figure.rotation.x = sin(phase * TAU) * 0.065
+				figure.scale.y = 1.0 - pow(sin(phase * PI), 2) * 0.035
+			"advisor", "general":
+				lift = sin(phase * PI) * (0.2 if active_move.kind == "advisor" else 0.16)
+				figure.rotation.z = sin(phase * TAU) * 0.025
+				# A tiny settling bounce stays within the final fifth of the step.
+				figure.position.y -= sin(clampf((phase - 0.8) / 0.2, 0, 1) * PI) * 0.055
+	if reduced_motion:
+		lift = 0.0
+		figure.position = Vector3(0, 0.34, 0)
+		figure.rotation.x = 0
+		figure.rotation.z = 0
+		figure.scale = Vector3.ONE
 	node.position = from.lerp(to, progress) + Vector3(0, lift, 0)
-	var impact_time := THRUST_IMPACT if active_move.thrust else float(active_move.duration) * 0.72
-	if time >= impact_time and not active_move.impact:
+	combat_fx.sample_move(time, duration, node.position)
+	# Melee contact depends on actual distance, including a horse's jump.
+	# A fixed time fraction made long chariot captures hit several squares early.
+	var contact_ready := node.position.distance_to(to) <= 1.0
+	if active_move.thrust:
+		contact_ready = time >= THRUST_IMPACT
+	elif active_move.kind == "cannon":
+		contact_ready = time >= duration * 0.72
+	if active_move.capture and contact_ready and not active_move.impact:
 		active_move.impact = true
 		var victim = active_move.move.get("capturedId")
 		if victim != null and piece_nodes.has(int(victim)):
 			piece_nodes[int(victim)].visible = false
+		if active_move.capture:
+			combat_fx.impact(to, active_move.kind, active_move.color, direction)
+			_action_event("impact")
 		if active_move.thrust:
 			_animation_event("impact", THRUST_IMPACT)
 	if time >= float(active_move.duration):
 		var after: Dictionary = active_move.after
+		combat_fx.land(to, active_move.kind, active_move.color)
 		if active_move.thrust:
 			_animation_event("end", THRUST_DURATION)
+		_action_event("end")
 		active_move = {}
 		_sync_state({"state": after, "selectedId": null, "legalMoves": []})
 		_emit({"type": "move_done"})
-	else:
-		_sync_pedestals()
+
+func _action_event(phase: String) -> void:
+	_emit({"type": "action", "phase": phase, "kind": active_move.kind, "color": active_move.color, "capture": active_move.capture})
 
 func _smooth(value: float) -> float:
 	var x := clampf(value, 0, 1)
@@ -811,6 +915,9 @@ func _emit_metrics(request_id = null) -> void:
 		var projected := camera.unproject_position(node.position)
 		var head_projected := camera.unproject_position(node.position + Vector3(0, 2.1, 0))
 		var visual := {"id": piece.id, "type": piece.type, "color": piece.color, "visible": node.visible, "position": [node.position.x, node.position.y, node.position.z], "facing": node.rotation.y + node.get_node("Figure").rotation.y, "screen": [projected.x, projected.y], "headScreen": [head_projected.x, head_projected.y]}
+		var figure: Node3D = node.get_node("Figure")
+		visual.figurePosition = [figure.position.x, figure.position.y, figure.position.z]
+		visual.figureRotation = [figure.rotation.x, figure.rotation.y, figure.rotation.z]
 		if piece.type == "soldier" and manual_clock:
 			visual.bones = _bone_sample(node)
 		visuals.append(visual)
@@ -820,9 +927,14 @@ func _emit_metrics(request_id = null) -> void:
 		metrics.bones = _bone_sample(active_move.node)
 		var victim = active_move.move.get("capturedId")
 		metrics.targetVisualAlive = victim != null and piece_nodes.has(int(victim)) and piece_nodes[int(victim)].visible
+		var moving_position: Vector3 = active_move.node.position
+		metrics.motion = {"kind": active_move.kind, "color": active_move.color, "capture": active_move.capture, "time": active_move.time, "duration": active_move.duration, "position": [moving_position.x, moving_position.y, moving_position.z]}
+	else:
+		metrics.motion = {}
 	if request_id != null:
 		metrics.requestId = request_id
 	metrics.battlefield = battlefield.diagnostics() if is_instance_valid(battlefield) else {}
+	metrics.effects = combat_fx.diagnostics() if is_instance_valid(combat_fx) else {}
 	metrics.pedestals = _pedestal_diagnostics()
 	var cursor_screen := camera.unproject_position(keyboard_cursor.position)
 	metrics.keyboardCursor = {"row": cursor_row, "col": cursor_col, "visible": keyboard_cursor.visible, "screen": [cursor_screen.x, cursor_screen.y]}

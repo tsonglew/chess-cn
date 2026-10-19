@@ -7,6 +7,19 @@
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 .canvas-wrap:fullscreen{width:100vw;height:100vh;min-height:0;max-height:none;background:#182329}
 
+/* Small battle reports stay at the edge of the scene and never intercept play. */
+.display-options{display:flex;align-items:center;gap:15px;flex-shrink:0}
+.battle-notice{position:absolute;top:16px;left:18px;z-index:2;display:flex;align-items:center;gap:9px;max-width:calc(100% - 36px);padding:8px 13px 8px 9px;border:1px solid #c4b18a66;border-radius:4px;background:#202923e8;box-shadow:0 3px 14px #111b192b;color:#f3ead8;font-size:12px;letter-spacing:.04em;line-height:1.5;pointer-events:none}
+#battle-notice-seal{display:grid;place-items:center;flex-shrink:0;width:24px;height:24px;border:1px solid #c9826a;border-radius:50%;color:#efb49c;font:16px var(--serif)}
+.battle-notice[data-side="black"] #battle-notice-seal{border-color:#a6b5a3;color:#d1ddca}
+.battle-notice[data-kind="impact"],.battle-notice[data-kind="check"]{border-color:#d3a766a6}
+.battle-notice[data-kind="victory"]{border-color:#dcc78dbb;background:#3a3629ed}
+.battle-notice.is-visible{animation:battle-notice-enter .18s ease-out both}
+.reduce-effects-motion .battle-notice{animation:none}
+@keyframes battle-notice-enter{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1050px){.board-toolbar{gap:9px}.display-options{gap:9px}.label-switch{gap:5px}}
+@media(max-width:760px){.board-toolbar{height:auto;min-height:49px;flex-wrap:wrap;padding:8px 9px;gap:7px 10px}.display-options{margin-left:auto;gap:12px}.battle-notice{top:12px;left:12px;max-width:calc(100% - 24px);font-size:11px;padding:6px 10px 6px 7px}}
+
 /* Keyboard instructions stay alongside the board, including at narrow widths. */
 .board-panel{align-self:start;width:100%}
 kbd{display:inline-flex;align-items:center;justify-content:center;min-width:18px;padding:1px 4px;border:1px solid #c5c5b8;border-bottom-width:2px;border-radius:3px;background:#f8f5ee;font:10px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;color:#4e594c;white-space:nowrap}

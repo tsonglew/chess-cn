@@ -2,7 +2,7 @@
   "engine": "4.7.2.stable.official.ed1daf0bf",
   "variant": "web_nothreads_release",
   "renderer": "gl_compatibility",
-  "generatedAt": "2026-10-19T08:01:24.271Z",
+  "generatedAt": "2026-10-19T08:32:26.852Z",
   "files": [
     {
       "name": "FONT-LICENSE.txt",
@@ -31,8 +31,8 @@
     },
     {
       "name": "host.js",
-      "bytes": 19915,
-      "sha256": "6d334e8eb1a7e7e31e1c8b0e1e29010b9504228265ed379df631be5cd8c11eb8"
+      "bytes": 23609,
+      "sha256": "b561d151d7cd6eb8bdf7d599fe6027b251becd447032c3cac1d8fdab7f9e3502"
     },
     {
       "name": "index.audio.position.worklet.js",
@@ -46,8 +46,8 @@
     },
     {
       "name": "index.html",
-      "bytes": 7172,
-      "sha256": "f2fd599580251d074074f3d70022714d7186f5d621e9d532ae1fc97949d40e9f"
+      "bytes": 7615,
+      "sha256": "dafb093421bdfbc9f2c1ed9ae62121f634f76fbace45aef3daa985c4dfaecf6a"
     },
     {
       "name": "index.js",
@@ -56,8 +56,8 @@
     },
     {
       "name": "index.pck",
-      "bytes": 13242408,
-      "sha256": "f07d229479d125e1a75294ea78ec466d0ce9aed5424f6768886dd7d21ba17fc1"
+      "bytes": 13258364,
+      "sha256": "12a2aa61139f76f3e634c784a33dfd42eaac480255a44d43b1c50ab10b45f724"
     },
     {
       "name": "index.png",
@@ -76,8 +76,8 @@
     },
     {
       "name": "style.css",
-      "bytes": 12949,
-      "sha256": "fa2339b985fa4e5e04999feee0debf661a58e2f3a6054be7cf07a1dbe4751f30"
+      "bytes": 14477,
+      "sha256": "0e9b84e26124cee0b30ec4a245f2ba541489e782fa6a0d2b8cc4736b7f9b115f"
     }
   ]
 }

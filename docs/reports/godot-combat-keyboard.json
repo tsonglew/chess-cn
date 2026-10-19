@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-19T08:28:54.619Z",
+  "url": "http://127.0.0.1:8000/godot/?test=1&combat=keyboard",
+  "passed": true,
+  "scope": "Desktop real keyboard and pointer input; diagnostics and clock control use the test bridge. No mobile testing.",
+  "checks": [
+    "Loading keyboard actions do not alter the board or settings",
+    "Visible keyboard help, board-focus entry and canvas description",
+    "Enter selects a soldier and illegal sideways Space action cannot move it",
+    "Esc clears selection; WASD plus Enter makes a legal move; move/undo/restart are guarded during animation",
+    "Both sides move by keyboard and held U undoes only once per key press",
+    "Ctrl/Alt/Meta combinations and a trusted IME Process key leave game state unchanged",
+    "Board edges clamp without wrapping",
+    "Four view shortcuts, screen-relative side movement, label toggle and zoom",
+    "Mouse-selected piece can move with the keyboard; keyboard-selected piece can move with the mouse",
+    "Tab leaves canvas; native button Enter and checkbox Space work; canvas Space prevents scrolling",
+    "F enters board fullscreen and Escape exits it"
+  ],
+  "screenshots": [
+    "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-combat/keyboard/combat-selected-soldier.png",
+    "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-combat/keyboard/combat-side-cursor.png",
+    "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-combat/keyboard/combat-complete-help.png"
+  ],
+  "samples": {
+    "loading": {
+      "phase": "loading",
+      "turn": "red",
+      "selectedId": null,
+      "historyLength": 0,
+      "keyboard": {
+        "row": 6,
+        "col": 0,
+        "visible": false,
+        "focused": true
+      },
+      "camera": "iso",
+      "labels": true,
+      "pieces": [
+        {
+          "id": 0,
+          "type": "chariot",
+          "color": "black",
+          "row": 0,
+          "col": 0
+        },
+        {
+          "id": 1,
+          "type": "chariot",
+          "color": "red",
+          "row": 9,
+          "col": 0
+        },
+        {
+          "id": 2,
+          "type": "horse",
+          "color": "black",
+          "row": 0,
+          "col": 1
+        },
+        {
+          "id": 3,
+          "type": "horse",
+          "color": "red",
+          "row": 9,
+          "col": 1
+        },
+        {
+          "id": 4,
+          "type": "elephant",
+          "color": "black",
+          "row": 0,
+          "col": 2
+        },
+        {
+          "id": 5,
+          "type": "elephant",
+          "color": "red",
+          "row": 9,
+          "col": 2
+        },
+        {
+          "id": 6,
+          "type": "advisor",
+          "color": "black",
+          "row": 0,
+          "col": 3
+        },
+        {
+          "id": 7,
+          "type": "advisor",
+          "color": "red",
+          "row": 9,
+          "col": 3
+        },
+        {
+          "id": 8,
+          "type": "general",
+          "color": "black",
+          "row": 0,
+          "col": 4
+        },
+        {
+          "id": 9,
+          "type": "general",
+          "color": "red",
+          "row": 9,
+          "col": 4
+        },
+        {
+          "id": 10,
+          "type": "advisor",
+          "color": "black",
+          "row": 0,
+          "col": 5
+        },
+        {
+          "id": 11,
+          "type": "advisor",
+          "color": "red",
+          "row": 9,
+          "col": 5
+        },
+        {
+          "id": 12,
+          "type": "elephant",
+          "color": "black",
+          "row": 0,
+          "col": 6
+        },
+        {
+          "id": 13,
+          "type": "elephant",
+          "color": "red",
+          "row": 9,
+          "col": 6
+        },
+        {
+          "id": 14,
+          "type": "horse",
+          "color": "black",
+          "row": 0,
+          "col": 7
+        },
+        {
+          "id": 15,
+          "type": "horse",
+          "color": "red",
+          "row": 9,
+          "col": 7
+        },
+        {
+          "id": 16,
+          "type": "chariot",
+          "color": "black",
+          "row": 0,
+          "col": 8
+        },
+        {
+          "id": 17,
+          "type": "chariot",
+          "color": "red",
+          "row": 9,
+          "col": 8
+        },
+        {
+          "id": 18,
+          "type": "cannon",
+          "color": "black",
+          "row": 2,
+          "col": 1
+        },
+        {
+          "id": 19,
+          "type": "cannon",
+          "color": "black",
+          "row": 2,
+          "col": 7
+        },
+        {
+          "id": 20,
+          "type": "cannon",
+          "color": "red",
+          "row": 7,
+          "col": 1
+        },
+        {
+          "id": 21,
+          "type": "cannon",
+          "color": "red",
+          "row": 7,
+          "col": 7
+        },
+        {
+          "id": 22,
+          "type": "soldier",
+          "color": "black",
+          "row": 3,
+          "col": 0
+        },
+        {
+          "id": 23,
+          "type": "soldier",
+          "color": "red",
+          "row": 6,
+          "col": 0
+        },
+        {
+          "id": 24,
+          "type": "soldier",
+          "color": "black",
+          "row": 3,
+          "col": 2
+        },
+        {
+          "id": 25,
+          "type": "soldier",
+          "color": "red",
+          "row": 6,
+          "col": 2
+        },
+        {
+          "id": 26,
+          "type": "soldier",
+          "color": "black",
+          "row": 3,
+          "col": 4
+        },
+        {
+          "id": 27,
+          "type": "soldier",
+          "color": "red",
+          "row": 6,
+          "col": 4
+        },
+        {
+          "id": 28,
+          "type": "soldier",
+          "color": "black",
+          "row": 3,
+          "col": 6
+        },
+        {
+          "id": 29,
+          "type": "soldier",
+          "color": "red",
+          "row": 6,
+          "col": 6
+        },
+        {
+          "id": 30,
+          "type": "soldier",
+          "color": "black",
+          "row": 3,
+          "col": 8
+        },
+        {
+          "id": 31,
+          "type": "soldier",
+          "color": "red",
+          "row": 6,
+          "col": 8
+        }
+      ]
+    },
+    "final": {
+      "phase": "ready",
+      "turn": "red",
+      "selectedId": null,
+      "historyLength": 0,
+      "keyboard": {
+        "row": 5,
+        "col": 0,
+        "visible": true,
+        "focused": true
+      },
+      "camera": "iso",
+      "labels": true,
+      "cameraDistance": 47,
+      "keyboardCursor": {
+        "col": 0,
+        "row": 5,
+        "screen": [
+          635.1826171875,
+          562.386352539062
+        ],
+        "visible": true
+      },
+      "pieces": [
+        {
+          "id": 0,
+          "type": "chariot",
+          "color": "black",
+          "row": 0,
+          "col": 0
+        },
+        {
+          "id": 1,
+          "type": "chariot",
+          "color": "red",
+          "row": 9,
+          "col": 0
+        },
+        {
+          "id": 2,
+          "type": "horse",
+          "color": "black",
+          "row": 0,
+          "col": 1
+        },
+        {
+          "id": 3,
+          "type": "horse",
+          "color": "red",
+          "row": 9,
+          "col": 1
+        },
+        {
+          "id": 4,
+          "type": "elephant",
+          "color": "black",
+          "row": 0,
+          "col": 2
+        },
+        {
+          "id": 5,
+          "type": "elephant",
+          "color": "red",
+          "row": 9,
+          "col": 2
+        },
+        {
+          "id": 6,
+          "type": "advisor",
+          "color": "black",
+          "row": 0,
+          "col": 3
+        },
+        {
+          "id": 7,
+          "type": "advisor",
+          "color": "red",
+          "row": 9,
+          "col": 3
+        },
+        {
+          "id": 8,
+          "type": "general",
+          "color": "black",
+          "row": 0,
+          "col": 4
+        },
+        {
+          "id": 9,
+          "type": "general",
+          "color": "red",
+          "row": 9,
+          "col": 4
+        },
+        {
+          "id": 10,
+          "type": "advisor",
+          "color": "black",
+          "row": 0,
+          "col": 5
+        },
+        {
+          "id": 11,
+          "type": "advisor",
+          "color": "red",
+          "row": 9,
+          "col": 5
+        },
+        {
+          "id": 12,
+          "type": "elephant",
+          "color": "black",
+          "row": 0,
+          "col": 6
+        },
+        {
+          "id": 13,
+          "type": "elephant",
+          "color": "red",
+          "row": 9,
+          "col": 6
+        },
+        {
+          "id": 14,
+          "type": "horse",
+          "color": "black",
+          "row": 0,
+          "col": 7
+        },
+        {
+          "id": 15,
+          "type": "horse",
+          "color": "red",
+          "row": 9,
+          "col": 7
+        },
+        {
+          "id": 16,
+          "type": "chariot",
+          "color": "black",
+          "row": 0,
+          "col": 8
+        },
+        {
+          "id": 17,
+          "type": "chariot",
+          "color": "red",
+          "row": 9,
+          "col": 8
+        },
+        {
+          "id": 18,
+          "type": "cannon",
+          "color": "black",
+          "row": 2,
+          "col": 1
+        },
+        {
+          "id": 19,
+          "type": "cannon",
+          "color": "black",
+          "row": 2,
+          "col": 7
+        },
+        {
+          "id": 20,
+          "type": "cannon",
+          "color": "red",
+          "row": 7,
+          "col": 1
+        },
+        {
+          "id": 21,
+          "type": "cannon",
+          "color": "red",
+          "row": 7,
+          "col": 7
+        },
+        {
+          "id": 22,
+          "type": "soldier",
+          "color": "black",
+          "row": 3,
+          "col": 0
+        },
+        {
+          "id": 23,
+          "type": "soldier",
+          "color": "red",
+          "row": 6,
+          "col": 0
+        },
+        {
+          "id": 24,
+          "type": "soldier",
+          "color": "black",
+          "row": 3,
+          "col": 2
+        },
+        {
+          "id": 25,
+          "type": "soldier",
+          "color": "red",
+          "row": 6,
+          "col": 2
+        },
+        {
+          "id": 26,
+          "type": "soldier",
+          "color": "black",
+          "row": 3,
+          "col": 4
+        },
+        {
+          "id": 27,
+          "type": "soldier",
+          "color": "red",
+          "row": 6,
+          "col": 4
+        },
+        {
+          "id": 28,
+          "type": "soldier",
+          "color": "black",
+          "row": 3,
+          "col": 6
+        },
+        {
+          "id": 29,
+          "type": "soldier",
+          "color": "red",
+          "row": 6,
+          "col": 6
+        },
+        {
+          "id": 30,
+          "type": "soldier",
+          "color": "black",
+          "row": 3,
+          "col": 8
+        },
+        {
+          "id": 31,
+          "type": "soldier",
+          "color": "red",
+          "row": 6,
+          "col": 8
+        }
+      ]
+    }
+  },
+  "build": {
+    "engine": "4.7.2.stable.official.ed1daf0bf",
+    "variant": "web_nothreads_release",
+    "renderer": "gl_compatibility",
+    "generatedAt": "2026-10-19T08:27:46.337Z",
+    "files": [
+      {
+        "name": "FONT-LICENSE.txt",
+        "bytes": 4350,
+        "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6"
+      },
+      {
+        "name": "FONT-NOTICE.txt",
+        "bytes": 247,
+        "sha256": "b2f0c785e161b5df2acfc91b709d9b2ccb63d43dc85eb4ffcf4366f22a81a80f"
+      },
+      {
+        "name": "GODOT-LICENSE.txt",
+        "bytes": 1149,
+        "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+      },
+      {
+        "name": "THIRD-PARTY-NOTICES.txt",
+        "bytes": 100108,
+        "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+      },
+      {
+        "name": "asset-manifest.json",
+        "bytes": 2184,
+        "sha256": "4d99fb4b04ea84d22d2f9393b540909f909e96edc21409979fe66b406ff43aa3"
+      },
+      {
+        "name": "host.js",
+        "bytes": 23609,
+        "sha256": "b561d151d7cd6eb8bdf7d599fe6027b251becd447032c3cac1d8fdab7f9e3502"
+      },
+      {
+        "name": "index.audio.position.worklet.js",
+        "bytes": 2973,
+        "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+      },
+      {
+        "name": "index.audio.worklet.js",
+        "bytes": 7298,
+        "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+      },
+      {
+        "name": "index.html",
+        "bytes": 7615,
+        "sha256": "dafb093421bdfbc9f2c1ed9ae62121f634f76fbace45aef3daa985c4dfaecf6a"
+      },
+      {
+        "name": "index.js",
+        "bytes": 279815,
+        "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+      },
+      {
+        "name": "index.pck",
+        "bytes": 13258364,
+        "sha256": "1295ecf950ec67a637e2d3f33525edea316b693dd025d54e1fda83993ffd72bc"
+      },
+      {
+        "name": "index.png",
+        "bytes": 21443,
+        "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+      },
+      {
+        "name": "index.wasm",
+        "bytes": 39514754,
+        "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+      },
+      {
+        "name": "rules.js",
+        "bytes": 8107,
+        "sha256": "70037912512ff154e9e989cb1e5564fc4366aecd04681d4fd037c4412101fa27"
+      },
+      {
+        "name": "style.css",
+        "bytes": 14477,
+        "sha256": "0e9b84e26124cee0b30ec4a245f2ba541489e782fa6a0d2b8cc4736b7f9b115f"
+      }
+    ]
+  },
+  "browser": {
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1380,
+      "height": 759
+    },
+    "devicePixelRatio": 2
+  },
+  "uiSnapshot": "[p1 \"楚河汉界 · Godot 对照版\" | space \"Godot combat animation effects\"(5): 1 managed, 0 untracked — p1* \"楚河汉界 · Godot 对照版\"]\nroot\n  container\n    container\n      anchor \"打开 Three.js 原版\" [ref=36, loc=css:a[aria-label=\"打开 Three.js 原版\"], url=http://127.0.0.1:8000/]\n        text \"象\"\n        container\n          text \"楚河汉界\"\n          text \"三维象棋 · 引擎对照\"\n      container\n        text \"GODOT\"\n        text \"网页版\"\n      anchor [ref=37, url=http://127.0.0.1:8000/]\n        text \"打开 Three.js 原版\"\n        text \"↗\"\n    container\n      container \"三维棋盘\"\n        container\n          group \"观察视角\"\n            button [ref=38]\n              text \"1\"\n              text \"斜俯\"\n            button [ref=39]\n              text \"2\"\n              text \"俯视\"\n            button [ref=40]\n              text \"3\"\n              text \"正面\"\n            button [ref=41]\n              text \"4\"\n              text \"侧面\"\n          container\n            container\n              checkbox [ref=42]\n              text \"战斗特效\"\n            container\n              checkbox [ref=43]\n              text \"棋子字样\"\n        container\n          canvas \"Godot 三维象棋棋盘，可用鼠标或键盘行棋\" [ref=44]\n          text \"斜俯视角\"\n          text \"方向键 / WASD 移动 · Enter 确认 · Esc 取消\"\n        container\n          text \"Godot 已就绪\"\n          text \"采样中\"\n      container \"棋局控制\"\n        container\n          container\n            text \"棋局\"\n            text \"自由对弈\"\n          container\n            text \"红\"\n            heading\n              text \"红方先行\"\n          paragraph\n            text \"点击棋子，再选择高亮落点。\"\n          container\n            button [ref=45]\n              text \"↶ 悔棋\"\n            button [ref=46]\n              text \"重新开局\"\n        container \"键盘操作说明\"\n          container\n            heading\n              text \"键盘操作\"\n            container\n              text \"聚焦棋盘后生效 ·\"\n              text \"Tab\"\n              text \"切换控件\"\n            button [ref=47]\n              text \"键盘已启用\"\n          unordered_list\n            list_item\n              container\n                text \"↑\"\n                text \"↓\"\n                text \"←\"\n                text \"→\"\n                text \"/\"\n                text \"WASD\"\n              text \"按画面方向移光标\"\n            list_item\n              container\n                text \"Enter\"\n                text \"/\"\n                text \"Space\"\n              text \"选子 / 确认落点\"\n            list_item\n              text \"Esc\"\n              text \"取消选择\"\n            list_item\n              container\n                text \"U\"\n                text \"/\"\n                text \"R\"\n              text \"悔棋 / 重新开局\"\n            list_item\n              container\n                text \"1\"\n                text \"–\"\n                text \"4\"\n              text \"斜俯 / 俯视 / 正面 / 侧面\"\n            list_item\n              text \"L\"\n              text \"显示 / 隐藏字样\"\n            list_item\n              container\n                text \"+\"\n                text \"/\"\n                text \"−\"\n              text \"拉近 / 拉远视角\"\n            list_item\n              text \"F\"\n              text \"全屏 / 退出全屏\"\n          status\n            text \"已聚焦棋盘：方向键移动光标，Enter 选择当前格。\"\n        container\n          container\n            text \"动作样板\"\n            text \"1.20 s\"\n          text \"兵\"\n",
+  "errors": []
+}

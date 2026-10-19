@@ -4,6 +4,7 @@ const $ = (id) => document.getElementById(id);
 const clone = (value) => JSON.parse(JSON.stringify(value));
 const views = {iso:'斜俯视角',top:'俯视视角',front:'正面视角',side:'侧面视角'};
 const testMode = new URLSearchParams(location.search).get('test') === '1';
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const beganAt = performance.now();
 let state = createInitialState();
 let callback = null;
@@ -26,6 +27,10 @@ let engine = null;
 let completedMoves = 0;
 let nextRequestId = 1;
 let keyboardCursor = {row:6,col:0,visible:false};
+const effectsSettings = {enabled:true,reducedMotion:motionPreference.matches};
+let battleNotice = null;
+let battleNoticeTimer = null;
+const actionPhases = new Set();
 const pendingInspections = new Map();
 
 function result(ok, reason) { return {ok, ...(reason ? {reason} : {})}; }
@@ -34,8 +39,55 @@ function send(command) {
   try { callback(JSON.stringify(command)); return true; }
   catch (err) { fail(err); return false; }
 }
-function sync() {
-  return send({type:'sync',state:clone(state),selectedId,legalMoves:clone(selectedMoves),testMode,config:{testMode}});
+function sync(resetEffects = false) {
+  return send({type:'sync',state:clone(state),selectedId,legalMoves:clone(selectedMoves),resetEffects:Boolean(resetEffects),testMode,config:{testMode}});
+}
+function clearBattleNotice() {
+  clearTimeout(battleNoticeTimer);
+  battleNoticeTimer = null;
+  battleNotice = null;
+  const notice = $('battle-notice');
+  notice.hidden = true;
+  notice.classList.remove('is-visible');
+  $('battle-notice-text').textContent = '';
+}
+function showBattleNotice(text, color, kind = 'turn') {
+  clearBattleNotice();
+  battleNotice = {text,color,kind,visible:true};
+  const notice = $('battle-notice');
+  notice.dataset.side = color;
+  notice.dataset.kind = kind;
+  $('battle-notice-seal').textContent = color === 'red' ? '红' : '黑';
+  $('battle-notice-text').textContent = text;
+  notice.hidden = false;
+  // Only a new action restarts the entrance; metrics renders leave it untouched.
+  void notice.offsetWidth;
+  notice.classList.add('is-visible');
+  battleNoticeTimer = setTimeout(clearBattleNotice,kind === 'check' || kind === 'victory' ? 2800 : 1900);
+}
+function announceAction(event) {
+  if (phase !== 'moving' || actionPhases.has(event.phase)) return;
+  actionPhases.add(event.phase);
+  const color = event.color === 'black' ? 'black' : 'red';
+  const pieceName = `${color === 'red' ? '红' : '黑'}${GLYPH[color][event.kind] || '方'}`;
+  if (event.phase === 'start') showBattleNotice(`${pieceName}${event.capture ? '进击' : '行棋'}`,color,'start');
+  else if (event.phase === 'impact' && event.capture) showBattleNotice(`${pieceName}命中 · 吃子`,color,'impact');
+}
+function announceTurn() {
+  const currentStatus = status();
+  const color = currentStatus.over ? currentStatus.winner : state.turn;
+  const side = color === 'red' ? '红' : '黑';
+  if (currentStatus.over) showBattleNotice(`${side}方胜出`,color,'victory');
+  else if (currentStatus.check) showBattleNotice(`将军 · ${side}方应将`,color,'check');
+  else showBattleNotice(mode.startsWith('demo-') ? '演示完成 · 可再次观看' : `轮到${side}方行棋`,color,'turn');
+}
+function sendEffects() { return send({type:'effects',...effectsSettings}); }
+function showEffects(enabled) {
+  if (!runtimeReady || phase === 'error') return result(false,'runtime_unavailable');
+  effectsSettings.enabled = Boolean(enabled);
+  const sent = sendEffects();
+  render();
+  return result(sent,sent ? undefined : 'runtime_unavailable');
 }
 function clearSelection() { selectedId = null; selectedMoves = []; }
 function inputHint() { return keyboardCursor.visible ? '方向键移动光标，Enter 选子并确认落点。' : '点击棋子，再选择高亮落点。'; }
@@ -44,6 +96,7 @@ function snapshot() {
   return clone({runtimeReady,phase,testMode,mode,turn:state.turn,pieces:state.pieces,selectedId,
     legalMoves:selectedMoves,lastMove:state.lastMove,historyLength:state.history.length,
     completedMoves,status:status(),animation,camera,focus,labels,metrics,runtime,error,errors,
+    effects:effectsSettings,battleNotice,
     keyboard:{...keyboardCursor,focused:document.activeElement === $('canvas')},
     coordinates:'row 0..9 (black home to red home); col 0..8 (red left to right)',
   });
@@ -51,7 +104,8 @@ function snapshot() {
 function render() {
   const busy = !runtimeReady || phase === 'moving' || phase === 'error';
   const currentStatus = status();
-  const red = state.turn === 'red';
+  const movingColor = phase === 'moving' ? state.pieces.find((piece) => piece.id === state.lastMove?.pieceId)?.color : null;
+  const red = (movingColor ?? state.turn) === 'red';
   $('turn-seal').textContent = red ? '红' : '黑';
   $('turn-seal').className = `turn-seal ${red ? 'red' : 'black'}`;
   $('turn-text').textContent = phase === 'moving' ? '行棋演出中' : currentStatus.over
@@ -66,6 +120,10 @@ function render() {
   $('replay-button').disabled = busy || !mode.startsWith('demo-');
   $('labels-toggle').disabled = !runtimeReady || phase === 'error';
   $('labels-toggle').checked = labels;
+  $('effects-toggle').disabled = !runtimeReady || phase === 'error';
+  $('effects-toggle').checked = effectsSettings.enabled;
+  $('effects-toggle').title = effectsSettings.reducedMotion ? '已跟随系统减少动态效果' : '走棋扬尘 · 命中火花';
+  $('canvas-wrap').classList.toggle('reduce-effects-motion',effectsSettings.reducedMotion || !effectsSettings.enabled);
   $('keyboard-focus').disabled = busy;
   const keyboardFocused = document.activeElement === $('canvas');
   $('keyboard-help').classList.toggle('keyboard-active',keyboardFocused);
@@ -120,6 +178,7 @@ function move(...args) {
   const captured = applyMove(state,piece,to);
   const receipt = {pieceId:piece.id,from,to,capturedId:captured?.id ?? null};
   clearSelection();
+  clearBattleNotice(); actionPhases.clear();
   phase = 'moving';
   animation = {phase:'idle',clip:null,time:0,trace:[]};
   hint = `${piece.color === 'red' ? '红' : '黑'}${GLYPH[piece.color][piece.type]}${captured ? '进击' : '行棋'}中…`;
@@ -137,9 +196,10 @@ function square(row,col) {
 }
 function reset(nextState, nextMode) {
   state = nextState; mode = nextMode; clearSelection();
+  clearBattleNotice(); actionPhases.clear();
   animation = {phase:'idle',clip:null,time:0,trace:[]};
   hint = inputHint();
-  phase = 'ready'; sync(); render();
+  phase = 'ready'; sync(true); render();
 }
 function restart() {
   if (!canPlay()) return result(false,'runtime_busy');
@@ -156,7 +216,8 @@ function undo() {
   keyboardCursor = {...keyboardCursor,...undone.from};
   send({type:'cursor',...keyboardCursor});
   clearSelection(); animation = {phase:'idle',clip:null,time:0,trace:[]};
-  hint = '已撤回一步。'; sync(); render();
+  clearBattleNotice(); actionPhases.clear();
+  hint = '已撤回一步。'; sync(true); render();
   return result(true);
 }
 function demo(color = 'red') {
@@ -275,6 +336,7 @@ async function advanceTime(ms) {
 function fail(reason) {
   error = reason instanceof Error ? reason.message : String(reason);
   errors.push(error); phase = 'error';
+  clearBattleNotice();
   $('loading').hidden = false; $('loading').classList.add('failed');
   $('loading-title').textContent = '棋局未能启动';
   $('loading-detail').textContent = error;
@@ -297,7 +359,7 @@ window.GodotHost = {
       $('loading').hidden = true;
       const version = typeof event.engine === 'string' ? event.engine : event.engine?.version ?? event.version;
       if (version) $('engine-version').textContent = `${version.toLowerCase().startsWith('godot') ? '' : 'Godot '}${version} · WebGL 2`;
-      queueMicrotask(() => { sync(); send({type:'camera',view:camera}); send({type:'labels',visible:labels}); send({type:'inspect'}); });
+      queueMicrotask(() => { sync(true); sendEffects(); send({type:'camera',view:camera}); send({type:'labels',visible:labels}); send({type:'inspect'}); });
     } else if (type === 'square') {
       keyboardCursor = {row:Number(event.row),col:Number(event.col),visible:false};
       send({type:'cursor',...keyboardCursor});
@@ -310,9 +372,12 @@ window.GodotHost = {
     } else if (type === 'move_done') {
       phase = 'ready'; completedMoves++;
       hint = mode.startsWith('demo-') ? '可切换视角、再次演示，或重新开局。' : inputHint();
+      announceTurn();
       // The scene owns the completed placement. Sync only clears highlights and
       // reconciles the rule state; it must not trigger a second animation.
       queueMicrotask(sync);
+    } else if (type === 'action') {
+      announceAction(event);
     } else if (type === 'animation') {
       const point = {phase:event.phase,clip:event.clip ?? 'SoldierThrust',time:Number(event.time) || 0};
       animation = {...animation,...point,trace:[...animation.trace,point].slice(-30)};
@@ -336,7 +401,7 @@ window.GodotHost = {
 };
 window.render_game_to_text = () => JSON.stringify(snapshot());
 window.advanceTime = advanceTime;
-window.godotTest = {state:snapshot,select,move,square,demo,view,labels:showLabels,advanceTime,undo,restart,inspect};
+window.godotTest = {state:snapshot,select,move,square,demo,view,labels:showLabels,effects:showEffects,advanceTime,undo,restart,inspect};
 
 $('undo-button').addEventListener('click',undo);
 $('restart-button').addEventListener('click',restart);
@@ -344,6 +409,13 @@ $('demo-red').addEventListener('click',() => demo('red'));
 $('demo-black').addEventListener('click',() => demo('black'));
 $('replay-button').addEventListener('click',() => demo(lastDemo));
 $('labels-toggle').addEventListener('change',(event) => showLabels(event.target.checked));
+$('effects-toggle').addEventListener('change',(event) => showEffects(event.target.checked));
+motionPreference.addEventListener('change',(event) => {
+  effectsSettings.reducedMotion = event.matches;
+  clearBattleNotice();
+  if (runtimeReady && phase !== 'error') sendEffects();
+  render();
+});
 $('reload-button').addEventListener('click',() => location.reload());
 $('keyboard-focus').addEventListener('click',focusKeyboard);
 $('canvas').addEventListener('focus',render);
