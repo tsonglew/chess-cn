@@ -49,14 +49,42 @@
 
       <aside class="control-panel" aria-label="棋局控制">
         <section class="game-control">
+          <div class="mode-tabs" role="group" aria-label="游戏模式">
+            <button id="mode-game" type="button" aria-pressed="true" disabled>自由对弈</button>
+            <button id="mode-puzzle" type="button" aria-pressed="false" disabled>残局研习</button>
+          </div>
+          <div id="puzzle-picker" class="puzzle-picker" hidden>
+            <div class="puzzle-picker-heading"><label for="puzzle-select">选择关卡</label><span class="preview-badge">教学预览</span></div>
+            <select id="puzzle-select" aria-label="残局关卡" disabled><option>正在加载关卡…</option></select>
+          </div>
           <div class="section-kicker"><span>棋局</span><span id="mode-label">自由对弈</span></div>
           <div class="turn-heading"><span id="turn-seal" class="turn-seal red">红</span><h1 id="turn-text">红方先行</h1></div>
           <p id="game-hint" class="game-hint" aria-live="polite">点击棋子，再选择高亮落点。</p>
           <div class="game-actions"><button id="undo-button" type="button" disabled>↶ 悔棋</button><button id="restart-button" type="button" disabled>重新开局</button></div>
         </section>
 
+        <section id="puzzle-panel" class="puzzle-control" aria-label="残局目标与提示" hidden>
+          <div class="section-kicker"><span>破局目标</span><span id="puzzle-progress">已通关 0 / 8</span></div>
+          <h2 id="puzzle-goal">红方先行，将死黑将</h2>
+          <div class="puzzle-readout"><span id="puzzle-turns">红方已走 0 步</span><span id="puzzle-status" role="status" aria-live="polite">准备布阵</span></div>
+          <p id="puzzle-message" class="puzzle-message" aria-live="polite">先观察局面，再选择红方棋子。</p>
+          <p id="puzzle-storage-warning" class="puzzle-storage-warning" role="status" aria-live="polite" hidden></p>
+          <div class="puzzle-actions">
+            <button id="puzzle-reload" type="button" hidden>重新加载关卡</button>
+            <button id="puzzle-hint" type="button" disabled>提示 1 / 3</button>
+            <button id="puzzle-demo" type="button" disabled>演示答案</button>
+            <button id="puzzle-stop-demo" class="accent-button" type="button" hidden>退出演示，回到棋局</button>
+            <button id="puzzle-continue" type="button" hidden>继续尝试这条走法</button>
+            <button id="puzzle-resume" type="button" hidden>继续棋局</button>
+          </div>
+          <div class="puzzle-navigation"><button id="puzzle-previous" type="button" disabled>← 上一关</button><button id="puzzle-next" type="button" disabled>下一关 →</button></div>
+        </section>
+
         <section class="keyboard-help" id="keyboard-help" aria-label="键盘操作说明">
           <div class="keyboard-heading"><h2>键盘操作</h2><span>聚焦棋盘后生效 · <kbd>Tab</kbd> 切换控件</span><button id="keyboard-focus" type="button" disabled>使用键盘</button></div>
+          <p class="keyboard-quick"><kbd>↑↓←→</kbd> 移动 · <kbd>Enter</kbd> 确认</p>
+          <details id="keyboard-details" open><summary>完整快捷键</summary>
+          <p class="keyboard-expanded-hint">聚焦棋盘后生效 · <kbd>Tab</kbd> / <kbd>Shift+Tab</kbd> 切换控件</p>
           <ul class="keyboard-shortcuts">
             <li><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> / <kbd>WASD</kbd></span><span>按画面方向移光标</span></li>
             <li><span><kbd>Enter</kbd> / <kbd>Space</kbd></span><span>选子 / 确认落点</span></li>
@@ -67,10 +95,17 @@
             <li><span><kbd>+</kbd> / <kbd>−</kbd></span><span>拉近 / 拉远视角</span></li>
             <li><span><kbd>F</kbd></span><span>全屏 / 退出全屏</span></li>
           </ul>
+          </details>
           <p id="keyboard-status" class="keyboard-status" role="status" aria-live="polite" aria-atomic="true">先点“使用键盘”或用 Tab 聚焦棋盘。</p>
         </section>
 
-        <section class="motion-control">
+        <section id="puzzle-notes" class="puzzle-notes" aria-label="关卡思路与说明" hidden>
+          <details id="puzzle-explanation-details" class="puzzle-explanation"><summary>查看本关思路</summary><p id="puzzle-explanation"></p></details>
+          <p id="puzzle-lock-note" class="puzzle-footnote">通关当前关卡，即可解锁下一关。</p>
+          <p class="puzzle-footnote preview-note">自编教学局面，棋理与难度仍在复核。</p>
+        </section>
+
+        <section id="motion-control" class="motion-control">
           <div class="section-kicker"><span>动作样板</span><span class="motion-duration">1.20 s</span></div>
           <div class="motion-title"><span class="large-glyph">兵<span>卒</span></span><div><h2>向前一击</h2><p>突刺扬尘 · 命中火花</p></div></div>
           <div class="demo-actions"><button id="demo-red" class="accent-button" type="button" disabled>演示红兵</button><button id="demo-black" type="button" disabled>演示黑卒</button></div>
@@ -79,7 +114,7 @@
           <button id="replay-button" class="text-button" type="button" disabled>↻ 再看一次</button>
         </section>
 
-        <section class="observation">
+        <section id="observation" class="observation">
           <div class="section-kicker"><span>这样看更清楚</span></div>
           <p>切到俯视并隐藏字样，比较横冠的士与圆盔的兵；用正面和侧面检查突刺的姿态。</p>
           <div class="piece-legend"><span><i class="red-side"></i>红方</span><span><i class="black-side"></i>黑方</span></div>
@@ -91,7 +126,7 @@
   </div>
   <noscript>请启用 JavaScript 以运行此网页版。</noscript>
   <script src="index.js"></script>
-  <script>window.GODOT_EXPORT_CONFIG = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":13258364,"index.wasm":39514754},"focusCanvas":false,"gdextensionLibs":[],"godotPoolSize":4};</script>
+  <script>window.GODOT_EXPORT_CONFIG = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":13258428,"index.wasm":39514754},"focusCanvas":false,"gdextensionLibs":[],"godotPoolSize":4};</script>
   <script type="module" src="./host.js"></script>
 </body>
 </html>

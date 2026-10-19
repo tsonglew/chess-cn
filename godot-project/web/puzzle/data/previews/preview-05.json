@@ -1,0 +1,154 @@
+{
+  "$schema": "../puzzle.schema.json",
+  "schemaVersion": 1,
+  "id": "preview-05",
+  "contentVersion": 1,
+  "status": "candidate",
+  "title": "马炮转位",
+  "order": 5,
+  "difficulty": "intermediate",
+  "themes": [
+    "调马"
+  ],
+  "sources": [
+    {
+      "title": "项目自编教学预览",
+      "url": null,
+      "accessedAt": null,
+      "reviewStatus": "selfAuthored",
+      "notes": "项目自编局面；不冒用原候选棋谱来源"
+    }
+  ],
+  "initialFen": "9/N8/4k4/9/9/4C4/9/9/9/4K4 w - - 0 1",
+  "initialPosition": {
+    "pieces": [
+      {
+        "id": 0,
+        "type": "horse",
+        "color": "red",
+        "row": 1,
+        "col": 0
+      },
+      {
+        "id": 1,
+        "type": "general",
+        "color": "black",
+        "row": 2,
+        "col": 4
+      },
+      {
+        "id": 2,
+        "type": "cannon",
+        "color": "red",
+        "row": 5,
+        "col": 4
+      },
+      {
+        "id": 3,
+        "type": "general",
+        "color": "red",
+        "row": 9,
+        "col": 4
+      }
+    ],
+    "turn": "red"
+  },
+  "goal": {
+    "kind": "checkmate",
+    "maxRedTurns": 3
+  },
+  "hints": [
+    {
+      "level": 1,
+      "kind": "idea",
+      "text": "先把边马调入宫侧，不必每一步都将军。"
+    },
+    {
+      "level": 2,
+      "kind": "piece",
+      "text": "观察提示高亮的棋子，并考虑它与其他子力的配合。"
+    },
+    {
+      "level": 3,
+      "kind": "destination",
+      "text": "当前局面的正确走法由已证明解法图给出。"
+    }
+  ],
+  "explanation": "先把边马调入宫侧，不必每一步都将军。",
+  "recommendedLine": [
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 1,
+        "col": 0
+      },
+      "to": {
+        "row": 0,
+        "col": 2
+      }
+    },
+    {
+      "pieceId": 1,
+      "from": {
+        "row": 2,
+        "col": 4
+      },
+      "to": {
+        "row": 2,
+        "col": 5
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 0,
+        "col": 2
+      },
+      "to": {
+        "row": 2,
+        "col": 3
+      }
+    },
+    {
+      "pieceId": 1,
+      "from": {
+        "row": 2,
+        "col": 5
+      },
+      "to": {
+        "row": 2,
+        "col": 4
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 2,
+        "col": 3
+      },
+      "to": {
+        "row": 4,
+        "col": 4
+      }
+    }
+  ],
+  "solution": {
+    "path": "puzzles/solutions/preview-05.json",
+    "sha256": "1a9b63ccae8641e96a385d8b76e00fa3dca3705e7f6749d4b372f5e939791faf",
+    "rootKey": "9/N8/4k4/9/9/4C4/9/9/9/4K4 w|3|checkmate|xiangqi-bounded-v1"
+  },
+  "verification": {
+    "status": "passed",
+    "allDefensesCovered": true,
+    "allWinningMovesCovered": true,
+    "shortestMateVerified": true,
+    "minRedTurnsToMate": 3,
+    "rulesVersion": "xiangqi-bounded-v1",
+    "solverVersion": "and-or-v1",
+    "reportPath": "docs/reports/teaching-previews.json",
+    "positionHash": "12ed09ca4d4727aed2f373ce25ce2b360c3ca6790a191d48ab98aafdfda86c81",
+    "verifiedBy": "and-or-v1（自动证明；独立复核待完成）",
+    "verifiedAt": "2026-10-09T00:00:00Z"
+  },
+  "notes": "开发预览；自动证明通过不等于独立棋理与难度验收。TODO[DEV-02] 独立复核；禁止加入发布目录。"
+}

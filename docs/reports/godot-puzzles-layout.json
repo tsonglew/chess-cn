@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-19T09:50:27.360Z",
+  "passed": true,
+  "scope": "Two desktop viewports at DPR 1. Layout and discoverability only; no mobile or performance claim.",
+  "checks": [
+    "1368×781 DPR 1: modes, level selection, goal, hint, demo, previous/next and keyboard entry fit without overlap or horizontal overflow",
+    "1100×800 DPR 1: modes, level selection, goal, hint, demo, previous/next and keyboard entry fit without overlap or horizontal overflow",
+    "Expanded keyboard instructions expose U/R and Tab; production progress is unchanged"
+  ],
+  "viewports": [
+    {
+      "width": 1368,
+      "height": 781,
+      "dpr": 1,
+      "documentWidth": 1368,
+      "controls": {
+        "#mode-game": {
+          "x": 1076,
+          "y": 130,
+          "width": 127.5,
+          "height": 32,
+          "right": 1203.5,
+          "bottom": 162,
+          "visible": true,
+          "unobscured": true
+        },
+        "#mode-puzzle": {
+          "x": 1206.5,
+          "y": 130,
+          "width": 127.5,
+          "height": 32,
+          "right": 1334,
+          "bottom": 162,
+          "visible": true,
+          "unobscured": true
+        },
+        "#puzzle-select": {
+          "x": 1072,
+          "y": 203.5,
+          "width": 266,
+          "height": 37,
+          "right": 1338,
+          "bottom": 240.5,
+          "visible": true,
+          "unobscured": true
+        },
+        "#puzzle-goal": {
+          "x": 1072,
+          "y": 409.8984375,
+          "width": 266,
+          "height": 26.59375,
+          "right": 1338,
+          "bottom": 436.4921875,
+          "visible": true,
+          "unobscured": true
+        },
+        "#puzzle-hint": {
+          "x": 1072,
+          "y": 514.4921875,
+          "width": 129,
+          "height": 34,
+          "right": 1201,
+          "bottom": 548.4921875,
+          "visible": true,
+          "unobscured": true
+        },
+        "#puzzle-demo": {
+          "x": 1209,
+          "y": 514.4921875,
+          "width": 129,
+          "height": 34,
+          "right": 1338,
+          "bottom": 548.4921875,
+          "visible": true,
+          "unobscured": true
+        },
+        "#puzzle-previous": {
+          "x": 1072,
+          "y": 556.4921875,
+          "width": 129,
+          "height": 32,
+          "right": 1201,
+          "bottom": 588.4921875,
+          "visible": true,
+          "unobscured": true
+        },
+        "#puzzle-next": {
+          "x": 1209,
+          "y": 556.4921875,
+          "width": 129,
+          "height": 32,
+          "right": 1338,
+          "bottom": 588.4921875,
+          "visible": true,
+          "unobscured": true
+        },
+        "#keyboard-focus": {
+          "x": 1261,
+          "y": 609.4921875,
+          "width": 66,
+          "height": 27,
+          "right": 1327,
+          "bottom": 636.4921875,
+          "visible": true,
+          "unobscured": true
+        }
+      },
+      "expandedKeyboard": {
+        "undo": true,
+        "restart": true,
+        "tab": true
+      }
+    },
+    {
+      "width": 1100,
+      "height": 800,
+      "dpr": 1,
+      "documentWidth": 1100,
+      "controls": {
+        "#mode-game": {
+          "x": 808,
+          "y": 130,
+          "width": 127.5,
+          "height": 32,
+          "right": 935.5,
+          "bottom": 162,
+          "visible": true,
+          "unobscured": true
+        },
+        "#mode-puzzle": {
+          "x": 938.5,
+          "y": 130,
+          "width": 127.5,
+          "height": 32,
+          "right": 1066,
+          "bottom": 162,
+          "visible": true,
+          "unobscured": true
+        },
+        "#puzzle-select": {
+          "x": 804,
+          "y": 203.5,
+          "width": 266,
+          "height": 37,
+          "right": 1070,
+          "bottom": 240.5,
+          "visible": true,
+          "unobscured": true
+        },
+        "#puzzle-goal": {
+          "x": 804,
+          "y": 409.8984375,
+          "width": 266,
+          "height": 26.59375,
+          "right": 1070,
+          "bottom": 436.4921875,
+          "visible": true,
+          "unobscured": true
+        },
+        "#puzzle-hint": {
+          "x": 804,
+          "y": 514.4921875,
+          "width": 129,
+          "height": 34,
+          "right": 933,
+          "bottom": 548.4921875,
+          "visible": true,
+          "unobscured": true
+        },
+        "#puzzle-demo": {
+          "x": 941,
+          "y": 514.4921875,
+          "width": 129,
+          "height": 34,
+          "right": 1070,
+          "bottom": 548.4921875,
+          "visible": true,
+          "unobscured": true
+        },
+        "#puzzle-previous": {
+          "x": 804,
+          "y": 556.4921875,
+          "width": 129,
+          "height": 32,
+          "right": 933,
+          "bottom": 588.4921875,
+          "visible": true,
+          "unobscured": true
+        },
+        "#puzzle-next": {
+          "x": 941,
+          "y": 556.4921875,
+          "width": 129,
+          "height": 32,
+          "right": 1070,
+          "bottom": 588.4921875,
+          "visible": true,
+          "unobscured": true
+        },
+        "#keyboard-focus": {
+          "x": 993,
+          "y": 609.4921875,
+          "width": 66,
+          "height": 27,
+          "right": 1059,
+          "bottom": 636.4921875,
+          "visible": true,
+          "unobscured": true
+        }
+      },
+      "expandedKeyboard": {
+        "undo": true,
+        "restart": true,
+        "tab": true
+      }
+    }
+  ],
+  "screenshots": [
+    "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-puzzles/layout-1368x781.png",
+    "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-puzzles/layout-1100x800.png"
+  ],
+  "url": "http://127.0.0.1:8000/godot/?test=1"
+}

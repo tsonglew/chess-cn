@@ -1,0 +1,132 @@
+{
+  "$schema": "../puzzle.schema.json",
+  "schemaVersion": 1,
+  "id": "preview-04",
+  "contentVersion": 1,
+  "status": "candidate",
+  "title": "马炮合杀",
+  "order": 4,
+  "difficulty": "basic",
+  "themes": [
+    "马后炮"
+  ],
+  "sources": [
+    {
+      "title": "项目自编教学预览",
+      "url": null,
+      "accessedAt": null,
+      "reviewStatus": "selfAuthored",
+      "notes": "项目自编局面；不冒用原候选棋谱来源"
+    }
+  ],
+  "initialFen": "9/7N1/3k5/9/9/9/9/4C4/9/5K3 w - - 0 1",
+  "initialPosition": {
+    "pieces": [
+      {
+        "id": 0,
+        "type": "horse",
+        "color": "red",
+        "row": 1,
+        "col": 7
+      },
+      {
+        "id": 1,
+        "type": "general",
+        "color": "black",
+        "row": 2,
+        "col": 3
+      },
+      {
+        "id": 2,
+        "type": "cannon",
+        "color": "red",
+        "row": 7,
+        "col": 4
+      },
+      {
+        "id": 3,
+        "type": "general",
+        "color": "red",
+        "row": 9,
+        "col": 5
+      }
+    ],
+    "turn": "red"
+  },
+  "goal": {
+    "kind": "checkmate",
+    "maxRedTurns": 2
+  },
+  "hints": [
+    {
+      "level": 1,
+      "kind": "idea",
+      "text": "马既控制逃路，也可以成为炮架。"
+    },
+    {
+      "level": 2,
+      "kind": "piece",
+      "text": "观察提示高亮的棋子，并考虑它与其他子力的配合。"
+    },
+    {
+      "level": 3,
+      "kind": "destination",
+      "text": "当前局面的正确走法由已证明解法图给出。"
+    }
+  ],
+  "explanation": "马既控制逃路，也可以成为炮架。",
+  "recommendedLine": [
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 1,
+        "col": 7
+      },
+      "to": {
+        "row": 2,
+        "col": 5
+      }
+    },
+    {
+      "pieceId": 1,
+      "from": {
+        "row": 2,
+        "col": 3
+      },
+      "to": {
+        "row": 2,
+        "col": 4
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 2,
+        "col": 5
+      },
+      "to": {
+        "row": 4,
+        "col": 4
+      }
+    }
+  ],
+  "solution": {
+    "path": "puzzles/solutions/preview-04.json",
+    "sha256": "e4b6a662553b393b2efc82cee62c366ecc21f17a1ce09414a8fe0fd419d52f1c",
+    "rootKey": "9/7N1/3k5/9/9/9/9/4C4/9/5K3 w|2|checkmate|xiangqi-bounded-v1"
+  },
+  "verification": {
+    "status": "passed",
+    "allDefensesCovered": true,
+    "allWinningMovesCovered": true,
+    "shortestMateVerified": true,
+    "minRedTurnsToMate": 2,
+    "rulesVersion": "xiangqi-bounded-v1",
+    "solverVersion": "and-or-v1",
+    "reportPath": "docs/reports/teaching-previews.json",
+    "positionHash": "1713e69b6a7651a7adf1bc4f50d8be92302fd88c3a14b7d46af6914bb5a4621c",
+    "verifiedBy": "and-or-v1（自动证明；独立复核待完成）",
+    "verifiedAt": "2026-10-09T00:00:00Z"
+  },
+  "notes": "开发预览；自动证明通过不等于独立棋理与难度验收。TODO[DEV-02] 独立复核；禁止加入发布目录。"
+}

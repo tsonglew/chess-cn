@@ -656,7 +656,7 @@ func _begin_move(command: Dictionary) -> void:
 	var capture: bool = move.get("capturedId") != null
 	var durations := {"soldier": 0.46, "horse": 0.66, "chariot": 0.6, "cannon": 0.9 if capture else 0.58, "advisor": 0.5, "elephant": 0.64, "general": 0.54}
 	var duration: float = THRUST_DURATION if is_thrust else durations.get(piece.type, 0.46)
-	active_move = {"node": node, "move": move, "after": command.after, "from": from, "to": to, "time": 0.0, "impact": false, "thrust": is_thrust, "duration": duration, "kind": piece.type, "color": piece.color, "capture": capture}
+	active_move = {"node": node, "move": move, "after": command.after, "from": from, "to": to, "time": 0.0, "impact": false, "thrust": is_thrust, "duration": duration, "requestId": command.get("requestId"), "kind": piece.type, "color": piece.color, "capture": capture}
 	combat_fx.begin_move(from, to, piece.type, piece.color, capture, duration)
 	_action_event("start")
 	if is_thrust:
@@ -781,13 +781,14 @@ func _tick_step(delta: float) -> void:
 			_animation_event("impact", THRUST_IMPACT)
 	if time >= float(active_move.duration):
 		var after: Dictionary = active_move.after
+		var move_request_id = active_move.get("requestId")
 		combat_fx.land(to, active_move.kind, active_move.color)
 		if active_move.thrust:
 			_animation_event("end", THRUST_DURATION)
 		_action_event("end")
 		active_move = {}
 		_sync_state({"state": after, "selectedId": null, "legalMoves": []})
-		_emit({"type": "move_done"})
+		_emit({"type": "move_done", "requestId": move_request_id})
 
 func _action_event(phase: String) -> void:
 	_emit({"type": "action", "phase": phase, "kind": active_move.kind, "color": active_move.color, "capture": active_move.capture})

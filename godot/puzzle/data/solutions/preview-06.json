@@ -1,0 +1,351 @@
+{
+  "schemaVersion": 1,
+  "puzzleId": "preview-06",
+  "contentVersion": 1,
+  "solverVersion": "and-or-v1",
+  "inputHash": "4d603ce4f169985d17956d4589e485e47eb7abf79ef04f4fa7e2c715da5f2ec0",
+  "status": "complete",
+  "proofStatus": "proven",
+  "minRedTurnsToMate": 3,
+  "rulesVersion": "xiangqi-bounded-v1",
+  "rootKey": "9/5k3/5a3/N8/6R2/9/9/9/9/5K3 w|3|checkmate|xiangqi-bounded-v1",
+  "nodes": {
+    "9/5k3/5a3/N8/6R2/9/9/9/9/5K3 w|3|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 3,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 3,
+              "col": 0
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "key": "9/5k3/2N2a3/9/6R2/9/9/9/9/5K3 b|2|checkmate|xiangqi-bounded-v1",
+          "distance": 3
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          "key": "9/5kR2/5a3/N8/9/9/9/9/9/5K3 b|2|checkmate|xiangqi-bounded-v1",
+          "distance": 3
+        }
+      ],
+      "legalMoveCount": 23
+    },
+    "9/5k3/2N2a3/9/6R2/9/9/9/9/5K3 b|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 5
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          "key": "5k3/9/2N2a3/9/6R2/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "5k3/9/2N2a3/9/6R2/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          "key": "5k3/6R2/2N2a3/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 6
+            }
+          },
+          "key": "5k3/9/2N2aR2/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 27
+    },
+    "5k3/6R2/2N2a3/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          "key": "4k4/6R2/2N2a3/9/9/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "4k4/6R2/2N2a3/9/9/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 6
+            },
+            "to": {
+              "row": 0,
+              "col": 6
+            }
+          },
+          "key": "4k1R2/9/2N2a3/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 26
+    },
+    "4k1R2/9/2N2a3/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "5k3/9/2N2aR2/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          "key": "4k4/9/2N2aR2/9/9/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          "key": "9/5k3/2N2aR2/9/9/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 2
+    },
+    "4k4/9/2N2aR2/9/9/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 0,
+              "col": 6
+            }
+          },
+          "key": "4k1R2/9/2N2a3/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 21
+    },
+    "9/5k3/2N2aR2/9/9/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          "key": "9/5k3/2N2R3/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 22
+    },
+    "9/5k3/2N2R3/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/5kR2/5a3/N8/9/9/9/9/9/5K3 b|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 5
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          "key": "5k3/6R2/5a3/N8/9/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "5k3/6R2/5a3/N8/9/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 3,
+              "col": 0
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          "key": "5k3/6R2/2N2a3/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 23
+    }
+  },
+  "visited": 2350,
+  "cached": 2350,
+  "maxNodes": 500000,
+  "timeMs": 60000,
+  "recommendedLine": [
+    {
+      "pieceId": 2,
+      "from": {
+        "row": 3,
+        "col": 0
+      },
+      "to": {
+        "row": 2,
+        "col": 2
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 1,
+        "col": 5
+      },
+      "to": {
+        "row": 0,
+        "col": 5
+      }
+    },
+    {
+      "pieceId": 3,
+      "from": {
+        "row": 4,
+        "col": 6
+      },
+      "to": {
+        "row": 1,
+        "col": 6
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 0,
+        "col": 5
+      },
+      "to": {
+        "row": 0,
+        "col": 4
+      }
+    },
+    {
+      "pieceId": 3,
+      "from": {
+        "row": 1,
+        "col": 6
+      },
+      "to": {
+        "row": 0,
+        "col": 6
+      }
+    }
+  ]
+}

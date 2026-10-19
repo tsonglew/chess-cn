@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "puzzleId": "preview-04",
+  "contentVersion": 1,
+  "solverVersion": "and-or-v1",
+  "inputHash": "1713e69b6a7651a7adf1bc4f50d8be92302fd88c3a14b7d46af6914bb5a4621c",
+  "status": "complete",
+  "proofStatus": "proven",
+  "minRedTurnsToMate": 2,
+  "rulesVersion": "xiangqi-bounded-v1",
+  "rootKey": "9/7N1/3k5/9/9/9/9/4C4/9/5K3 w|2|checkmate|xiangqi-bounded-v1",
+  "nodes": {
+    "9/7N1/3k5/9/9/9/9/4C4/9/5K3 w|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 7
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          "key": "9/9/3k1N3/9/9/9/9/4C4/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 23
+    },
+    "9/9/3k1N3/9/9/9/9/4C4/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          "key": "9/9/4kN3/9/9/9/9/4C4/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/9/4kN3/9/9/9/9/4C4/9/5K3 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 4,
+              "col": 4
+            }
+          },
+          "key": "9/9/4k4/9/4N4/9/9/4C4/9/5K3 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 22
+    },
+    "9/9/4k4/9/4N4/9/9/4C4/9/5K3 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    }
+  },
+  "visited": 275,
+  "cached": 275,
+  "maxNodes": 500000,
+  "timeMs": 60000,
+  "recommendedLine": [
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 1,
+        "col": 7
+      },
+      "to": {
+        "row": 2,
+        "col": 5
+      }
+    },
+    {
+      "pieceId": 1,
+      "from": {
+        "row": 2,
+        "col": 3
+      },
+      "to": {
+        "row": 2,
+        "col": 4
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 2,
+        "col": 5
+      },
+      "to": {
+        "row": 4,
+        "col": 4
+      }
+    }
+  ]
+}

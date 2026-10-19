@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "generatedAt": "2026-10-19T09:52:56.972Z",
+  "url": "http://127.0.0.1:54997/godot/?mode=puzzle",
+  "checks": [
+    "Natural-clock first puzzle completed with real keyboard",
+    "Second puzzle and automatic black reply in third puzzle animate without advanceTime",
+    "Unproven branch remains visible and retryable"
+  ],
+  "redAndBlackElapsedMs": 1218,
+  "state": {
+    "phase": "ready",
+    "testMode": false,
+    "puzzlePhase": "wrongMove",
+    "moves": [
+      {
+        "pieceId": 1,
+        "from": {
+          "row": 3,
+          "col": 0
+        },
+        "to": {
+          "row": 0,
+          "col": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  "screenshots": [
+    "/Users/liucong03/.codex/worktrees/godot-web-comparison/chess-cn/output/godot-puzzles/realtime-wrong-branch.png"
+  ]
+}

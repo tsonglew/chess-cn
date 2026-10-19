@@ -1,0 +1,132 @@
+{
+  "$schema": "../puzzle.schema.json",
+  "schemaVersion": 1,
+  "id": "preview-03",
+  "contentVersion": 1,
+  "status": "candidate",
+  "title": "双车接力",
+  "order": 3,
+  "difficulty": "basic",
+  "themes": [
+    "双车"
+  ],
+  "sources": [
+    {
+      "title": "项目自编教学预览",
+      "url": null,
+      "accessedAt": null,
+      "reviewStatus": "selfAuthored",
+      "notes": "项目自编局面；不冒用原候选棋谱来源"
+    }
+  ],
+  "initialFen": "4k4/9/9/R8/8R/9/9/9/9/3K5 w - - 0 1",
+  "initialPosition": {
+    "pieces": [
+      {
+        "id": 0,
+        "type": "general",
+        "color": "black",
+        "row": 0,
+        "col": 4
+      },
+      {
+        "id": 1,
+        "type": "chariot",
+        "color": "red",
+        "row": 3,
+        "col": 0
+      },
+      {
+        "id": 2,
+        "type": "chariot",
+        "color": "red",
+        "row": 4,
+        "col": 8
+      },
+      {
+        "id": 3,
+        "type": "general",
+        "color": "red",
+        "row": 9,
+        "col": 3
+      }
+    ],
+    "turn": "red"
+  },
+  "goal": {
+    "kind": "checkmate",
+    "maxRedTurns": 2
+  },
+  "hints": [
+    {
+      "level": 1,
+      "kind": "idea",
+      "text": "一车先限制将的活动范围，另一车完成最后一击。"
+    },
+    {
+      "level": 2,
+      "kind": "piece",
+      "text": "观察提示高亮的棋子，并考虑它与其他子力的配合。"
+    },
+    {
+      "level": 3,
+      "kind": "destination",
+      "text": "当前局面的正确走法由已证明解法图给出。"
+    }
+  ],
+  "explanation": "一车先限制将的活动范围，另一车完成最后一击。",
+  "recommendedLine": [
+    {
+      "pieceId": 1,
+      "from": {
+        "row": 3,
+        "col": 0
+      },
+      "to": {
+        "row": 1,
+        "col": 0
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 0,
+        "col": 4
+      },
+      "to": {
+        "row": 0,
+        "col": 5
+      }
+    },
+    {
+      "pieceId": 2,
+      "from": {
+        "row": 4,
+        "col": 8
+      },
+      "to": {
+        "row": 0,
+        "col": 8
+      }
+    }
+  ],
+  "solution": {
+    "path": "puzzles/solutions/preview-03.json",
+    "sha256": "eb93e80318223c6a94a16cb45b6392149629b49dd54706d2f3da86cbefd78e31",
+    "rootKey": "4k4/9/9/R8/8R/9/9/9/9/3K5 w|2|checkmate|xiangqi-bounded-v1"
+  },
+  "verification": {
+    "status": "passed",
+    "allDefensesCovered": true,
+    "allWinningMovesCovered": true,
+    "shortestMateVerified": true,
+    "minRedTurnsToMate": 2,
+    "rulesVersion": "xiangqi-bounded-v1",
+    "solverVersion": "and-or-v1",
+    "reportPath": "docs/reports/teaching-previews.json",
+    "positionHash": "ba661256056f318db8e12a91e0a70a9c17e4c9fb659fb8b23721f6ee300d6e20",
+    "verifiedBy": "and-or-v1（自动证明；独立复核待完成）",
+    "verifiedAt": "2026-10-09T00:00:00Z"
+  },
+  "notes": "开发预览；自动证明通过不等于独立棋理与难度验收。TODO[DEV-02] 独立复核；禁止加入发布目录。"
+}

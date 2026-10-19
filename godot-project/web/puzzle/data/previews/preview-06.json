@@ -1,0 +1,161 @@
+{
+  "$schema": "../puzzle.schema.json",
+  "schemaVersion": 1,
+  "id": "preview-06",
+  "contentVersion": 1,
+  "status": "candidate",
+  "title": "车马静着",
+  "order": 6,
+  "difficulty": "intermediate",
+  "themes": [
+    "静着"
+  ],
+  "sources": [
+    {
+      "title": "项目自编教学预览",
+      "url": null,
+      "accessedAt": null,
+      "reviewStatus": "selfAuthored",
+      "notes": "项目自编局面；不冒用原候选棋谱来源"
+    }
+  ],
+  "initialFen": "9/5k3/5a3/N8/6R2/9/9/9/9/5K3 w - - 0 1",
+  "initialPosition": {
+    "pieces": [
+      {
+        "id": 0,
+        "type": "general",
+        "color": "black",
+        "row": 1,
+        "col": 5
+      },
+      {
+        "id": 1,
+        "type": "advisor",
+        "color": "black",
+        "row": 2,
+        "col": 5
+      },
+      {
+        "id": 2,
+        "type": "horse",
+        "color": "red",
+        "row": 3,
+        "col": 0
+      },
+      {
+        "id": 3,
+        "type": "chariot",
+        "color": "red",
+        "row": 4,
+        "col": 6
+      },
+      {
+        "id": 4,
+        "type": "general",
+        "color": "red",
+        "row": 9,
+        "col": 5
+      }
+    ],
+    "turn": "red"
+  },
+  "goal": {
+    "kind": "checkmate",
+    "maxRedTurns": 3
+  },
+  "hints": [
+    {
+      "level": 1,
+      "kind": "idea",
+      "text": "先改善马的位置，再利用车的横向控制。"
+    },
+    {
+      "level": 2,
+      "kind": "piece",
+      "text": "观察提示高亮的棋子，并考虑它与其他子力的配合。"
+    },
+    {
+      "level": 3,
+      "kind": "destination",
+      "text": "当前局面的正确走法由已证明解法图给出。"
+    }
+  ],
+  "explanation": "先改善马的位置，再利用车的横向控制。",
+  "recommendedLine": [
+    {
+      "pieceId": 2,
+      "from": {
+        "row": 3,
+        "col": 0
+      },
+      "to": {
+        "row": 2,
+        "col": 2
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 1,
+        "col": 5
+      },
+      "to": {
+        "row": 0,
+        "col": 5
+      }
+    },
+    {
+      "pieceId": 3,
+      "from": {
+        "row": 4,
+        "col": 6
+      },
+      "to": {
+        "row": 1,
+        "col": 6
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 0,
+        "col": 5
+      },
+      "to": {
+        "row": 0,
+        "col": 4
+      }
+    },
+    {
+      "pieceId": 3,
+      "from": {
+        "row": 1,
+        "col": 6
+      },
+      "to": {
+        "row": 0,
+        "col": 6
+      }
+    }
+  ],
+  "solution": {
+    "path": "puzzles/solutions/preview-06.json",
+    "sha256": "82b9afcd0b2d7a789c036b327f4a3cb846b88375e5b48493b50673119cf1a0d1",
+    "rootKey": "9/5k3/5a3/N8/6R2/9/9/9/9/5K3 w|3|checkmate|xiangqi-bounded-v1"
+  },
+  "verification": {
+    "status": "passed",
+    "allDefensesCovered": true,
+    "allWinningMovesCovered": true,
+    "shortestMateVerified": true,
+    "minRedTurnsToMate": 3,
+    "rulesVersion": "xiangqi-bounded-v1",
+    "solverVersion": "and-or-v1",
+    "reportPath": "docs/reports/teaching-previews.json",
+    "positionHash": "4d603ce4f169985d17956d4589e485e47eb7abf79ef04f4fa7e2c715da5f2ec0",
+    "verifiedBy": "and-or-v1（自动证明；独立复核待完成）",
+    "verifiedAt": "2026-10-09T00:00:00Z"
+  },
+  "notes": "开发预览；自动证明通过不等于独立棋理与难度验收。TODO[DEV-02] 独立复核；禁止加入发布目录。"
+}

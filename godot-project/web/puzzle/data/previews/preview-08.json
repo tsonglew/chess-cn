@@ -1,0 +1,176 @@
+{
+  "$schema": "../puzzle.schema.json",
+  "schemaVersion": 1,
+  "id": "preview-08",
+  "contentVersion": 1,
+  "status": "candidate",
+  "title": "马炮借帅",
+  "order": 8,
+  "difficulty": "advanced",
+  "themes": [
+    "借帅控线"
+  ],
+  "sources": [
+    {
+      "title": "项目自编教学预览",
+      "url": null,
+      "accessedAt": null,
+      "reviewStatus": "selfAuthored",
+      "notes": "项目自编局面；不冒用原候选棋谱来源"
+    }
+  ],
+  "initialFen": "9/2N1k4/8C/9/9/9/9/9/9/5K3 w - - 0 1",
+  "initialPosition": {
+    "pieces": [
+      {
+        "id": 0,
+        "type": "horse",
+        "color": "red",
+        "row": 1,
+        "col": 2
+      },
+      {
+        "id": 1,
+        "type": "general",
+        "color": "black",
+        "row": 1,
+        "col": 4
+      },
+      {
+        "id": 2,
+        "type": "cannon",
+        "color": "red",
+        "row": 2,
+        "col": 8
+      },
+      {
+        "id": 3,
+        "type": "general",
+        "color": "red",
+        "row": 9,
+        "col": 5
+      }
+    ],
+    "turn": "red"
+  },
+  "goal": {
+    "kind": "checkmate",
+    "maxRedTurns": 4
+  },
+  "hints": [
+    {
+      "level": 1,
+      "kind": "idea",
+      "text": "除马炮以外，帅的横向移动也能改变黑将的逃路。"
+    },
+    {
+      "level": 2,
+      "kind": "piece",
+      "text": "观察提示高亮的棋子，并考虑它与其他子力的配合。"
+    },
+    {
+      "level": 3,
+      "kind": "destination",
+      "text": "当前局面的正确走法由已证明解法图给出。"
+    }
+  ],
+  "explanation": "除马炮以外，帅的横向移动也能改变黑将的逃路。",
+  "recommendedLine": [
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 1,
+        "col": 2
+      },
+      "to": {
+        "row": 3,
+        "col": 3
+      }
+    },
+    {
+      "pieceId": 1,
+      "from": {
+        "row": 1,
+        "col": 4
+      },
+      "to": {
+        "row": 0,
+        "col": 4
+      }
+    },
+    {
+      "pieceId": 2,
+      "from": {
+        "row": 2,
+        "col": 8
+      },
+      "to": {
+        "row": 4,
+        "col": 8
+      }
+    },
+    {
+      "pieceId": 1,
+      "from": {
+        "row": 0,
+        "col": 4
+      },
+      "to": {
+        "row": 0,
+        "col": 3
+      }
+    },
+    {
+      "pieceId": 3,
+      "from": {
+        "row": 9,
+        "col": 5
+      },
+      "to": {
+        "row": 9,
+        "col": 4
+      }
+    },
+    {
+      "pieceId": 1,
+      "from": {
+        "row": 0,
+        "col": 3
+      },
+      "to": {
+        "row": 1,
+        "col": 3
+      }
+    },
+    {
+      "pieceId": 2,
+      "from": {
+        "row": 4,
+        "col": 8
+      },
+      "to": {
+        "row": 4,
+        "col": 3
+      }
+    }
+  ],
+  "solution": {
+    "path": "puzzles/solutions/preview-08.json",
+    "sha256": "4cad853b51656af8fab79b8575acf74c0193d790ac91d9c9aec32bf43396b1ca",
+    "rootKey": "9/2N1k4/8C/9/9/9/9/9/9/5K3 w|4|checkmate|xiangqi-bounded-v1"
+  },
+  "verification": {
+    "status": "passed",
+    "allDefensesCovered": true,
+    "allWinningMovesCovered": true,
+    "shortestMateVerified": true,
+    "minRedTurnsToMate": 4,
+    "rulesVersion": "xiangqi-bounded-v1",
+    "solverVersion": "and-or-v1",
+    "reportPath": "docs/reports/teaching-previews.json",
+    "positionHash": "8dae71f4a49af4a8e32203aa585657543186d3a9ff32479d43d91b700b4dc0e5",
+    "verifiedBy": "and-or-v1（自动证明；独立复核待完成）",
+    "verifiedAt": "2026-10-09T00:00:00Z"
+  },
+  "notes": "开发预览；自动证明通过不等于独立棋理与难度验收。TODO[DEV-02] 独立复核；禁止加入发布目录。"
+}

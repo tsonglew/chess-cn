@@ -1,4 +1,7 @@
 import {createInitialState, pieceAt, legalMoves, applyMove, undo as undoRules, gameStatus, GLYPH} from './rules.js';
+import {createGodotPuzzleMode} from './puzzle-mode.js';
+import {createPuzzleUI} from './puzzle-ui.js';
+import {terminalStatus} from './puzzle/game/position.js';
 
 const $ = (id) => document.getElementById(id);
 const clone = (value) => JSON.parse(JSON.stringify(value));
@@ -11,6 +14,10 @@ let callback = null;
 let runtimeReady = false;
 let phase = 'loading';
 let mode = 'game';
+let puzzleApp = null;
+let puzzleUI = null;
+let pendingPuzzleMove = null;
+let nextMoveId = 1;
 let selectedId = null;
 let selectedMoves = [];
 let camera = 'iso';
@@ -91,12 +98,99 @@ function showEffects(enabled) {
 }
 function clearSelection() { selectedId = null; selectedMoves = []; }
 function inputHint() { return keyboardCursor.visible ? '方向键移动光标，Enter 选子并确认落点。' : '点击棋子，再选择高亮落点。'; }
-function status() { return gameStatus(state); }
+function status() { return mode === 'puzzle' ? terminalStatus(state) : gameStatus(state); }
+function puzzleState() { return puzzleApp?.getState(); }
+function puzzleReady() { return mode === 'puzzle' && puzzleState()?.view?.phase === 'playerTurn'; }
+function legalFor(piece) {
+  return mode === 'puzzle' ? puzzleApp.legalMoves().filter(move => move.pieceId === piece.id).map(move => move.to) : legalMoves(state.pieces,piece);
+}
+function puzzleBoard(snapshot) { return {...clone(snapshot),history:clone(snapshot.moves)}; }
+function cancelPuzzleAnimation() {
+  if (!pendingPuzzleMove) return;
+  const pending = pendingPuzzleMove; pendingPuzzleMove = null;
+  pending.cleanup(); pending.reject(new DOMException('已取消','AbortError'));
+  if (runtimeReady) sync(true);
+}
+function syncPuzzleBoard(snapshot) {
+  state = puzzleBoard(snapshot); clearSelection();
+  clearBattleNotice(); actionPhases.clear();
+  animation = {phase:'idle',clip:null,time:0,trace:[]}; phase = 'ready';
+  const first = state.pieces.find(piece => piece.color === state.turn && piece.type !== 'general') || state.pieces[0];
+  keyboardCursor = {...keyboardCursor,row:first.row,col:first.col};
+  send({type:'cursor',...keyboardCursor}); sync(true);
+}
+function playPuzzleReceipt(receipt,context) {
+  cancelPuzzleAnimation();
+  state = puzzleBoard(receipt.after); clearSelection();
+  clearBattleNotice(); actionPhases.clear(); phase = 'moving';
+  animation = {phase:'idle',clip:null,time:0,trace:[]};
+  const requestId = `puzzle-${nextMoveId++}`;
+  return new Promise((resolve,reject) => {
+    const abort = () => cancelPuzzleAnimation();
+    context.signal.addEventListener('abort',abort,{once:true});
+    pendingPuzzleMove = {requestId,resolve,reject,cleanup:() => context.signal.removeEventListener('abort',abort)};
+    if (context.signal.aborted) { cancelPuzzleAnimation(); return; }
+    const sent = send({type:'move',requestId,before:puzzleBoard(receipt.before),after:state,
+      move:{...receipt.move,capturedId:receipt.captured?.id ?? null}});
+    if (!sent) { cancelPuzzleAnimation(); reject(new Error('棋盘动画暂时不可用，请重试')); }
+    render();
+  });
+}
+function onPuzzleChange(current) {
+  if (mode !== 'puzzle') { render(); return; }
+  const view = current.view;
+  if (view?.snapshot) {
+    state = puzzleBoard(view.snapshot);
+    if (!['animating','demonstrating'].includes(view.phase) || !pendingPuzzleMove) phase = 'ready';
+    if (view.phase !== 'playerTurn') clearSelection();
+    if (view.phase === 'playerTurn' && view.hint?.move) {
+      selectedId = view.hint.move.pieceId;
+      hint = view.hint.showDestination ? '已标出推荐落点，可点击或按 Enter 行棋。' : '已标出推荐棋子，选择它查看合法落点。';
+      selectedMoves = view.hint.showDestination ? [view.hint.move.to] : [];
+      sync();
+    }
+    if (view.phase === 'success') showBattleNotice('破局成功 · 已完成本关','red','victory');
+    else if (view.phase === 'failure') showBattleNotice('尚未达成目标 · 可悔棋再试','red','turn');
+    else if (view.phase === 'wrongMove') showBattleNotice('尝试新的走法 · 可悔棋或继续','red','turn');
+    else if (view.phase === 'playerTurn' && state.history.length && !view.hint) announceTurn();
+  }
+  render();
+}
+function puzzleAction(action,arg) {
+  if (!runtimeReady || phase === 'error') return result(false,'runtime_unavailable');
+  try {
+    let operation;
+    if (action === 'mode') {
+      if (arg) {
+        if (mode !== 'puzzle') {
+          if (phase === 'moving') return result(false,'runtime_busy');
+          mode = 'puzzle'; focus = null; send({type:'focus',active:false});
+          clearSelection(); clearBattleNotice(); sync(true);
+        }
+        operation = puzzleApp.activate();
+      } else {
+        puzzleApp.deactivate(); mode = 'game';
+        focus = null; send({type:'focus',active:false});
+        keyboardCursor = {...keyboardCursor,row:6,col:0}; send({type:'cursor',...keyboardCursor});
+        reset(createInitialState(),'game');
+      }
+    } else {
+      if (mode !== 'puzzle' || !puzzleState()?.view || puzzleState().loading) return result(false,'puzzle_unavailable');
+      if (action === 'choose') operation = puzzleApp.choose(arg);
+      else if (action === 'next' || action === 'previous') operation = puzzleApp.relative(action === 'next' ? 1 : -1);
+      else if (action === 'hint' && !puzzleReady()) return result(false,'puzzle_busy');
+      else if (action === 'demo' && ['animating','opponentTurn','paused','demonstrating'].includes(puzzleState().view.phase)) return result(false,'puzzle_busy');
+      else if (typeof puzzleApp[action] === 'function') operation = puzzleApp[action]();
+      else return result(false,'unknown_action');
+    }
+    Promise.resolve(operation).catch(error => puzzleApp.reportError(error)); render(); return result(true);
+  } catch (error) { puzzleApp.reportError(error); return result(false,error.message); }
+}
 function snapshot() {
   return clone({runtimeReady,phase,testMode,mode,turn:state.turn,pieces:state.pieces,selectedId,
     legalMoves:selectedMoves,lastMove:state.lastMove,historyLength:state.history.length,
     completedMoves,status:status(),animation,camera,focus,labels,metrics,runtime,error,errors,
-    effects:effectsSettings,battleNotice,
+    effects:effectsSettings,battleNotice,puzzle:puzzleState(),
     keyboard:{...keyboardCursor,focused:document.activeElement === $('canvas')},
     coordinates:'row 0..9 (black home to red home); col 0..8 (red left to right)',
   });
@@ -104,17 +198,29 @@ function snapshot() {
 function render() {
   const busy = !runtimeReady || phase === 'moving' || phase === 'error';
   const currentStatus = status();
+  const puzzle = mode === 'puzzle' ? puzzleState() : null;
+  const puzzlePhase = puzzle?.view?.phase;
   const movingColor = phase === 'moving' ? state.pieces.find((piece) => piece.id === state.lastMove?.pieceId)?.color : null;
-  const red = (movingColor ?? state.turn) === 'red';
+  const red = (movingColor ?? (['success','failure','wrongMove'].includes(puzzlePhase) ? 'red' : currentStatus.over ? currentStatus.winner : state.turn)) === 'red';
   $('turn-seal').textContent = red ? '红' : '黑';
   $('turn-seal').className = `turn-seal ${red ? 'red' : 'black'}`;
   $('turn-text').textContent = phase === 'moving' ? '行棋演出中' : currentStatus.over
     ? `${currentStatus.winner === 'red' ? '红' : '黑'}方胜出`
     : `${red ? '红' : '黑'}方${currentStatus.check ? '被将军' : state.history.length ? '行棋' : '先行'}`;
-  $('game-hint').textContent = hint;
-  $('mode-label').textContent = mode === 'game' ? '自由对弈' : `${lastDemo === 'red' ? '红兵' : '黑卒'}演示`;
-  $('undo-button').disabled = busy || !state.history.length;
-  $('restart-button').disabled = busy;
+  if (puzzle) {
+    const titles = {playerTurn:'红方破局',opponentTurn:'黑方应对',animating:'行棋演出中',wrongMove:'换个思路',success:'破局成功',failure:'再试一次',demonstrating:'解法演示',paused:'棋局已暂停',error:'棋局遇到问题'};
+    $('turn-text').textContent = puzzle.loading ? '正在布阵' : titles[puzzlePhase] || '选择残局';
+  }
+  const puzzleHints = {playerTurn:selectedId !== null ? hint : '你执红方，黑方会自动应对。',
+    success:'将死目标已完成，可进入下一关或回看思路。',failure:'未达成将死目标，可悔棋或重试本关。',
+    wrongMove:'可悔棋换个思路，也可继续尝试。',demonstrating:'观看完整解法，结束后返回原局。',
+    animating:`${red ? '红方行棋' : '黑方应对'}中…`,opponentTurn:'黑方正在思考应对。',paused:'棋局已保存，继续后接着行棋。'};
+  $('game-hint').textContent = puzzle ? (puzzle.loading ? '正在载入教学残局…' : puzzleHints[puzzlePhase] || '选择关卡，开始研习。') : hint;
+  $('mode-label').textContent = mode === 'puzzle' ? '残局研习' : mode === 'game' ? '自由对弈' : `${lastDemo === 'red' ? '红兵' : '黑卒'}演示`;
+  $('undo-button').disabled = puzzle ? !puzzle.view || puzzle.loading || puzzle.view.demonstrating || !state.history.length : busy || !state.history.length;
+  $('restart-button').disabled = puzzle ? !puzzle.view || puzzle.loading : busy;
+  $('undo-button').textContent = puzzle ? '↶ 悔棋一回合' : '↶ 悔棋';
+  $('restart-button').textContent = puzzle ? '重试本关' : '重新开局';
   $('demo-red').disabled = busy;
   $('demo-black').disabled = busy;
   $('replay-button').disabled = busy || !mode.startsWith('demo-');
@@ -124,7 +230,7 @@ function render() {
   $('effects-toggle').checked = effectsSettings.enabled;
   $('effects-toggle').title = effectsSettings.reducedMotion ? '已跟随系统减少动态效果' : '走棋扬尘 · 命中火花';
   $('canvas-wrap').classList.toggle('reduce-effects-motion',effectsSettings.reducedMotion || !effectsSettings.enabled);
-  $('keyboard-focus').disabled = busy;
+  $('keyboard-focus').disabled = puzzle ? puzzle.loading || !puzzle.view || phase === 'error' : busy;
   const keyboardFocused = document.activeElement === $('canvas');
   $('keyboard-help').classList.toggle('keyboard-active',keyboardFocused);
   $('keyboard-focus').textContent = keyboardFocused ? '键盘已启用' : '使用键盘';
@@ -147,9 +253,10 @@ function render() {
   const elapsed = Math.max(0, Math.min(1.2, Number(animation.time) || 0));
   $('motion-progress').style.width = `${elapsed / 1.2 * 100}%`;
   $('motion-time').textContent = `${elapsed.toFixed(2)} / 1.20 s`;
+  puzzleUI?.render({...puzzleState(),active:mode === 'puzzle',loading:!runtimeReady || !!puzzleState()?.loading});
   $('motion-phase').textContent = {idle:'等待演示',start:'起势 · 突刺',impact:'命中',end:'收势完成'}[animation.phase] || '动作播放中';
 }
-function canPlay() { return runtimeReady && phase === 'ready'; }
+function canPlay() { return runtimeReady && phase === 'ready' && (mode !== 'puzzle' || puzzleReady()); }
 function selectedPiece() { return state.pieces.find((piece) => piece.id === selectedId); }
 function select(row, col) {
   if (!canPlay()) return result(false, 'runtime_busy');
@@ -158,7 +265,7 @@ function select(row, col) {
   if (!piece || piece.color !== state.turn) return result(false,'not_current_side');
   if (status().over) return result(false,'game_over');
   selectedId = piece.id;
-  selectedMoves = legalMoves(state.pieces,piece);
+  selectedMoves = legalFor(piece);
   const moveHint = keyboardCursor.visible ? '移到高亮落点，按 Enter 行棋。' : '点击高亮落点行棋。';
   hint = `已选${piece.color === 'red' ? '红' : '黑'}${GLYPH[piece.color][piece.type]}，${selectedMoves.length ? moveHint : '目前没有合法落点。'}`;
   sync(); render();
@@ -171,7 +278,12 @@ function move(...args) {
   else { piece = selectedPiece(); [row,col] = args; }
   if (!piece || piece.color !== state.turn) return result(false,'not_current_side');
   if (status().over) return result(false,'game_over');
-  if (!legalMoves(state.pieces,piece).some((square) => square.row === row && square.col === col)) return result(false,'illegal_move');
+  if (!legalFor(piece).some((square) => square.row === row && square.col === col)) return result(false,'illegal_move');
+  if (mode === 'puzzle') {
+    const receiptMove = puzzleApp.legalMoves().find(move => move.pieceId === piece.id && move.to.row === row && move.to.col === col);
+    void puzzleApp.playMove(receiptMove).catch(error => puzzleApp.reportError(error));
+    return result(true);
+  }
   const before = clone(state);
   const from = {row:piece.row,col:piece.col};
   const to = {row,col};
@@ -202,6 +314,7 @@ function reset(nextState, nextMode) {
   phase = 'ready'; sync(true); render();
 }
 function restart() {
+  if (mode === 'puzzle') return puzzleAction('retry');
   if (!canPlay()) return result(false,'runtime_busy');
   focus = null; send({type:'focus',active:false});
   keyboardCursor = {...keyboardCursor,row:6,col:0};
@@ -210,6 +323,10 @@ function restart() {
   return result(true);
 }
 function undo() {
+  if (mode === 'puzzle') {
+    if (!state.history.length || puzzleState()?.view?.demonstrating) return result(false,'no_history');
+    return puzzleAction('undo');
+  }
   if (!canPlay()) return result(false,'runtime_busy');
   const undone = undoRules(state);
   if (!undone) return result(false,'no_history');
@@ -233,6 +350,7 @@ function demo(color = 'red') {
     piece.row = 9-piece.row; piece.col = 8-piece.col;
     piece.color = piece.color === 'red' ? 'black' : 'red';
   }
+  if (mode === 'puzzle') puzzleApp.deactivate();
   lastDemo = color;
   keyboardCursor = {...keyboardCursor,row:color === 'red' ? 5 : 4,col:color === 'red' ? 0 : 8};
   send({type:'cursor',...keyboardCursor});
@@ -257,7 +375,7 @@ function showKeyboardCursor() {
   }
 }
 function focusKeyboard() {
-  if (!canPlay()) return;
+  if (!runtimeReady || phase === 'error' || (mode !== 'puzzle' && !canPlay())) return;
   $('canvas').focus({preventScroll:true});
   showKeyboardCursor();
   if (selectedId === null) hint = inputHint();
@@ -302,9 +420,9 @@ function keyboardInput(event) {
     if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
     if (canPlay()) cancelSelection();
   } else if (key === 'u') {
-    if (canPlay()) undo();
+    if (mode === 'puzzle' || canPlay()) undo();
   } else if (key === 'r') {
-    if (canPlay()) restart();
+    if (mode === 'puzzle' || canPlay()) restart();
   } else if (/^[1-4]$/.test(key)) {
     view(['iso','top','front','side'][Number(key)-1]);
   } else if (key === 'l') showLabels(!labels);
@@ -359,7 +477,7 @@ window.GodotHost = {
       $('loading').hidden = true;
       const version = typeof event.engine === 'string' ? event.engine : event.engine?.version ?? event.version;
       if (version) $('engine-version').textContent = `${version.toLowerCase().startsWith('godot') ? '' : 'Godot '}${version} · WebGL 2`;
-      queueMicrotask(() => { sync(true); sendEffects(); send({type:'camera',view:camera}); send({type:'labels',visible:labels}); send({type:'inspect'}); });
+      queueMicrotask(() => { if (new URLSearchParams(location.search).get('mode') === 'puzzle') puzzleAction('mode',true); sync(true); sendEffects(); send({type:'camera',view:camera}); send({type:'labels',visible:labels}); send({type:'inspect'}); });
     } else if (type === 'square') {
       keyboardCursor = {row:Number(event.row),col:Number(event.col),visible:false};
       send({type:'cursor',...keyboardCursor});
@@ -370,12 +488,18 @@ window.GodotHost = {
         keyboardCursor = {row,col,visible:Boolean(event.visible)};
       }
     } else if (type === 'move_done') {
-      phase = 'ready'; completedMoves++;
-      hint = mode.startsWith('demo-') ? '可切换视角、再次演示，或重新开局。' : inputHint();
-      announceTurn();
-      // The scene owns the completed placement. Sync only clears highlights and
-      // reconciles the rule state; it must not trigger a second animation.
-      queueMicrotask(sync);
+      if (event.requestId != null) {
+        // Resolve only this receipt. A stale completion must never advance a
+        // new level, and a queued sync must not cancel the automatic reply.
+        if (pendingPuzzleMove?.requestId !== event.requestId) return;
+        const pending = pendingPuzzleMove; pendingPuzzleMove = null;
+        pending.cleanup(); phase = 'ready'; completedMoves++; pending.resolve();
+      } else if (mode !== 'puzzle') {
+        phase = 'ready'; completedMoves++;
+        hint = mode.startsWith('demo-') ? '可切换视角、再次演示，或重新开局。' : inputHint();
+        announceTurn();
+        queueMicrotask(() => { if (mode !== 'puzzle' && phase === 'ready') sync(); });
+      }
     } else if (type === 'action') {
       announceAction(event);
     } else if (type === 'animation') {
@@ -401,8 +525,28 @@ window.GodotHost = {
 };
 window.render_game_to_text = () => JSON.stringify(snapshot());
 window.advanceTime = advanceTime;
-window.godotTest = {state:snapshot,select,move,square,demo,view,labels:showLabels,effects:showEffects,advanceTime,undo,restart,inspect};
+window.godotTest = {state:snapshot,select,move,square,demo,view,labels:showLabels,effects:showEffects,advanceTime,undo,restart,inspect,puzzle:puzzleAction};
 
+puzzleApp = createGodotPuzzleMode({
+  presentation:{sync:syncPuzzleBoard,play:playPuzzleReceipt,cancel:cancelPuzzleAnimation},
+  onChange:onPuzzleChange,
+  storage:{
+    async read(key) { return localStorage.getItem((testMode ? 'chess-cn.godot-test.' : '')+key); },
+    async write(key,value) { localStorage.setItem((testMode ? 'chess-cn.godot-test.' : '')+key,value); },
+    async remove(key) { localStorage.removeItem((testMode ? 'chess-cn.godot-test.' : '')+key); },
+  },
+});
+puzzleUI = createPuzzleUI({onMode:mode => puzzleAction('mode',mode === 'puzzle'),
+  onChoose:id => puzzleAction('choose',id),onHint:() => puzzleAction('hint'),
+  onDemo:() => puzzleAction('demo'),onStopDemo:() => puzzleAction('stopDemo'),
+  onContinue:() => puzzleAction('continue'),onPrevious:() => puzzleAction('previous'),
+  onNext:() => puzzleAction('next'),onResume:() => puzzleAction('resume'),onReload:() => puzzleAction('mode',true),
+});
+document.addEventListener('visibilitychange',() => {
+  if (mode !== 'puzzle') return;
+  if (document.hidden) puzzleApp.pause();
+  else void Promise.resolve(puzzleApp.resume()).catch(error => puzzleApp.reportError(error));
+});
 $('undo-button').addEventListener('click',undo);
 $('restart-button').addEventListener('click',restart);
 $('demo-red').addEventListener('click',() => demo('red'));

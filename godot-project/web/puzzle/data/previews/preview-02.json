@@ -1,0 +1,124 @@
+{
+  "$schema": "../puzzle.schema.json",
+  "schemaVersion": 1,
+  "id": "preview-02",
+  "contentVersion": 1,
+  "status": "candidate",
+  "title": "重炮封宫",
+  "order": 2,
+  "difficulty": "intro",
+  "themes": [
+    "重炮"
+  ],
+  "sources": [
+    {
+      "title": "项目自编教学预览",
+      "url": null,
+      "accessedAt": null,
+      "reviewStatus": "selfAuthored",
+      "notes": "项目自编局面；不冒用原候选棋谱来源"
+    }
+  ],
+  "initialFen": "3aka3/9/4C4/C8/9/9/9/9/9/3K5 w - - 0 1",
+  "initialPosition": {
+    "pieces": [
+      {
+        "id": 0,
+        "type": "advisor",
+        "color": "black",
+        "row": 0,
+        "col": 3
+      },
+      {
+        "id": 1,
+        "type": "general",
+        "color": "black",
+        "row": 0,
+        "col": 4
+      },
+      {
+        "id": 2,
+        "type": "advisor",
+        "color": "black",
+        "row": 0,
+        "col": 5
+      },
+      {
+        "id": 3,
+        "type": "cannon",
+        "color": "red",
+        "row": 2,
+        "col": 4
+      },
+      {
+        "id": 4,
+        "type": "cannon",
+        "color": "red",
+        "row": 3,
+        "col": 0
+      },
+      {
+        "id": 5,
+        "type": "general",
+        "color": "red",
+        "row": 9,
+        "col": 3
+      }
+    ],
+    "turn": "red"
+  },
+  "goal": {
+    "kind": "checkmate",
+    "maxRedTurns": 1
+  },
+  "hints": [
+    {
+      "level": 1,
+      "kind": "idea",
+      "text": "让两门炮在同一纵线上相互配合。"
+    },
+    {
+      "level": 2,
+      "kind": "piece",
+      "text": "观察提示高亮的棋子，并考虑它与其他子力的配合。"
+    },
+    {
+      "level": 3,
+      "kind": "destination",
+      "text": "当前局面的正确走法由已证明解法图给出。"
+    }
+  ],
+  "explanation": "让两门炮在同一纵线上相互配合。",
+  "recommendedLine": [
+    {
+      "pieceId": 4,
+      "from": {
+        "row": 3,
+        "col": 0
+      },
+      "to": {
+        "row": 3,
+        "col": 4
+      }
+    }
+  ],
+  "solution": {
+    "path": "puzzles/solutions/preview-02.json",
+    "sha256": "be830ba15b734dd1c0fa27d057c1bdfab6d28b28dfed623bcd81729f325ebb03",
+    "rootKey": "3aka3/9/4C4/C8/9/9/9/9/9/3K5 w|1|checkmate|xiangqi-bounded-v1"
+  },
+  "verification": {
+    "status": "passed",
+    "allDefensesCovered": true,
+    "allWinningMovesCovered": true,
+    "shortestMateVerified": true,
+    "minRedTurnsToMate": 1,
+    "rulesVersion": "xiangqi-bounded-v1",
+    "solverVersion": "and-or-v1",
+    "reportPath": "docs/reports/teaching-previews.json",
+    "positionHash": "e639efe54297ec34dd188649380a6bd7c3468b324f636ad72f2be4f7a924b8d6",
+    "verifiedBy": "and-or-v1（自动证明；独立复核待完成）",
+    "verifiedAt": "2026-10-09T00:00:00Z"
+  },
+  "notes": "开发预览；自动证明通过不等于独立棋理与难度验收。TODO[DEV-02] 独立复核；禁止加入发布目录。"
+}

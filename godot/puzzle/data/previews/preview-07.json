@@ -1,0 +1,161 @@
+{
+  "$schema": "../puzzle.schema.json",
+  "schemaVersion": 1,
+  "id": "preview-07",
+  "contentVersion": 1,
+  "status": "candidate",
+  "title": "双车破士",
+  "order": 7,
+  "difficulty": "advanced",
+  "themes": [
+    "破士"
+  ],
+  "sources": [
+    {
+      "title": "项目自编教学预览",
+      "url": null,
+      "accessedAt": null,
+      "reviewStatus": "selfAuthored",
+      "notes": "项目自编局面；不冒用原候选棋谱来源"
+    }
+  ],
+  "initialFen": "9/3k5/5aR2/9/8R/9/9/9/9/5K3 w - - 0 1",
+  "initialPosition": {
+    "pieces": [
+      {
+        "id": 0,
+        "type": "general",
+        "color": "black",
+        "row": 1,
+        "col": 3
+      },
+      {
+        "id": 1,
+        "type": "advisor",
+        "color": "black",
+        "row": 2,
+        "col": 5
+      },
+      {
+        "id": 2,
+        "type": "chariot",
+        "color": "red",
+        "row": 2,
+        "col": 6
+      },
+      {
+        "id": 3,
+        "type": "chariot",
+        "color": "red",
+        "row": 4,
+        "col": 8
+      },
+      {
+        "id": 4,
+        "type": "general",
+        "color": "red",
+        "row": 9,
+        "col": 5
+      }
+    ],
+    "turn": "red"
+  },
+  "goal": {
+    "kind": "checkmate",
+    "maxRedTurns": 3
+  },
+  "hints": [
+    {
+      "level": 1,
+      "kind": "idea",
+      "text": "注意黑士的阻挡作用，用双车逼将后再破士。"
+    },
+    {
+      "level": 2,
+      "kind": "piece",
+      "text": "观察提示高亮的棋子，并考虑它与其他子力的配合。"
+    },
+    {
+      "level": 3,
+      "kind": "destination",
+      "text": "当前局面的正确走法由已证明解法图给出。"
+    }
+  ],
+  "explanation": "注意黑士的阻挡作用，用双车逼将后再破士。",
+  "recommendedLine": [
+    {
+      "pieceId": 2,
+      "from": {
+        "row": 2,
+        "col": 6
+      },
+      "to": {
+        "row": 1,
+        "col": 6
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 1,
+        "col": 3
+      },
+      "to": {
+        "row": 2,
+        "col": 3
+      }
+    },
+    {
+      "pieceId": 3,
+      "from": {
+        "row": 4,
+        "col": 8
+      },
+      "to": {
+        "row": 2,
+        "col": 8
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 2,
+        "col": 3
+      },
+      "to": {
+        "row": 2,
+        "col": 4
+      }
+    },
+    {
+      "pieceId": 3,
+      "from": {
+        "row": 2,
+        "col": 8
+      },
+      "to": {
+        "row": 2,
+        "col": 5
+      }
+    }
+  ],
+  "solution": {
+    "path": "puzzles/solutions/preview-07.json",
+    "sha256": "2896a9bf7a79a20d8fc5a7194b5787590adbfcee5dd6f6f2788b7c0de5091cb2",
+    "rootKey": "9/3k5/5aR2/9/8R/9/9/9/9/5K3 w|3|checkmate|xiangqi-bounded-v1"
+  },
+  "verification": {
+    "status": "passed",
+    "allDefensesCovered": true,
+    "allWinningMovesCovered": true,
+    "shortestMateVerified": true,
+    "minRedTurnsToMate": 3,
+    "rulesVersion": "xiangqi-bounded-v1",
+    "solverVersion": "and-or-v1",
+    "reportPath": "docs/reports/teaching-previews.json",
+    "positionHash": "4bd2786667f06e35ffba558cdb40d30358061f9383e2b4f7596a1865c903c64c",
+    "verifiedBy": "and-or-v1（自动证明；独立复核待完成）",
+    "verifiedAt": "2026-10-09T00:00:00Z"
+  },
+  "notes": "开发预览；自动证明通过不等于独立棋理与难度验收。TODO[DEV-02] 独立复核；禁止加入发布目录。"
+}

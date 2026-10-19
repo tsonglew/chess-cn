@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "puzzleId": "preview-02",
+  "contentVersion": 1,
+  "solverVersion": "and-or-v1",
+  "inputHash": "e639efe54297ec34dd188649380a6bd7c3468b324f636ad72f2be4f7a924b8d6",
+  "status": "complete",
+  "proofStatus": "proven",
+  "minRedTurnsToMate": 1,
+  "rulesVersion": "xiangqi-bounded-v1",
+  "rootKey": "3aka3/9/4C4/C8/9/9/9/9/9/3K5 w|1|checkmate|xiangqi-bounded-v1",
+  "nodes": {
+    "3aka3/9/4C4/C8/9/9/9/9/9/3K5 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 3,
+              "col": 0
+            },
+            "to": {
+              "row": 3,
+              "col": 4
+            }
+          },
+          "key": "3aka3/9/4C4/4C4/9/9/9/9/9/3K5 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 35
+    },
+    "3aka3/9/4C4/4C4/9/9/9/9/9/3K5 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    }
+  },
+  "visited": 36,
+  "cached": 36,
+  "maxNodes": 500000,
+  "timeMs": 60000,
+  "recommendedLine": [
+    {
+      "pieceId": 4,
+      "from": {
+        "row": 3,
+        "col": 0
+      },
+      "to": {
+        "row": 3,
+        "col": 4
+      }
+    }
+  ]
+}

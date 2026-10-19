@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Build the parallel /godot/ site without touching the Three.js application.
-import { existsSync, mkdirSync, readFileSync, writeFileSync, copyFileSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync, copyFileSync, readdirSync, statSync, cpSync, rmSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -25,12 +25,22 @@ run(['--headless', '--path', project, '--import']);
 run(['--headless', '--path', project, '--export-release', 'Web', path.join(output, 'index.html')]);
 const htmlPath = path.join(output, 'index.html');
 writeFileSync(htmlPath, readFileSync(htmlPath, 'utf8').replace(/[\t ]+$/gm, '').trimEnd() + '\n');
-for (const name of ['host.js', 'style.css', 'rules.js']) copyFileSync(path.join(project, 'web', name), path.join(output, name));
+for (const name of ['host.js', 'puzzle-mode.js', 'puzzle-ui.js', 'style.css', 'rules.js']) copyFileSync(path.join(project, 'web', name), path.join(output, name));
+// These are browser ES modules/data, deliberately outside the Godot PCK.
+// Replace generated contents so a removed level cannot survive a later build.
+rmSync(path.join(output, 'puzzle'), { recursive: true, force: true });
+cpSync(path.join(project, 'web', 'puzzle'), path.join(output, 'puzzle'), { recursive: true });
 copyFileSync(path.join(project, 'asset-manifest.json'), path.join(output, 'asset-manifest.json'));
 copyFileSync(path.join(project, 'fonts', 'OFL.txt'), path.join(output, 'FONT-LICENSE.txt'));
 copyFileSync(path.join(project, 'fonts', 'NOTICE.txt'), path.join(output, 'FONT-NOTICE.txt'));
 for (const name of ['GODOT-LICENSE.txt', 'THIRD-PARTY-NOTICES.txt']) copyFileSync(path.join(project, 'licenses', name), path.join(output, name));
-const files = readdirSync(output).filter(name => !name.startsWith('.') && name !== 'build-manifest.json' && statSync(path.join(output, name)).isFile()).map(name => {
+function listFiles(directory, prefix = '') {
+  return readdirSync(directory).filter(name => !name.startsWith('.') && !(prefix === '' && name === 'build-manifest.json')).sort().flatMap(name => {
+    const full = path.join(directory, name), relative = prefix + name;
+    return statSync(full).isDirectory() ? listFiles(full, relative + '/') : statSync(full).isFile() ? [relative] : [];
+  });
+}
+const files = listFiles(output).map(name => {
   const data = readFileSync(path.join(output, name));
   return { name, bytes: data.length, sha256: createHash('sha256').update(data).digest('hex') };
 });

@@ -2,7 +2,7 @@
   "engine": "4.7.2.stable.official.ed1daf0bf",
   "variant": "web_nothreads_release",
   "renderer": "gl_compatibility",
-  "generatedAt": "2026-10-19T08:32:26.852Z",
+  "generatedAt": "2026-10-19T09:50:56.034Z",
   "files": [
     {
       "name": "FONT-LICENSE.txt",
@@ -31,8 +31,8 @@
     },
     {
       "name": "host.js",
-      "bytes": 23609,
-      "sha256": "b561d151d7cd6eb8bdf7d599fe6027b251becd447032c3cac1d8fdab7f9e3502"
+      "bytes": 32834,
+      "sha256": "35c1f8ac808b6fe74551ee9710aac6ae72d1f4858f774d80dc5ec8ff891b06df"
     },
     {
       "name": "index.audio.position.worklet.js",
@@ -46,8 +46,8 @@
     },
     {
       "name": "index.html",
-      "bytes": 7615,
-      "sha256": "dafb093421bdfbc9f2c1ed9ae62121f634f76fbace45aef3daa985c4dfaecf6a"
+      "bytes": 10625,
+      "sha256": "8e12bb5e3ff29aabae408436e6eb6bccd99ddeba321e4eae6646ea5d9716e0bc"
     },
     {
       "name": "index.js",
@@ -56,8 +56,8 @@
     },
     {
       "name": "index.pck",
-      "bytes": 13258364,
-      "sha256": "12a2aa61139f76f3e634c784a33dfd42eaac480255a44d43b1c50ab10b45f724"
+      "bytes": 13258428,
+      "sha256": "6f4617d448f996a2c77e91f11b36748d42316a78a42d36a9947b83a0723dd7f4"
     },
     {
       "name": "index.png",
@@ -70,14 +70,169 @@
       "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
     },
     {
+      "name": "puzzle/data/previews/catalog.json",
+      "bytes": 357,
+      "sha256": "71ee90760a3ced16366af22be3b31bb828ca78484983ff631ad9654d86ad8c42"
+    },
+    {
+      "name": "puzzle/data/previews/preview-01.json",
+      "bytes": 2566,
+      "sha256": "ea2052849a2ebaabd4969fca4334fe5b0182e7afa3730b0f469d32aae1bc5f40"
+    },
+    {
+      "name": "puzzle/data/previews/preview-02.json",
+      "bytes": 2907,
+      "sha256": "fe514a0b1ce473e85eb423e8de844f0c0631909e4d9f5166b4c8cb05823b5752"
+    },
+    {
+      "name": "puzzle/data/previews/preview-03.json",
+      "bytes": 3001,
+      "sha256": "9942a53ef0dd12d924c351721876b5bcef6883801d63d4e06f76d18543352709"
+    },
+    {
+      "name": "puzzle/data/previews/preview-04.json",
+      "bytes": 2963,
+      "sha256": "ddf5e5d6919aad9083fca468da2f39e61b9515bea562d5db764d842d62b40037"
+    },
+    {
+      "name": "puzzle/data/previews/preview-05.json",
+      "bytes": 3283,
+      "sha256": "3c1788e6867c28d2c3717f84e80a8147824cd3cc16199ef5f25430487729fc63"
+    },
+    {
+      "name": "puzzle/data/previews/preview-06.json",
+      "bytes": 3410,
+      "sha256": "df785f46ca76a0fb02fa647b10715742a2cab79600df16f7a9331f50d94ded2e"
+    },
+    {
+      "name": "puzzle/data/previews/preview-07.json",
+      "bytes": 3418,
+      "sha256": "1b997281057fa1bb323593746c4ef1097fb99cfe5d99014e9d201c29ccc846f0"
+    },
+    {
+      "name": "puzzle/data/previews/preview-08.json",
+      "bytes": 3609,
+      "sha256": "d16d8e0fa4daad134b9f447f12321899fcace56530e24d43e9cfdbf21a5e3641"
+    },
+    {
+      "name": "puzzle/data/solutions/preview-01.json",
+      "bytes": 1393,
+      "sha256": "8ba1ca382691c38dbd2574cb2b9fe4ecfc7cd81ca1a2b47d61782118cd2db6ed"
+    },
+    {
+      "name": "puzzle/data/solutions/preview-02.json",
+      "bytes": 1407,
+      "sha256": "be830ba15b734dd1c0fa27d057c1bdfab6d28b28dfed623bcd81729f325ebb03"
+    },
+    {
+      "name": "puzzle/data/solutions/preview-03.json",
+      "bytes": 10772,
+      "sha256": "eb93e80318223c6a94a16cb45b6392149629b49dd54706d2f3da86cbefd78e31"
+    },
+    {
+      "name": "puzzle/data/solutions/preview-04.json",
+      "bytes": 2774,
+      "sha256": "e4b6a662553b393b2efc82cee62c366ecc21f17a1ce09414a8fe0fd419d52f1c"
+    },
+    {
+      "name": "puzzle/data/solutions/preview-05.json",
+      "bytes": 4147,
+      "sha256": "1a9b63ccae8641e96a385d8b76e00fa3dca3705e7f6749d4b372f5e939791faf"
+    },
+    {
+      "name": "puzzle/data/solutions/preview-06.json",
+      "bytes": 8051,
+      "sha256": "82b9afcd0b2d7a789c036b327f4a3cb846b88375e5b48493b50673119cf1a0d1"
+    },
+    {
+      "name": "puzzle/data/solutions/preview-07.json",
+      "bytes": 82609,
+      "sha256": "2896a9bf7a79a20d8fc5a7194b5787590adbfcee5dd6f6f2788b7c0de5091cb2"
+    },
+    {
+      "name": "puzzle/data/solutions/preview-08.json",
+      "bytes": 356430,
+      "sha256": "4cad853b51656af8fab79b8575acf74c0193d790ac91d9c9aec32bf43396b1ca"
+    },
+    {
+      "name": "puzzle/game/hint-copy.js",
+      "bytes": 627,
+      "sha256": "a9a9cf9682bf29025cf3c4b1e350d001e6c323ee1237868d412d13bac3866e77"
+    },
+    {
+      "name": "puzzle/game/opponent.js",
+      "bytes": 2949,
+      "sha256": "57353f4d77afd1398ab987a6abe5717fef50cdbfe6175a7ebb4aaf26e75627c2"
+    },
+    {
+      "name": "puzzle/game/position.js",
+      "bytes": 6422,
+      "sha256": "e8f9693d8ffeafe8fb6ce95b5027635504a4c9021f49f2b66abb640ec57a9aea"
+    },
+    {
+      "name": "puzzle/game/progress.js",
+      "bytes": 6182,
+      "sha256": "655e4b0b6304c5d5a26cb7b5368d8a355526e7fc26ad347250edc861b86adb39"
+    },
+    {
+      "name": "puzzle/game/puzzle-controller.js",
+      "bytes": 10701,
+      "sha256": "e674845f126726390a3734725595894da1c43cd1a22e3bd244ddd9df074c355b"
+    },
+    {
+      "name": "puzzle/game/session.js",
+      "bytes": 4643,
+      "sha256": "98fe6fa37065e2607ff36539e87178966a4818e4288e4375f2292bc700964f59"
+    },
+    {
+      "name": "puzzle/game/sha256.js",
+      "bytes": 1487,
+      "sha256": "da6829e2dea9220f5578a0718040fa4bb264f57ea6347eef8d025bdf55e3f7d9"
+    },
+    {
+      "name": "puzzle/game/solution-tree.js",
+      "bytes": 3534,
+      "sha256": "3808157adef3fde2450e9ca3ce14a20b50363f2d0af27560cb7142ed3579a065"
+    },
+    {
+      "name": "puzzle/game/solver.js",
+      "bytes": 4561,
+      "sha256": "8ef8ab609db53739ea5a1e808f7914de01d0dab6ad6957c7fbaa764182e2f764"
+    },
+    {
+      "name": "puzzle/loader.js",
+      "bytes": 3238,
+      "sha256": "8c60d360b2bb6910caa3f86bf4ae61694df9499d878654c6e42f6dce3641490e"
+    },
+    {
+      "name": "puzzle/rules.js",
+      "bytes": 8107,
+      "sha256": "70037912512ff154e9e989cb1e5564fc4366aecd04681d4fd037c4412101fa27"
+    },
+    {
+      "name": "puzzle/source-manifest.json",
+      "bytes": 5548,
+      "sha256": "82845a12783f5932b10bc2eab6d6d8a0590632a483e98556203357a920e23dfc"
+    },
+    {
+      "name": "puzzle-mode.js",
+      "bytes": 4973,
+      "sha256": "540ab139a6c29b70da816f99531e9948174febddb6280238d06611ee85d67643"
+    },
+    {
+      "name": "puzzle-ui.js",
+      "bytes": 9033,
+      "sha256": "41d0432eb98750ba030f6898ec069b3e7eb5509fce48dcf25c30b10724a628de"
+    },
+    {
       "name": "rules.js",
       "bytes": 8107,
       "sha256": "70037912512ff154e9e989cb1e5564fc4366aecd04681d4fd037c4412101fa27"
     },
     {
       "name": "style.css",
-      "bytes": 14477,
-      "sha256": "0e9b84e26124cee0b30ec4a245f2ba541489e782fa6a0d2b8cc4736b7f9b115f"
+      "bytes": 20037,
+      "sha256": "a079878a6272cecd0b12d0a5f36c8d2f0bb4298a1eab88e5fa1b55b94f221ab5"
     }
   ]
 }

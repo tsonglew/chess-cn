@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "status": "development-preview",
+  "releaseIds": [],
+  "previewIds": [
+    "preview-01",
+    "preview-02",
+    "preview-03",
+    "preview-04",
+    "preview-05",
+    "preview-06",
+    "preview-07",
+    "preview-08"
+  ],
+  "notes": "所有预览为自编教学局面，自动证明通过；独立棋理与难度复核待完成。"
+}

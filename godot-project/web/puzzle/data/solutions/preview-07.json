@@ -1,0 +1,3367 @@
+{
+  "schemaVersion": 1,
+  "puzzleId": "preview-07",
+  "contentVersion": 1,
+  "solverVersion": "and-or-v1",
+  "inputHash": "4bd2786667f06e35ffba558cdb40d30358061f9383e2b4f7596a1865c903c64c",
+  "status": "complete",
+  "proofStatus": "proven",
+  "minRedTurnsToMate": 3,
+  "rulesVersion": "xiangqi-bounded-v1",
+  "rootKey": "9/3k5/5aR2/9/8R/9/9/9/9/5K3 w|3|checkmate|xiangqi-bounded-v1",
+  "nodes": {
+    "9/3k5/5aR2/9/8R/9/9/9/9/5K3 w|3|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 3,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          "key": "9/3k2R2/5a3/9/8R/9/9/9/9/5K3 b|2|checkmate|xiangqi-bounded-v1",
+          "distance": 3
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          "key": "9/3k5/5R3/9/8R/9/9/9/9/5K3 b|2|checkmate|xiangqi-bounded-v1",
+          "distance": 3
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/3R5/9/9/9/9/5K3 b|2|checkmate|xiangqi-bounded-v1",
+          "distance": 3
+        },
+        {
+          "move": {
+            "from": {
+              "row": 9,
+              "col": 5
+            },
+            "to": {
+              "row": 9,
+              "col": 4
+            }
+          },
+          "key": "9/3k5/5aR2/9/8R/9/9/9/9/4K4 b|2|checkmate|xiangqi-bounded-v1",
+          "distance": 3
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/3k2R2/5a3/9/8R/9/9/9/9/5K3 b|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 3
+            }
+          },
+          "key": "3k5/6R2/5a3/9/8R/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "key": "9/6R2/3k1a3/9/8R/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "9/3ka1R2/9/9/8R/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 3
+    },
+    "3k5/6R2/5a3/9/8R/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 0,
+              "col": 8
+            }
+          },
+          "key": "3k4R/6R2/5a3/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "3k4R/6R2/5a3/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/6R2/3k1a3/9/8R/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 2,
+              "col": 8
+            }
+          },
+          "key": "9/6R2/3k1a2R/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 9,
+              "col": 5
+            },
+            "to": {
+              "row": 9,
+              "col": 4
+            }
+          },
+          "key": "9/6R2/3k1a3/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/6R2/3k1a2R/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          "key": "9/6R2/4ka2R/9/9/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/6R2/4ka2R/9/9/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 8
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          "key": "9/6R2/4kR3/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 30
+    },
+    "9/6R2/4kR3/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/6R2/3k1a3/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "9/4a1R2/3k5/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/4a1R2/3k5/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/4a1R2/3k5/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 32
+    },
+    "9/4a1R2/3k5/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/3ka1R2/9/9/8R/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3ka1R2/9/9/3R5/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 32
+    },
+    "9/3ka1R2/9/9/3R5/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/3k5/5R3/9/8R/9/9/9/9/5K3 b|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 3
+            }
+          },
+          "key": "3k5/9/5R3/9/8R/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "9/4k4/5R3/9/8R/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 2
+    },
+    "3k5/9/5R3/9/8R/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          "key": "3k5/5R3/9/9/8R/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "key": "3k5/9/3R5/9/8R/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          "key": "3k5/9/4R4/9/8R/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 1,
+              "col": 8
+            }
+          },
+          "key": "3k5/8R/5R3/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "3k5/9/5R3/9/3R5/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 9,
+              "col": 5
+            },
+            "to": {
+              "row": 9,
+              "col": 4
+            }
+          },
+          "key": "3k5/9/5R3/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 35
+    },
+    "3k5/5R3/9/9/8R/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          "key": "4k4/5R3/9/9/8R/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "4k4/5R3/9/9/8R/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 0,
+              "col": 8
+            }
+          },
+          "key": "4k3R/5R3/9/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 34
+    },
+    "4k3R/5R3/9/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "3k5/9/3R5/9/8R/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          "key": "4k4/9/3R5/9/8R/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "4k4/9/3R5/9/8R/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 4
+            }
+          },
+          "key": "4k4/9/3R5/9/4R4/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 35
+    },
+    "4k4/9/3R5/9/4R4/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "3k5/9/4R4/9/8R/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/4R4/9/8R/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/4R4/9/8R/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/4R4/9/3R5/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/3k5/4R4/9/3R5/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "3k5/8R/5R3/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          "key": "4k4/8R/5R3/9/9/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "4k4/8R/5R3/9/9/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          "key": "4kR3/8R/9/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 34
+    },
+    "4kR3/8R/9/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "3k5/9/5R3/9/3R5/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          "key": "4k4/9/5R3/9/3R5/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "4k4/9/5R3/9/3R5/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          "key": "4k4/9/4R4/9/3R5/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 34
+    },
+    "4k4/9/4R4/9/3R5/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "3k5/9/5R3/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5R3/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5R3/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5R3/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/3k5/5R3/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4k4/5R3/9/8R/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          "key": "9/4kR3/9/9/8R/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "key": "9/4k4/3R5/9/8R/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 1,
+              "col": 8
+            }
+          },
+          "key": "9/4k3R/5R3/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/4k4/5R3/9/3R5/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 34
+    },
+    "9/4kR3/9/9/8R/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          "key": "4k4/5R3/9/9/8R/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          "key": "9/5R3/4k4/9/8R/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 2
+    },
+    "9/5R3/4k4/9/8R/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 2,
+              "col": 8
+            }
+          },
+          "key": "9/5R3/4k3R/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 34
+    },
+    "9/5R3/4k3R/9/9/9/9/9/9/5K3 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4k4/3R5/9/8R/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          "key": "4k4/9/3R5/9/8R/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/4k3R/5R3/9/9/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          "key": "4k4/8R/5R3/9/9/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/4k4/5R3/9/3R5/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          "key": "4k4/9/5R3/9/3R5/9/9/9/9/5K3 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/3R5/9/9/9/9/5K3 b|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "9/4k4/5aR2/9/3R5/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/4k4/5aR2/9/3R5/9/9/9/9/5K3 w|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          "key": "9/4k4/5R3/9/3R5/9/9/9/9/5K3 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 30
+    },
+    "9/3k5/5aR2/9/8R/9/9/9/9/4K4 b|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 3
+            }
+          },
+          "key": "3k5/9/5aR2/9/8R/9/9/9/9/4K4 w|2|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "key": "9/9/3k1aR2/9/8R/9/9/9/9/4K4 w|2|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "9/3ka4/6R2/9/8R/9/9/9/9/4K4 w|2|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 3
+    },
+    "3k5/9/5aR2/9/8R/9/9/9/9/4K4 w|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 0,
+              "col": 6
+            }
+          },
+          "key": "3k2R2/9/5a3/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          "key": "3k5/9/5R3/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "3k5/9/5aR2/9/3R5/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "3k2R2/9/5a3/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "6R2/3k5/5a3/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "6R2/3k5/5a3/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "6R2/3k5/5a3/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "6R2/3k5/5a3/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "3k5/9/5aR2/9/3R5/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1aR2/9/8R/9/9/9/9/4K4 w|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 0,
+              "col": 6
+            }
+          },
+          "key": "6R2/9/3k1a3/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          "key": "9/6R2/3k1a3/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          "key": "9/9/3k1R3/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 7
+            }
+          },
+          "key": "9/9/3k1a1R1/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 8
+            }
+          },
+          "key": "9/9/3k1a2R/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 3,
+              "col": 6
+            }
+          },
+          "key": "9/9/3k1a3/6R2/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 4,
+              "col": 6
+            }
+          },
+          "key": "9/9/3k1a3/9/6R1R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 5,
+              "col": 6
+            }
+          },
+          "key": "9/9/3k1a3/9/8R/6R2/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 6,
+              "col": 6
+            }
+          },
+          "key": "9/9/3k1a3/9/8R/9/6R2/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 7,
+              "col": 6
+            }
+          },
+          "key": "9/9/3k1a3/9/8R/9/9/6R2/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 8,
+              "col": 6
+            }
+          },
+          "key": "9/9/3k1a3/9/8R/9/9/9/6R2/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 9,
+              "col": 6
+            }
+          },
+          "key": "9/9/3k1a3/9/8R/9/9/9/9/4K1R2 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 3,
+              "col": 8
+            }
+          },
+          "key": "9/9/3k1aR2/8R/9/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 0
+            }
+          },
+          "key": "9/9/3k1aR2/9/R8/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 1
+            }
+          },
+          "key": "9/9/3k1aR2/9/1R7/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 2
+            }
+          },
+          "key": "9/9/3k1aR2/9/2R6/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/9/3k1aR2/9/3R5/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 4
+            }
+          },
+          "key": "9/9/3k1aR2/9/4R4/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 5
+            }
+          },
+          "key": "9/9/3k1aR2/9/5R3/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 6
+            }
+          },
+          "key": "9/9/3k1aR2/9/6R2/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 7
+            }
+          },
+          "key": "9/9/3k1aR2/9/7R1/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 5,
+              "col": 8
+            }
+          },
+          "key": "9/9/3k1aR2/9/9/8R/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 6,
+              "col": 8
+            }
+          },
+          "key": "9/9/3k1aR2/9/9/9/8R/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 7,
+              "col": 8
+            }
+          },
+          "key": "9/9/3k1aR2/9/9/9/9/8R/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 8,
+              "col": 8
+            }
+          },
+          "key": "9/9/3k1aR2/9/9/9/9/9/8R/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        },
+        {
+          "move": {
+            "from": {
+              "row": 9,
+              "col": 4
+            },
+            "to": {
+              "row": 8,
+              "col": 4
+            }
+          },
+          "key": "9/9/3k1aR2/9/8R/9/9/9/4K4/9 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "6R2/9/3k1a3/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "6R2/3k5/5a3/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "6R2/4a4/3k5/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 2
+    },
+    "6R2/4a4/3k5/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "6R2/4a4/3k5/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "6R2/4a4/3k5/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1R3/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5R3/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/9/3k1a1R1/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a1R1/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5a1R1/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a1R1/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/3k5/5a1R1/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1a2R/9/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a2R/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5a2R/9/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a2R/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 22
+    },
+    "9/3k5/5a2R/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1a3/6R2/8R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/6R2/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "9/4a4/3k5/6R2/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 2
+    },
+    "9/3k5/5a3/6R2/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 3,
+              "col": 6
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/3R5/8R/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/6R2/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/3k5/5a3/3R5/8R/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/3k5/5a3/6R2/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4a4/3k5/6R2/8R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 3,
+              "col": 6
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          "key": "9/4a4/3k5/3R5/8R/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/4a4/3k5/6R2/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/4a4/3k5/3R5/8R/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4a4/3k5/6R2/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1a3/9/6R1R/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/6R1R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "9/4a4/3k5/9/6R1R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 2
+    },
+    "9/3k5/5a3/9/6R1R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 6
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/3R4R/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 28
+    },
+    "9/3k5/5a3/9/3R4R/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4a4/3k5/9/6R1R/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 6
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/4a4/3k5/9/3R4R/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 28
+    },
+    "9/4a4/3k5/9/3R4R/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1a3/9/8R/6R2/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/8R/6R2/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "9/4a4/3k5/9/8R/6R2/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 2
+    },
+    "9/3k5/5a3/9/8R/6R2/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/3R5/6R2/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 5,
+              "col": 6
+            },
+            "to": {
+              "row": 5,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/8R/3R5/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/3k5/5a3/9/3R5/6R2/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/3k5/5a3/9/8R/3R5/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4a4/3k5/9/8R/6R2/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/4a4/3k5/9/3R5/6R2/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 5,
+              "col": 6
+            },
+            "to": {
+              "row": 5,
+              "col": 3
+            }
+          },
+          "key": "9/4a4/3k5/9/8R/3R5/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/4a4/3k5/9/3R5/6R2/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4a4/3k5/9/8R/3R5/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1a3/9/8R/9/6R2/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/8R/9/6R2/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "9/4a4/3k5/9/8R/9/6R2/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 2
+    },
+    "9/3k5/5a3/9/8R/9/6R2/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/3R5/9/6R2/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 6,
+              "col": 6
+            },
+            "to": {
+              "row": 6,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/8R/9/3R5/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/3k5/5a3/9/3R5/9/6R2/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/3k5/5a3/9/8R/9/3R5/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4a4/3k5/9/8R/9/6R2/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/4a4/3k5/9/3R5/9/6R2/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 6,
+              "col": 6
+            },
+            "to": {
+              "row": 6,
+              "col": 3
+            }
+          },
+          "key": "9/4a4/3k5/9/8R/9/3R5/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/4a4/3k5/9/3R5/9/6R2/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4a4/3k5/9/8R/9/3R5/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1a3/9/8R/9/9/6R2/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/8R/9/9/6R2/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "9/4a4/3k5/9/8R/9/9/6R2/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 2
+    },
+    "9/3k5/5a3/9/8R/9/9/6R2/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/3R5/9/9/6R2/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 7,
+              "col": 6
+            },
+            "to": {
+              "row": 7,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/8R/9/9/3R5/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/3k5/5a3/9/3R5/9/9/6R2/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/3k5/5a3/9/8R/9/9/3R5/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4a4/3k5/9/8R/9/9/6R2/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/4a4/3k5/9/3R5/9/9/6R2/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 7,
+              "col": 6
+            },
+            "to": {
+              "row": 7,
+              "col": 3
+            }
+          },
+          "key": "9/4a4/3k5/9/8R/9/9/3R5/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/4a4/3k5/9/3R5/9/9/6R2/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4a4/3k5/9/8R/9/9/3R5/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1a3/9/8R/9/9/9/6R2/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/8R/9/9/9/6R2/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "9/4a4/3k5/9/8R/9/9/9/6R2/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 2
+    },
+    "9/3k5/5a3/9/8R/9/9/9/6R2/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/3R5/9/9/9/6R2/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 8,
+              "col": 6
+            },
+            "to": {
+              "row": 8,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/8R/9/9/9/3R5/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/3k5/5a3/9/3R5/9/9/9/6R2/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/3k5/5a3/9/8R/9/9/9/3R5/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4a4/3k5/9/8R/9/9/9/6R2/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/4a4/3k5/9/3R5/9/9/9/6R2/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 8,
+              "col": 6
+            },
+            "to": {
+              "row": 8,
+              "col": 3
+            }
+          },
+          "key": "9/4a4/3k5/9/8R/9/9/9/3R5/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/4a4/3k5/9/3R5/9/9/9/6R2/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4a4/3k5/9/8R/9/9/9/3R5/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1a3/9/8R/9/9/9/9/4K1R2 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/8R/9/9/9/9/4K1R2 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          "key": "9/4a4/3k5/9/8R/9/9/9/9/4K1R2 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 2
+    },
+    "9/3k5/5a3/9/8R/9/9/9/9/4K1R2 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5a3/9/3R5/9/9/9/9/4K1R2 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/3k5/5a3/9/3R5/9/9/9/9/4K1R2 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/4a4/3k5/9/8R/9/9/9/9/4K1R2 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/4a4/3k5/9/3R5/9/9/9/9/4K1R2 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/4a4/3k5/9/3R5/9/9/9/9/4K1R2 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1aR2/8R/9/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/8R/9/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/8R/9/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 3,
+              "col": 8
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/3R5/9/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/3k5/5aR2/3R5/9/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1aR2/9/R8/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/R8/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/R8/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 0
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/3k5/5aR2/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1aR2/9/1R7/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/1R7/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/1R7/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 1
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/9/3k1aR2/9/2R6/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/2R6/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/2R6/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 2
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/9/3k1aR2/9/3R5/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1aR2/9/4R4/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/4R4/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/4R4/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 4
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 30
+    },
+    "9/9/3k1aR2/9/5R3/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/5R3/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/5R3/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 5
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 29
+    },
+    "9/9/3k1aR2/9/6R2/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/6R2/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/6R2/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 6
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 22
+    },
+    "9/9/3k1aR2/9/7R1/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/7R1/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/7R1/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 7
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/9/3k1aR2/9/9/8R/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/9/8R/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/9/8R/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 5,
+              "col": 8
+            },
+            "to": {
+              "row": 5,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/9/3R5/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/3k5/5aR2/9/9/3R5/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1aR2/9/9/9/8R/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/9/9/8R/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/9/9/8R/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 6,
+              "col": 8
+            },
+            "to": {
+              "row": 6,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/9/9/3R5/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/3k5/5aR2/9/9/9/3R5/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1aR2/9/9/9/9/8R/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/9/9/9/8R/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/9/9/9/8R/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 7,
+              "col": 8
+            },
+            "to": {
+              "row": 7,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/9/9/9/3R5/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/3k5/5aR2/9/9/9/9/3R5/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1aR2/9/9/9/9/9/8R/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/9/9/9/9/8R/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/9/9/9/9/8R/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 8,
+              "col": 8
+            },
+            "to": {
+              "row": 8,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/9/9/9/9/3R5/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 31
+    },
+    "9/3k5/5aR2/9/9/9/9/9/3R5/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/9/3k1aR2/9/8R/9/9/9/4K4/9 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/8R/9/9/9/4K4/9 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/5aR2/9/8R/9/9/9/4K4/9 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/5aR2/9/3R5/9/9/9/4K4/9 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 32
+    },
+    "9/3k5/5aR2/9/3R5/9/9/9/4K4/9 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/3ka4/6R2/9/8R/9/9/9/9/4K4 w|2|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 2,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 8
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          "key": "9/3ka4/6R2/9/3R5/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1",
+          "distance": 2
+        }
+      ],
+      "legalMoveCount": 36
+    },
+    "9/3ka4/6R2/9/3R5/9/9/9/9/4K4 b|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/3a2R2/9/3R5/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 1
+    },
+    "9/3k5/3a2R2/9/3R5/9/9/9/9/4K4 w|1|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 1,
+      "terminalReason": "none",
+      "edges": [
+        {
+          "move": {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/3R5/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        },
+        {
+          "move": {
+            "from": {
+              "row": 4,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          "key": "9/3k5/3R2R2/9/9/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1",
+          "distance": 1
+        }
+      ],
+      "legalMoveCount": 32
+    },
+    "9/3k5/3R5/9/3R5/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    },
+    "9/3k5/3R2R2/9/9/9/9/9/9/4K4 b|0|checkmate|xiangqi-bounded-v1": {
+      "proofStatus": "proven",
+      "distance": 0,
+      "terminalReason": "checkmate",
+      "edges": [],
+      "legalMoveCount": 0
+    }
+  },
+  "visited": 9607,
+  "cached": 9607,
+  "maxNodes": 500000,
+  "timeMs": 60000,
+  "recommendedLine": [
+    {
+      "pieceId": 2,
+      "from": {
+        "row": 2,
+        "col": 6
+      },
+      "to": {
+        "row": 1,
+        "col": 6
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 1,
+        "col": 3
+      },
+      "to": {
+        "row": 2,
+        "col": 3
+      }
+    },
+    {
+      "pieceId": 3,
+      "from": {
+        "row": 4,
+        "col": 8
+      },
+      "to": {
+        "row": 2,
+        "col": 8
+      }
+    },
+    {
+      "pieceId": 0,
+      "from": {
+        "row": 2,
+        "col": 3
+      },
+      "to": {
+        "row": 2,
+        "col": 4
+      }
+    },
+    {
+      "pieceId": 3,
+      "from": {
+        "row": 2,
+        "col": 8
+      },
+      "to": {
+        "row": 2,
+        "col": 5
+      }
+    }
+  ]
+}

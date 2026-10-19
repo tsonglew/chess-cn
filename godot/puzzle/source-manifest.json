@@ -1,0 +1,146 @@
+{
+  "source": "Existing Three.js puzzle preview entry (js/puzzle-main.js + js/bootstrap.js)",
+  "status": "development-preview",
+  "sourceFiles": [
+    {
+      "source": "js/game/hint-copy.js",
+      "packaged": "game/hint-copy.js",
+      "sourceSha256": "a9a9cf9682bf29025cf3c4b1e350d001e6c323ee1237868d412d13bac3866e77"
+    },
+    {
+      "source": "js/game/position.js",
+      "packaged": "game/position.js",
+      "sourceSha256": "e8f9693d8ffeafe8fb6ce95b5027635504a4c9021f49f2b66abb640ec57a9aea"
+    },
+    {
+      "source": "js/game/puzzle-controller.js",
+      "packaged": "game/puzzle-controller.js",
+      "sourceSha256": "42a5e819b615a27f4bcd5c437b3d5f2684e3e69f8ce538825e3a064c5362893c"
+    },
+    {
+      "source": "js/game/solution-tree.js",
+      "packaged": "game/solution-tree.js",
+      "sourceSha256": "3808157adef3fde2450e9ca3ce14a20b50363f2d0af27560cb7142ed3579a065"
+    },
+    {
+      "source": "js/game/progress.js",
+      "packaged": "game/progress.js",
+      "sourceSha256": "9646441de9a425f903963ff775fcdc68856ea56849da515b30db2947e129491a"
+    },
+    {
+      "source": "js/game/solver.js",
+      "packaged": "game/solver.js",
+      "sourceSha256": "8ef8ab609db53739ea5a1e808f7914de01d0dab6ad6957c7fbaa764182e2f764"
+    },
+    {
+      "source": "js/game/session.js",
+      "packaged": "game/session.js",
+      "sourceSha256": "321b7859c2a01e52848dc037b538cf66305f5c667723eab15a285004c29ef687"
+    },
+    {
+      "source": "js/game/opponent.js",
+      "packaged": "game/opponent.js",
+      "sourceSha256": "57353f4d77afd1398ab987a6abe5717fef50cdbfe6175a7ebb4aaf26e75627c2"
+    },
+    {
+      "source": "js/game/sha256.js",
+      "packaged": "game/sha256.js",
+      "sourceSha256": "da6829e2dea9220f5578a0718040fa4bb264f57ea6347eef8d025bdf55e3f7d9"
+    },
+    {
+      "source": "js/rules.js",
+      "packaged": "rules.js",
+      "sourceSha256": "70037912512ff154e9e989cb1e5564fc4366aecd04681d4fd037c4412101fa27"
+    },
+    {
+      "source": "puzzles/previews/catalog.json",
+      "packaged": "data/previews/catalog.json",
+      "sourceSha256": "71ee90760a3ced16366af22be3b31bb828ca78484983ff631ad9654d86ad8c42"
+    },
+    {
+      "source": "puzzles/previews/preview-01.json",
+      "packaged": "data/previews/preview-01.json",
+      "sourceSha256": "ea2052849a2ebaabd4969fca4334fe5b0182e7afa3730b0f469d32aae1bc5f40"
+    },
+    {
+      "source": "puzzles/solutions/preview-01.json",
+      "packaged": "data/solutions/preview-01.json",
+      "sourceSha256": "8ba1ca382691c38dbd2574cb2b9fe4ecfc7cd81ca1a2b47d61782118cd2db6ed"
+    },
+    {
+      "source": "puzzles/previews/preview-02.json",
+      "packaged": "data/previews/preview-02.json",
+      "sourceSha256": "fe514a0b1ce473e85eb423e8de844f0c0631909e4d9f5166b4c8cb05823b5752"
+    },
+    {
+      "source": "puzzles/solutions/preview-02.json",
+      "packaged": "data/solutions/preview-02.json",
+      "sourceSha256": "be830ba15b734dd1c0fa27d057c1bdfab6d28b28dfed623bcd81729f325ebb03"
+    },
+    {
+      "source": "puzzles/previews/preview-03.json",
+      "packaged": "data/previews/preview-03.json",
+      "sourceSha256": "9942a53ef0dd12d924c351721876b5bcef6883801d63d4e06f76d18543352709"
+    },
+    {
+      "source": "puzzles/solutions/preview-03.json",
+      "packaged": "data/solutions/preview-03.json",
+      "sourceSha256": "eb93e80318223c6a94a16cb45b6392149629b49dd54706d2f3da86cbefd78e31"
+    },
+    {
+      "source": "puzzles/previews/preview-04.json",
+      "packaged": "data/previews/preview-04.json",
+      "sourceSha256": "ddf5e5d6919aad9083fca468da2f39e61b9515bea562d5db764d842d62b40037"
+    },
+    {
+      "source": "puzzles/solutions/preview-04.json",
+      "packaged": "data/solutions/preview-04.json",
+      "sourceSha256": "e4b6a662553b393b2efc82cee62c366ecc21f17a1ce09414a8fe0fd419d52f1c"
+    },
+    {
+      "source": "puzzles/previews/preview-05.json",
+      "packaged": "data/previews/preview-05.json",
+      "sourceSha256": "3c1788e6867c28d2c3717f84e80a8147824cd3cc16199ef5f25430487729fc63"
+    },
+    {
+      "source": "puzzles/solutions/preview-05.json",
+      "packaged": "data/solutions/preview-05.json",
+      "sourceSha256": "1a9b63ccae8641e96a385d8b76e00fa3dca3705e7f6749d4b372f5e939791faf"
+    },
+    {
+      "source": "puzzles/previews/preview-06.json",
+      "packaged": "data/previews/preview-06.json",
+      "sourceSha256": "df785f46ca76a0fb02fa647b10715742a2cab79600df16f7a9331f50d94ded2e"
+    },
+    {
+      "source": "puzzles/solutions/preview-06.json",
+      "packaged": "data/solutions/preview-06.json",
+      "sourceSha256": "82b9afcd0b2d7a789c036b327f4a3cb846b88375e5b48493b50673119cf1a0d1"
+    },
+    {
+      "source": "puzzles/previews/preview-07.json",
+      "packaged": "data/previews/preview-07.json",
+      "sourceSha256": "1b997281057fa1bb323593746c4ef1097fb99cfe5d99014e9d201c29ccc846f0"
+    },
+    {
+      "source": "puzzles/solutions/preview-07.json",
+      "packaged": "data/solutions/preview-07.json",
+      "sourceSha256": "2896a9bf7a79a20d8fc5a7194b5787590adbfcee5dd6f6f2788b7c0de5091cb2"
+    },
+    {
+      "source": "puzzles/previews/preview-08.json",
+      "packaged": "data/previews/preview-08.json",
+      "sourceSha256": "d16d8e0fa4daad134b9f447f12321899fcace56530e24d43e9cfdbf21a5e3641"
+    },
+    {
+      "source": "puzzles/solutions/preview-08.json",
+      "packaged": "data/solutions/preview-08.json",
+      "sourceSha256": "4cad853b51656af8fab79b8575acf74c0193d790ac91d9c9aec32bf43396b1ca"
+    }
+  ],
+  "adaptedModules": [
+    "game/session.js",
+    "game/puzzle-controller.js",
+    "game/progress.js"
+  ]
+}

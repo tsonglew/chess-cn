@@ -44,3 +44,65 @@ kbd{display:inline-flex;align-items:center;justify-content:center;min-width:18px
 #canvas:focus-visible{box-shadow:inset 0 0 0 3px #dac783}
 @media(max-width:1050px){.view-tabs button{padding:7px 7px}.keyboard-help{padding:10px}.keyboard-shortcuts{gap:8px}.keyboard-heading{gap:8px}}
 @media(max-width:760px){.view-tabs button{padding:6px 7px}.keyboard-help{grid-column:1/-1;grid-row:2;margin-top:0;padding:12px}.motion-control{grid-column:2;grid-row:1}.keyboard-heading{margin-bottom:10px}.keyboard-shortcuts li{flex-direction:column;align-items:flex-start;gap:2px}.keyboard-shortcuts{gap:8px 14px}.keyboard-shortcuts li:first-child{grid-column:auto;flex-direction:column;align-items:flex-start}}
+
+/* Endgame study uses the same restrained paper, cinnabar and field-green palette. */
+select{font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}
+select:focus-visible,summary:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.mode-tabs{display:flex;padding:3px;margin:0 0 19px;border:1px solid var(--line);border-radius:5px;background:#e6e2d6;gap:3px}
+.mode-tabs button{flex:1;min-height:32px;border-color:transparent;font-size:12px;letter-spacing:.04em}
+.mode-tabs button[aria-pressed="true"]{background:#f9f5eb;border-color:#d3cbbb;color:#8c4035;box-shadow:0 1px 3px #443d2712}
+.mode-tabs button[aria-pressed="true"]:not(:disabled):hover{background:#fffaf0}
+.puzzle-picker{margin:0 0 18px}
+.puzzle-picker-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px;font-size:10px;color:var(--muted)}
+.preview-badge{border:1px solid #ae8a4d55;border-radius:3px;padding:2px 5px;color:#88703f;background:#eadfbd55;font-size:9px;letter-spacing:.04em}
+#puzzle-select{width:100%;min-height:37px;padding:6px 9px;border:1px solid #c3c8b6;border-radius:4px;background:#f8f5eb;font-size:12px;cursor:pointer;text-overflow:ellipsis}
+#puzzle-select:disabled{cursor:default;opacity:.55}
+.puzzle-active .mode-tabs{margin-bottom:12px}
+.puzzle-active .puzzle-picker{margin-bottom:12px}
+.puzzle-active .game-control>.section-kicker{display:none}
+.puzzle-active .turn-heading{margin-top:10px}
+.puzzle-active .turn-heading h1{font-size:23px}
+.puzzle-active .game-hint{min-height:0;margin:8px 0 10px;line-height:1.7}
+.puzzle-active .game-actions button{height:33px}
+.keyboard-quick{display:none}
+#keyboard-details>summary{display:none;cursor:pointer;font-size:10px;color:var(--green);padding:5px 0;list-style-position:inside}
+.puzzle-active .keyboard-help{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 7px;margin-top:12px;padding:8px 10px}
+.puzzle-active .keyboard-heading{grid-column:1/-1;margin-bottom:0}
+.puzzle-active .keyboard-heading>span{display:none}
+.puzzle-active .keyboard-quick{display:block;margin:0;align-self:center;font-size:10px;color:#65715f;line-height:1.6;white-space:nowrap}
+.puzzle-active #keyboard-details>summary{display:list-item}
+.puzzle-active #keyboard-details[open]{grid-column:1/-1}
+.puzzle-active #keyboard-details[open] .keyboard-shortcuts{padding-top:8px}
+.puzzle-active .keyboard-status{grid-column:1/-1;min-height:0;margin-top:0;padding-top:0;border-top:0;font-size:9px;line-height:1.5}
+.puzzle-control{border-top:1px solid var(--line);padding-top:12px;margin-top:14px}
+.puzzle-control h2{font:500 19px/1.4 var(--serif);letter-spacing:.02em;margin:8px 0}
+.puzzle-readout{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums}
+#puzzle-status{padding:3px 6px;border-radius:3px;background:#e3e7da;color:#526352;white-space:nowrap}
+#puzzle-status[data-phase="success"]{background:#dbe5cf;color:#3f5d34}
+#puzzle-status[data-phase="wrongMove"],#puzzle-status[data-phase="failure"],#puzzle-status[data-phase="error"]{background:#eee0d5;color:#925344}
+#puzzle-status[data-phase="demonstrating"]{background:#e6e0ce;color:#7b683a}
+.puzzle-message{font-size:11px;color:#666e60;line-height:1.7;min-height:32px;margin:8px 0 10px;white-space:pre-line;overflow-wrap:anywhere}
+.puzzle-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.puzzle-actions button{min-height:34px;padding:6px 5px;font-size:11px}
+#puzzle-hint{border-color:#aeb9a1;background:#e7ecde;color:#486140}
+#puzzle-hint:not(:disabled):hover{background:#d8e2ca}
+#puzzle-stop-demo,#puzzle-continue,#puzzle-resume,#puzzle-reload{grid-column:1/-1}
+#puzzle-reload{color:#f9f4e5;background:#53664f;border-color:#53664f}
+#puzzle-reload:not(:disabled):hover{background:#44583f}
+#puzzle-stop-demo{color:#943f35;border-color:#b57567;background:#eeded3}
+.puzzle-notes{margin-top:12px}
+.puzzle-explanation{border-top:1px solid #d5d1c588;padding-top:7px}
+.puzzle-explanation summary{cursor:pointer;font-size:11px;color:#6b725f;padding:5px 0;list-style-position:inside}
+.puzzle-explanation p{font-size:11px;line-height:1.9;margin:6px 0;color:#686e61}
+.puzzle-navigation{display:flex;gap:8px;margin-top:8px}
+.puzzle-navigation button{min-height:32px;flex:1;font-size:11px}
+#puzzle-next:not(:disabled){color:#f9f4e5;background:#53664f;border-color:#53664f}
+#puzzle-next:not(:disabled):hover{background:#44583f}
+.puzzle-footnote{font-size:10px;color:#828577;line-height:1.7;margin:9px 0 0}
+.preview-note{margin-top:3px;color:#9a8c70}
+.puzzle-storage-warning{font-size:10px;line-height:1.7;padding:8px 9px;border-left:2px solid #b67c4e;background:#ece1cc;color:#896141;margin:0 0 10px;overflow-wrap:anywhere}
+@media(max-width:1050px){.mode-tabs button{font-size:11px}.puzzle-control h2{font-size:18px}.puzzle-active .turn-heading h1{font-size:21px}.puzzle-actions{gap:6px}}
+@media(max-width:760px){.mode-tabs{margin-bottom:16px}.puzzle-active .game-control{grid-column:1/-1}.puzzle-active .keyboard-help{margin-top:0;grid-row:3}.puzzle-picker{margin-bottom:15px}.puzzle-control{grid-column:1/-1;grid-row:2;margin-top:0;padding-top:17px}.puzzle-control h2{font-size:21px}.puzzle-message{min-height:0}.puzzle-actions button,.puzzle-navigation button{min-height:38px}.puzzle-notes{grid-column:1/-1;grid-row:4;margin-top:0}.puzzle-active .comparison-note{grid-row:5}}
+
+.keyboard-expanded-hint{display:none;font-size:10px;color:var(--muted);line-height:1.6;margin:7px 0}
+.puzzle-active .keyboard-expanded-hint{display:block}
